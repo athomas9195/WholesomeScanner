@@ -50,9 +50,11 @@ The ingredient scanner lets the user scan a barcode of any item at the store or 
 * In the ingredients report, display what the ingredient does or what its main function is (ie Phenoxyethanol - preservative)
 * In the search feature on the discovery page, user can display the results by price and by rating 
 * User can share their favorite products with friends through in-app sharing 
-* Communities will feature forums 
+* Communities will feature forums and trending products 
 * User can post on community forums 
 * User profile shows a map of user's favorite stores 
+* User profile shows a map of food donation locations
+* A focus on infant and children's needs
  
 ### 2. Screen Archetypes
 
