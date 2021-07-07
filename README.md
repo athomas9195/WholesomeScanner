@@ -101,6 +101,10 @@ The ingredient scanner lets the user scan a barcode of any item at the store or 
 * Profile -> Ingredient Selection Screen -> Text field to be modified
 * Settings -> Toggle settings
 
+
+**Wireframes**
+![alt text](https://github.com/athomas9195/WholesomeScanner/blob/main/Wireframes%20Image.png)
+
 <!-- ## Wireframes
 [Add picture of your hand sketched wireframes in this section]
 <img src="YOUR_WIREFRAME_IMAGE_URL" width=600>
