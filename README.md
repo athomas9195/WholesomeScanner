@@ -103,7 +103,7 @@ The ingredient scanner lets the user scan a barcode of any item at the store or 
 
 
 **Wireframes**
-<img src="https://github.com/athomas9195/WholesomeScanner/blob/main/Wireframes%20Image.png" width="100" height="400">
+![alt text] (https://github.com/athomas9195/WholesomeScanner/blob/main/Wireframes%20Image.png)
 
 <!-- ## Wireframes
 [Add picture of your hand sketched wireframes in this section]
