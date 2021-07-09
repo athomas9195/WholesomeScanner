@@ -186,28 +186,28 @@ The ingredient scanner lets the user scan a barcode of any item at the store or 
       - (Read/GET) Query custom good/bad ingredients and user's selected ingredients
       
 #### [OPTIONAL:] Existing API Endpoints
-##### An API Of Ice And Fire
-- Base URL - [http://www.anapioficeandfire.com/api](http://www.anapioficeandfire.com/api)
+##### Chomp API
+- Base URL - https://github.com/chompfoods?tab=repositories&q=SDK ??SDK? $0.01 per request?
 
    HTTP Verb | Endpoint | Description
    ----------|----------|------------
-    `GET`    | /characters | get all characters
-    `GET`    | /characters/?name=name | return specific character by name
-    `GET`    | /houses   | get all houses
-    `GET`    | /houses/?name=name | return specific house by name
+    `GET`    | /characters | 
+    `GET`    | /characters/?name=name | 
+    `GET`    | /houses   | 
+    `GET`    | /houses/?name=name |  
 
-##### Game of Thrones API
-- Base URL - [https://api.got.show/api](https://api.got.show/api)
+##### USDA Food Data Central API 
+- Base URL - https://fdc.nal.usda.gov/api-guide.html 
 
    HTTP Verb | Endpoint | Description
    ----------|----------|------------
-    `GET`    | /cities | gets all cities
-    `GET`    | /cities/byId/:id | gets specific city by :id
-    `GET`    | /continents | gets all continents
-    `GET`    | /continents/byId/:id | gets specific continent by :id
-    `GET`    | /regions | gets all regions
-    `GET`    | /regions/byId/:id | gets specific region by :id
-    `GET`    | /characters/paths/:name | gets a character's path with a given name
+    `GET`    | /cities | 
+    `GET`    | /cities/byId/:id | 
+    `GET`    | /continents | 
+    `GET`    | /continents/byId/:id | 
+    `GET`    | /regions | 
+    `GET`    | /regions/byId/:id | 
+    `GET`    | /characters/paths/:name | 
 
 
 
