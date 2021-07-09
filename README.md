@@ -119,8 +119,8 @@ The ingredient scanner lets the user scan a barcode of any item at the store or 
 * Settings -> Toggle settings
 
 **Schema**
-*Models*
-###Scan  
+* *Models*
+* Scan  
    | Property      | Type     | Description | 
    | ------------- | -------- | ------------|
    | objectId      | String   | unique id for the user post (default field) |
@@ -135,7 +135,7 @@ The ingredient scanner lets the user scan a barcode of any item at the store or 
    | bad ingredients | Array  | the product's allergens or harmful additives |
    
    
-###User   
+* User   
    | Property      | Type     | Description | 
    | ------------- | -------- | ------------|
    | objectId      | String   | unique id for the user post (default field) |
