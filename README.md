@@ -29,6 +29,7 @@ The ingredient scanner lets the user scan a barcode of any item at the store or 
 **Required Must-have Stories**
 
 **Bundles**
+
 *User*
 * User logs in to access previous scans and preference settings
 * Profile pages for each user
