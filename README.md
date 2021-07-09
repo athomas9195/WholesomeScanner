@@ -28,21 +28,36 @@ The ingredient scanner lets the user scan a barcode of any item at the store or 
 
 **Required Must-have Stories**
 
-* User opens camera to scan barcode or ingredients list
-* User logs in to access previous scans, chats and preference settings
-* User sees generated report of product highlights, key ingredients, and safety evaluation of product 
-* In the report, user can select from similar product recommendations with similar and safer products or similar and cheaper products 
-* User can rate and review the product after purchasing 
-* User can select ingredients to avoid (ie artificial sweeteners and high fructose corn syrup)
+**Bundles**
+*User*
+* User logs in to access previous scans and preference settings
 * Profile pages for each user
 * User can access their scan history 
-* User can display their favorite products on their profile page 
-* Discover page where user can join communities (ie new moms community, keto diet community, low carbs community) and search for products 
-* Communities will feature the top rated products selected by that community 
+
+*User preferences*
+* Generate categories and lists for ingredients 
+* User can select custom ingredients to avoid (ie artificial sweeteners and high fructose corn syrup)
+* User can select categories of ingredients to avoid 
+
+*Scanner*
+* User opens camera to scan barcode or ingredients list
+* App compares scanned product (through API) against list of ingredients selected by user 
+
+*Report*
+* User sees generated report of product highlights, key ingredients, and safety evaluation of product
+* User sees "bad" ingredients 
+* User sees "good" ingredients  
+* In the report, user can select from similar product recommendations with similar and safer products or similar and cheaper products 
+* User can rate and review the product after purchasing 
+
+*Settings*
 * Settings (Accesibility, Notification, General, etc.)
 
 **Optional Nice-to-have Stories**
 
+* Discover page where user can join communities (ie new moms community, keto diet community, low carbs community) and search for products 
+* Communities will feature the top rated products selected by that community 
+* User can display their favorite products on their profile page 
 * User can compare and contrast two different products
 * User can group their favorite products to form a shopping list or a starter-kit  
 * User can check and uncheck items in shopping list 
