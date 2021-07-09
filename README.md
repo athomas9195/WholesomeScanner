@@ -118,6 +118,98 @@ The ingredient scanner lets the user scan a barcode of any item at the store or 
 * Profile -> Ingredient Selection Screen -> Text field to be modified
 * Settings -> Toggle settings
 
+**Schema**
+*Models*
+###Scan  
+   | Property      | Type     | Description | 
+   | ------------- | -------- | ------------|
+   | objectId      | String   | unique id for the user post (default field) |
+   | author        | Pointer to User| scan author |
+   | image         | File     | image that user takes of the barcode |
+   | createdAt     | DateTime | date when post is created (default field) |
+   | updatedAt     | DateTime | date when post is last updated (default field) |
+   | user rating   | Number   | the user's rating of the product out of 5 |
+   | safety rating | Number   | the product's safety rating |
+   | key ingredients | Array  | the product's key ingredients (highlights) |
+   | good ingredients| Array  | the product's good ingredients |
+   | bad ingredients | Array  | the product's allergens or harmful additives |
+   
+   
+###User   
+   | Property      | Type     | Description | 
+   | ------------- | -------- | ------------|
+   | objectId      | String   | unique id for the user post (default field) |
+   | username      | String   | user's name |
+   | image         | File     | user's profile image |
+   | createdAt     | DateTime | date when post is created (default field) |
+   | updatedAt     | DateTime | date when post is last updated (default field) |
+   | scan history  | Array (of Scan Pointers)  | an array of Pointers to the Scan object | 
+   | custom bad ingreds  | Array (String) | a custom array of ingredients to avoid | 
+   | custom goood ingreds| Array (String) | a custom array of ingredients to highlight | 
+   | selected ingredients| Array (String)| an array of provided ingredients user wants to avoid | 
+
+
+### Networking
+#### List of network requests by screen
+   - Profile Screen
+      - (Read/GET) Query all scans where user is author
+         ```obj c
+           // construct PFQuery
+          PFQuery *scanQuery = [Scan query];
+          [postQuery orderByDescending:@"createdAt"];
+          [postQuery includeKey:@"author"];
+          [postQuery whereKey:@"author" equalTo: [PFUser currentUser]];
+          postQuery.limit = postLimit;
+
+          // fetch data asynchronously
+          [scanQuery findObjectsInBackgroundWithBlock:^(NSArray<Scan *> * _Nullable scans, NSError * _Nullable error) {
+              if (scans) {
+                  NSMutableArray* scansMutableArray = [scans mutableCopy];
+                  self.scans = scansMutableArray;
+                  [self.collectionView reloadData];
+              }
+              else {
+                  NSLog(@"%@", error.localizedDescription);
+                  NSLog(@"%@", @"CANNOT GET STUFF");
+              }
+          }];
+         ```
+      - (Create/POST) Create a new rating on a scan 
+      - (Delete) Delete existing rating 
+      - (Create/POST) Create a new ingredient group or custom ingredient 
+      - (Delete) Delete existing ingredient 
+      - (Update/PUT) Create a new profile pic 
+      - (Read/GET) Query logged in user object
+      
+   - Scan Screen
+      - (Create/POST) Create a new scan object 
+      - (Read/GET) Query custom good/bad ingredients and user's selected ingredients
+      
+#### [OPTIONAL:] Existing API Endpoints
+##### An API Of Ice And Fire
+- Base URL - [http://www.anapioficeandfire.com/api](http://www.anapioficeandfire.com/api)
+
+   HTTP Verb | Endpoint | Description
+   ----------|----------|------------
+    `GET`    | /characters | get all characters
+    `GET`    | /characters/?name=name | return specific character by name
+    `GET`    | /houses   | get all houses
+    `GET`    | /houses/?name=name | return specific house by name
+
+##### Game of Thrones API
+- Base URL - [https://api.got.show/api](https://api.got.show/api)
+
+   HTTP Verb | Endpoint | Description
+   ----------|----------|------------
+    `GET`    | /cities | gets all cities
+    `GET`    | /cities/byId/:id | gets specific city by :id
+    `GET`    | /continents | gets all continents
+    `GET`    | /continents/byId/:id | gets specific continent by :id
+    `GET`    | /regions | gets all regions
+    `GET`    | /regions/byId/:id | gets specific region by :id
+    `GET`    | /characters/paths/:name | gets a character's path with a given name
+
+
 
 **Wireframes**
 ![alt text](https://github.com/athomas9195/WholesomeScanner/blob/main/Wireframes%20Image.png)
