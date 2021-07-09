@@ -71,6 +71,7 @@ The ingredient scanner lets the user scan a barcode of any item at the store or 
 * User profile shows a map of user's favorite stores 
 * User profile shows a map of food donation locations
 * A focus on infant and children's needs
+* See reviews of scanned product online 
  
 ### 2. Screen Archetypes
 
