@@ -214,6 +214,8 @@ The ingredient scanner lets the user scan a barcode of any item at the store or 
 **Wireframes**
 ![alt text](https://github.com/athomas9195/WholesomeScanner/blob/main/Wireframes%20Image.png)
 
+![alt text](https://github.com/athomas9195/WholesomeScanner/blob/main/figma%20mockup.png)
+
 **Timeline**
 ![alt text](https://github.com/athomas9195/WholesomeScanner/blob/main/Screen%20Shot%202021-07-12%20at%205.41.17%20PM.png)
 ![alt text](https://github.com/athomas9195/WholesomeScanner/blob/main/Project%20Plan%202.png)
