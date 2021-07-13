@@ -87,6 +87,21 @@
             </objects>
             <point key="canvasLocation" x="-404.61538461538458" y="-41.232227488151658"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="fr6-vj-klQ">
+            <objects>
+                <viewController id="oxo-oc-eDn" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="i6p-f3-1wx">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="SjE-g5-qWA"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZFf-kA-xXw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="940" y="-41"/>
+        </scene>
     </scenes>
     <resources>
         <image name="logo" width="666.66668701171875" height="666.66668701171875"/>
@@ -95,6 +110,9 @@
         </namedColor>
         <systemColor name="opaqueSeparatorColor">
             <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
     </resources>
 </document>
