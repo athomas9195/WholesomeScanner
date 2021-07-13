@@ -1,0 +1,23 @@
+{
+  "images" : [
+    {
+      "filename" : "iconmonstr-user-male-thin-98.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "iconmonstr-user-male-thin-96.png",
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "iconmonstr-user-male-thin-97.png",
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

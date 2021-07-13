@@ -12,7 +12,7 @@
         <!--Login View Controller-->
         <scene sceneID="JQW-st-HSK">
             <objects>
-                <viewController storyboardIdentifier="LoginViewController" id="JMt-U4-5f1" customClass="LoginViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" modalPresentationStyle="fullScreen" id="JMt-U4-5f1" customClass="LoginViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4Ua-kw-rBr">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -81,6 +81,7 @@
                         <outlet property="logInButton" destination="xUz-eG-6vn" id="zQt-Lp-YQw"/>
                         <outlet property="passwordTextField" destination="4kp-60-ycp" id="ghP-7A-v7m"/>
                         <outlet property="usernameTextField" destination="KqK-cT-4JQ" id="7FX-hl-rYd"/>
+                        <segue destination="aHH-BD-d6t" kind="presentation" id="U90-8X-giy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mfM-wP-qqA" sceneMemberID="firstResponder"/>
@@ -88,23 +89,60 @@
             <point key="canvasLocation" x="-404.61538461538458" y="-41.232227488151658"/>
         </scene>
         <!--View Controller-->
-        <scene sceneID="fr6-vj-klQ">
+        <scene sceneID="jfa-Yb-92B">
             <objects>
-                <viewController id="oxo-oc-eDn" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="i6p-f3-1wx">
+                <viewController id="ncs-RX-o2S" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="IGo-Vq-k9B">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="SjE-g5-qWA"/>
+                        <viewLayoutGuide key="safeArea" id="cDn-y0-GFm"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="" image="iconmonstr-user-male-thin-96" id="79o-tW-pR6"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ZFf-kA-xXw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="v6H-aV-ehz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="940" y="-41"/>
+            <point key="canvasLocation" x="1148" y="417"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="bgR-zl-Tuf">
+            <objects>
+                <viewController id="q4Q-bn-dXR" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Bqm-I9-WyK">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="KLM-I2-dLe"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" image="—Pngtree—purple scan code_4420543-1" id="HIo-sv-dSr"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LVD-oN-5rc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1148" y="-271"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="m8Q-Uj-eTn">
+            <objects>
+                <tabBarController modalPresentationStyle="fullScreen" id="aHH-BD-d6t" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="8zi-3r-aOR">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="q4Q-bn-dXR" kind="relationship" relationship="viewControllers" id="UB0-M1-Cg5"/>
+                        <segue destination="ncs-RX-o2S" kind="relationship" relationship="viewControllers" id="4TQ-z3-0hO"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="a9u-i2-3n4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="371" y="-41"/>
         </scene>
     </scenes>
     <resources>
+        <image name="iconmonstr-user-male-thin-96" width="32" height="32"/>
         <image name="logo" width="666.66668701171875" height="666.66668701171875"/>
+        <image name="—Pngtree—purple scan code_4420543-1" width="33.333332061767578" height="33.333332061767578"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
