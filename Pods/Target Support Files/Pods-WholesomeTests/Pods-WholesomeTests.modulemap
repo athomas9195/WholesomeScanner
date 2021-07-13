@@ -1,0 +1,6 @@
+framework module Pods_WholesomeTests {
+  umbrella header "Pods-WholesomeTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

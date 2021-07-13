@@ -1,0 +1,6 @@
+framework module Pods_Wholesome {
+  umbrella header "Pods-Wholesome-umbrella.h"
+
+  export *
+  module * { export * }
+}
