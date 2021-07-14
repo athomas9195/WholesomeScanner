@@ -142,7 +142,7 @@
                                 <state key="normal" image="Image-3"/>
                             </button>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L1e-aX-nY6">
-                                <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                                <rect key="frame" x="0.0" y="250" width="390" height="594"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="TCj-7o-jyg">
                                         <rect key="frame" x="0.0" y="0.0" width="390" height="1200"/>
@@ -150,12 +150,12 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vzM-c6-qtY">
                                                 <rect key="frame" x="0.0" y="0.0" width="390" height="1200"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Image-7" translatesAutoresizingMaskIntoConstraints="NO" id="HhA-PV-kAG">
-                                                        <rect key="frame" x="17" y="109" width="240" height="128"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Image-8" translatesAutoresizingMaskIntoConstraints="NO" id="CqD-vh-FSm">
                                                         <rect key="frame" x="55" y="428" width="240" height="128"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    </imageView>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Image-7" translatesAutoresizingMaskIntoConstraints="NO" id="HhA-PV-kAG">
+                                                        <rect key="frame" x="8" y="30" width="240" height="128"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     </imageView>
                                                 </subviews>
@@ -165,8 +165,10 @@
                                                 </constraints>
                                             </view>
                                         </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </stackView>
                                 </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="TCj-7o-jyg" firstAttribute="width" secondItem="e0d-Rj-Wrd" secondAttribute="width" id="ete-hE-Icn"/>
                                     <constraint firstItem="TCj-7o-jyg" firstAttribute="bottom" secondItem="RWH-FS-ieX" secondAttribute="bottom" id="gZc-8m-Ikw"/>
@@ -182,7 +184,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="L1e-aX-nY6" secondAttribute="bottom" id="4hY-nZ-vTu"/>
-                            <constraint firstItem="L1e-aX-nY6" firstAttribute="top" secondItem="IGo-Vq-k9B" secondAttribute="top" id="LJG-LD-pJU"/>
+                            <constraint firstItem="L1e-aX-nY6" firstAttribute="top" secondItem="IGo-Vq-k9B" secondAttribute="top" constant="250" id="LJG-LD-pJU"/>
                             <constraint firstAttribute="trailing" secondItem="L1e-aX-nY6" secondAttribute="trailing" id="aki-JF-15E"/>
                             <constraint firstItem="L1e-aX-nY6" firstAttribute="leading" secondItem="IGo-Vq-k9B" secondAttribute="leading" id="wV8-fS-iWb"/>
                         </constraints>
