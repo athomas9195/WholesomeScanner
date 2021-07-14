@@ -159,7 +159,7 @@
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     </imageView>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="1200" id="aKp-FD-Y4l"/>
                                                 </constraints>
@@ -189,7 +189,9 @@
                             <constraint firstItem="L1e-aX-nY6" firstAttribute="leading" secondItem="IGo-Vq-k9B" secondAttribute="leading" id="wV8-fS-iWb"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="iconmonstr-user-male-thin-96" id="79o-tW-pR6"/>
+                    <tabBarItem key="tabBarItem" title="" image="iconmonstr-user-male-thin-96" id="79o-tW-pR6">
+                        <color key="badgeColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBarItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v6H-aV-ehz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -205,7 +207,9 @@
                         <viewLayoutGuide key="safeArea" id="KLM-I2-dLe"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="—Pngtree—purple scan code_4420543-1" id="HIo-sv-dSr"/>
+                    <tabBarItem key="tabBarItem" title="" image="—Pngtree—purple scan code_4420543-1" id="HIo-sv-dSr">
+                        <color key="badgeColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBarItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LVD-oN-5rc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -219,6 +223,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="q4Q-bn-dXR" kind="relationship" relationship="viewControllers" id="UB0-M1-Cg5"/>
@@ -248,9 +253,6 @@
         </namedColor>
         <systemColor name="opaqueSeparatorColor">
             <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
     </resources>
 </document>
