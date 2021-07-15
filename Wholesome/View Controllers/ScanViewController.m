@@ -115,6 +115,7 @@
                 
                 dispatch_sync(dispatch_get_main_queue(), ^{
                     [self.captureSession stopRunning];
+                    [self performSegueWithIdentifier:@"toReport" sender:self]; 
                    // self.scannedBarcode.text = capturedBarcode;
                     NSLog(@"%@", capturedBarcode);
                 });
