@@ -3,6 +3,7 @@
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -238,30 +239,32 @@
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="m4d-pt-F7T">
                                 <rect key="frame" x="0.0" y="0.0" width="390" height="761"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="inS-2J-e3L">
-                                        <rect key="frame" x="0.0" y="13" width="390" height="44"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                        <items>
-                                            <navigationItem id="qiY-y6-zI2">
-                                                <barButtonItem key="rightBarButtonItem" title="Done" id="LkC-ZS-CKE">
-                                                    <connections>
-                                                        <action selector="doneButtonPressed:" destination="q4Q-bn-dXR" id="Zdi-WT-3Xp"/>
-                                                    </connections>
-                                                </barButtonItem>
-                                            </navigationItem>
-                                        </items>
-                                    </navigationBar>
-                                </subviews>
                                 <color key="backgroundColor" systemColor="systemPurpleColor"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qb6-xX-k3L">
+                                <rect key="frame" x="325" y="40" width="45" height="41"/>
+                                <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal">
+                                    <imageReference key="image" image="iconmonstr-refresh-4-96" symbolScale="large"/>
+                                </state>
+                                <connections>
+                                    <action selector="rescanButtonPressed:" destination="q4Q-bn-dXR" eventType="touchUpInside" id="DJO-gn-Jd3"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="KLM-I2-dLe"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Qb6-xX-k3L" firstAttribute="leading" secondItem="KLM-I2-dLe" secondAttribute="leading" constant="325" id="UZR-uN-mTn"/>
+                            <constraint firstItem="KLM-I2-dLe" firstAttribute="bottom" secondItem="Qb6-xX-k3L" secondAttribute="bottom" constant="680" id="s3a-i3-e4c"/>
+                            <constraint firstItem="KLM-I2-dLe" firstAttribute="trailing" secondItem="Qb6-xX-k3L" secondAttribute="trailing" constant="20" id="sXG-v5-dJn"/>
+                            <constraint firstItem="Qb6-xX-k3L" firstAttribute="top" secondItem="KLM-I2-dLe" secondAttribute="top" constant="-4" id="u1o-8D-cef"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="—Pngtree—purple scan code_4420543-1" id="HIo-sv-dSr"/>
                     <connections>
                         <outlet property="cameraPreviewView" destination="m4d-pt-F7T" id="MTA-4c-mhP"/>
+                        <outlet property="rescanButton" destination="Qb6-xX-k3L" id="FSl-kU-5a9"/>
                         <segue destination="gS5-Yg-Wzy" kind="presentation" identifier="toReport" id="7Wn-Pk-17B"/>
                     </connections>
                 </viewController>
@@ -425,6 +428,7 @@
         <image name="Image-8" width="118" height="140.66667175292969"/>
         <image name="Image-9" width="118" height="140.66667175292969"/>
         <image name="almonds" width="400" height="400"/>
+        <image name="iconmonstr-refresh-4-96" width="32" height="32"/>
         <image name="iconmonstr-user-male-thin-96" width="32" height="32"/>
         <image name="logo" width="666.66668701171875" height="666.66668701171875"/>
         <image name="—Pngtree—purple scan code_4420543-1" width="33.333332061767578" height="33.333332061767578"/>

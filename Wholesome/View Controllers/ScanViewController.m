@@ -7,9 +7,11 @@
 
 #import "ScanViewController.h"
 #import <AVFoundation/AVFoundation.h>
+#import "APIManager.h"
 
 @interface ScanViewController () <AVCaptureMetadataOutputObjectsDelegate>
 @property (weak, nonatomic) IBOutlet UIView *cameraPreviewView;
+@property (weak, nonatomic) IBOutlet UIButton *rescanButton;
 
 @property (nonatomic, strong) AVCaptureSession *captureSession;
 @property (nonatomic, strong) AVCaptureVideoPreviewLayer *captureLayer;
@@ -19,9 +21,17 @@
 @implementation ScanViewController
 
 - (void)viewDidLoad {
+   
     [super viewDidLoad];
+    dispatch_async(dispatch_get_main_queue(), ^(void) {
+       // All UI calls go here
+        [self.view bringSubviewToFront:self.rescanButton];
+    });
     [self setupScanningSession];
     [self.captureSession startRunning];
+    
+    
+    
     // Do any additional setup after loading the view.
 }
 
@@ -36,10 +46,10 @@
     // Dispose of any resources that can be recreated.
 }
 
-//- (IBAction)rescanButtonPressed:(id)sender {
-//    // Start scanning again.
-//    [self.captureSession startRunning];
-//}
+- (IBAction)rescanButtonPressed:(id)sender {
+    // Start scanning again.
+    [self.captureSession startRunning];
+}
 
 - (IBAction)doneButtonPressed:(id)sender {
     [self.captureSession stopRunning];
@@ -84,6 +94,7 @@
 }
 
 // AVCaptureMetadataOutputObjectsDelegate method
+//calls the api 
 - (void)captureOutput:(AVCaptureOutput *)captureOutput didOutputMetadataObjects:(NSArray *)metadataObjects fromConnection:(AVCaptureConnection *)connection {
     // Do your action on barcode capture here:
     NSString *capturedBarcode = nil;
@@ -118,11 +129,67 @@
                     [self performSegueWithIdentifier:@"toReport" sender:self]; 
                    // self.scannedBarcode.text = capturedBarcode;
                     NSLog(@"%@", capturedBarcode);
+    
+                    [self getItemWithUPC:capturedBarcode completion:^(Product * product, NSError *error) {
+            
+                        if (product) {
+                            NSLog(@"%@", product.allIngred);
+                        
+                        } else {
+                            NSLog(@"😫😫😫 Error getting home timeline: %@", error.localizedDescription);
+                        }
+                    }];
                 });
                 return;
             }
         }
     }
+}
+
+//retrieves item info from Nutritionix (ingredients, item name, brand, and nutrition info).
+- (void)getItemWithUPC:(NSString *)upc completion:(void(^)(Product *product, NSError *error))completion {
+
+    NSString *path = [[NSBundle mainBundle] pathForResource: @"Keys" ofType: @"plist"];
+    NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile: path];
+    
+    NSString *appID= [dict objectForKey: @"app_Id"];
+    NSString *appKey = [dict objectForKey: @"app_Key"];
+    
+    NSDictionary *headers = @{ @"x-app-id": appID,
+                               @"x-app-key": appKey };
+    
+    //START
+    NSString *base = @"https://trackapi.nutritionix.com/v2/search/item?upc=";
+    NSString *fullURL = [base stringByAppendingString:upc];
+    
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:fullURL]
+                                                           cachePolicy:NSURLRequestUseProtocolCachePolicy
+                                                       timeoutInterval:10.0];
+    [request setHTTPMethod:@"GET"];
+    [request setAllHTTPHeaderFields:headers];
+
+    NSURLSession *session = [NSURLSession sharedSession];
+    NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request
+                                                completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+                                                    if (error) {
+                                                        NSLog(@"%@", error);
+                                                    } else {
+                                                        NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
+                                                        NSLog(@"%@", httpResponse);
+                                                         
+                                                        
+                                                        NSString *strISOLatin = [[NSString alloc] initWithData:data encoding:NSISOLatin1StringEncoding];
+                                                        NSData *dataUTF8 = [strISOLatin dataUsingEncoding:NSUTF8StringEncoding];
+
+                                                        id dict = [NSJSONSerialization JSONObjectWithData:dataUTF8 options:0 error:&error];
+                                                        if (dict != nil) {
+                                                            NSLog(@"Dict: %@", dict);
+                                                        } else {
+                                                            NSLog(@"Error: %@", error);
+                                                        }
+                                                    }
+                                                }];
+    [dataTask resume];
 }
 
 
