@@ -221,9 +221,7 @@
                             <constraint firstItem="L1e-aX-nY6" firstAttribute="leading" secondItem="IGo-Vq-k9B" secondAttribute="leading" id="wV8-fS-iWb"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="iconmonstr-user-male-thin-96" id="79o-tW-pR6">
-                        <color key="badgeColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </tabBarItem>
+                    <tabBarItem key="tabBarItem" title="" image="iconmonstr-user-male-thin-96" id="79o-tW-pR6"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v6H-aV-ehz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -239,9 +237,7 @@
                         <viewLayoutGuide key="safeArea" id="KLM-I2-dLe"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="—Pngtree—purple scan code_4420543-1" id="HIo-sv-dSr">
-                        <color key="badgeColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </tabBarItem>
+                    <tabBarItem key="tabBarItem" title="" image="—Pngtree—purple scan code_4420543-1" id="HIo-sv-dSr"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LVD-oN-5rc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -250,11 +246,12 @@
         <!--Tab Bar Controller-->
         <scene sceneID="m8Q-Uj-eTn">
             <objects>
-                <tabBarController modalPresentationStyle="fullScreen" id="aHH-BD-d6t" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="tabBarController" modalPresentationStyle="fullScreen" id="aHH-BD-d6t" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="8zi-3r-aOR">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" red="0.48244726770000002" green="0.2547401239" blue="0.63832677979999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
