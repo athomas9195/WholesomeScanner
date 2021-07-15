@@ -293,7 +293,7 @@
                                                             <constraint firstAttribute="height" constant="27" id="V1y-rh-Jbb"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CONTAINS GLUTEN" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="61s-Yl-Pii">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CONTAINS NUTS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="61s-Yl-Pii">
                                                         <rect key="frame" x="50.999999999999986" y="36" width="155.66666666666663" height="21"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="21" id="Lyq-Ch-BdO"/>
@@ -321,14 +321,14 @@
                                                         <rect key="frame" x="152" y="154" width="60" height="32"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     </imageView>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="almonds" translatesAutoresizingMaskIntoConstraints="NO" id="SI7-xe-Vj4">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="almonds" translatesAutoresizingMaskIntoConstraints="NO" id="SI7-xe-Vj4" customClass="PFImageView">
                                                         <rect key="frame" x="285" y="33" width="82" height="83"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="82" id="GuT-Ro-IiC"/>
                                                             <constraint firstAttribute="height" constant="83" id="bLJ-Uz-ZzU"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TgL-6O-QTZ">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Almonds, Expeller Pressed Canola Oil" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TgL-6O-QTZ">
                                                         <rect key="frame" x="16" y="252" width="358" height="385"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
