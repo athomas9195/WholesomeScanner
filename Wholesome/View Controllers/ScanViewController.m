@@ -21,7 +21,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setupScanningSession];
-    [self.captureSession startRunning]; 
+    [self.captureSession startRunning];
     // Do any additional setup after loading the view.
 }
 

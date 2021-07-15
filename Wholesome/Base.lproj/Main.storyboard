@@ -240,10 +240,10 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="inS-2J-e3L">
-                                        <rect key="frame" x="0.0" y="0.0" width="390" height="44"/>
+                                        <rect key="frame" x="0.0" y="13" width="390" height="44"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                         <items>
-                                            <navigationItem title="Title" id="qiY-y6-zI2">
+                                            <navigationItem id="qiY-y6-zI2">
                                                 <barButtonItem key="rightBarButtonItem" title="Done" id="LkC-ZS-CKE">
                                                     <connections>
                                                         <action selector="doneButtonPressed:" destination="q4Q-bn-dXR" id="Zdi-WT-3Xp"/>
@@ -262,11 +262,27 @@
                     <tabBarItem key="tabBarItem" title="" image="—Pngtree—purple scan code_4420543-1" id="HIo-sv-dSr"/>
                     <connections>
                         <outlet property="cameraPreviewView" destination="m4d-pt-F7T" id="MTA-4c-mhP"/>
+                        <segue destination="gS5-Yg-Wzy" kind="presentation" id="7Wn-Pk-17B"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LVD-oN-5rc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1147.6923076923076" y="-271.56398104265401"/>
+        </scene>
+        <!--Report View Controller-->
+        <scene sceneID="ywT-qN-lEP">
+            <objects>
+                <viewController id="gS5-Yg-Wzy" customClass="ReportViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="P6i-yM-98b">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="eVf-OK-zDZ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WKq-nk-JM5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1923" y="-272"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="m8Q-Uj-eTn">
@@ -309,6 +325,9 @@
         </namedColor>
         <systemColor name="opaqueSeparatorColor">
             <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemPurpleColor">
             <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
