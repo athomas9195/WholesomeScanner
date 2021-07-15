@@ -8,8 +8,8 @@
 #import "ProfileViewController.h"
 
 @interface ProfileViewController ()
-@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
-@property (weak, nonatomic) IBOutlet UIView *contentView;
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;  //the container for the categories
+@property (weak, nonatomic) IBOutlet UIView *contentView;   //the stack view 
 
 @end
 
