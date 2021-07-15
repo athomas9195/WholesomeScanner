@@ -276,13 +276,93 @@
                     <view key="view" contentMode="scaleToFill" id="P6i-yM-98b">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gWY-TB-Rd4">
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="y26-kr-eDm">
+                                        <rect key="frame" x="0.0" y="0.0" width="390" height="1200"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s0f-bb-XaE">
+                                                <rect key="frame" x="0.0" y="0.0" width="390" height="1200"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tfP-5t-1DU">
+                                                        <rect key="frame" x="16" y="33" width="35" height="35"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    </imageView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="CONTAINS GLUTEN" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="61s-Yl-Pii">
+                                                        <rect key="frame" x="73" y="40" width="196" height="21"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Product name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lPR-5N-W4H">
+                                                        <rect key="frame" x="16" y="92" width="358" height="48"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Image-13" translatesAutoresizingMaskIntoConstraints="NO" id="dBp-1d-clt">
+                                                        <rect key="frame" x="16" y="148" width="81" height="43"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    </imageView>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Image-13" translatesAutoresizingMaskIntoConstraints="NO" id="qcc-J1-XfZ">
+                                                        <rect key="frame" x="116" y="148" width="81" height="43"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    </imageView>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Image-13" translatesAutoresizingMaskIntoConstraints="NO" id="GEY-g5-DCi">
+                                                        <rect key="frame" x="219" y="148" width="81" height="43"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    </imageView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ingredients" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4ia-10-Aic">
+                                                        <rect key="frame" x="16" y="230" width="86" height="21"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TgL-6O-QTZ">
+                                                        <rect key="frame" x="16" y="274" width="358" height="301"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="1200" id="79I-yR-Y2R"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="y26-kr-eDm" firstAttribute="leading" secondItem="vPO-3h-ue4" secondAttribute="leading" id="4fN-3p-ss6"/>
+                                    <constraint firstItem="y26-kr-eDm" firstAttribute="top" secondItem="vPO-3h-ue4" secondAttribute="top" id="Sz1-2Z-JrM"/>
+                                    <constraint firstItem="y26-kr-eDm" firstAttribute="bottom" secondItem="vPO-3h-ue4" secondAttribute="bottom" id="mnS-j0-wPH"/>
+                                    <constraint firstItem="y26-kr-eDm" firstAttribute="width" secondItem="WwW-Qm-nfG" secondAttribute="width" id="obh-1G-Awh"/>
+                                    <constraint firstItem="y26-kr-eDm" firstAttribute="trailing" secondItem="vPO-3h-ue4" secondAttribute="trailing" id="xZZ-iX-BwJ"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="vPO-3h-ue4"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="WwW-Qm-nfG"/>
+                            </scrollView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="eVf-OK-zDZ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="gWY-TB-Rd4" firstAttribute="top" secondItem="P6i-yM-98b" secondAttribute="top" id="922-cv-cLI"/>
+                            <constraint firstItem="gWY-TB-Rd4" firstAttribute="leading" secondItem="P6i-yM-98b" secondAttribute="leading" id="9jy-cE-fKU"/>
+                            <constraint firstAttribute="bottom" secondItem="gWY-TB-Rd4" secondAttribute="bottom" id="DqC-Ul-JQe"/>
+                            <constraint firstAttribute="trailing" secondItem="gWY-TB-Rd4" secondAttribute="trailing" id="KhG-NC-Riw"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WKq-nk-JM5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1923" y="-272"/>
+            <point key="canvasLocation" x="1921.5384615384614" y="-272.27488151658764"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="m8Q-Uj-eTn">
@@ -309,6 +389,7 @@
         <image name="Image" width="50.666667938232422" height="50.666667938232422"/>
         <image name="Image-1" width="22" height="19.333333969116211"/>
         <image name="Image-10" width="118" height="140.66667175292969"/>
+        <image name="Image-13" width="41.333332061767578" height="20.666666030883789"/>
         <image name="Image-2" width="18.666666030883789" height="21.333333969116211"/>
         <image name="Image-3" width="18.666666030883789" height="21.333333969116211"/>
         <image name="Image-4" width="58.666667938232422" height="20.666666030883789"/>
