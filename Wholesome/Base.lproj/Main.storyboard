@@ -227,21 +227,31 @@
             </objects>
             <point key="canvasLocation" x="1147.6923076923076" y="416.58767772511845"/>
         </scene>
-        <!--View Controller-->
+        <!--Scan View Controller-->
         <scene sceneID="bgR-zl-Tuf">
             <objects>
-                <viewController id="q4Q-bn-dXR" sceneMemberID="viewController">
+                <viewController id="q4Q-bn-dXR" customClass="ScanViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Bqm-I9-WyK">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="m4d-pt-F7T">
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="761"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemPurpleColor"/>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="KLM-I2-dLe"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="—Pngtree—purple scan code_4420543-1" id="HIo-sv-dSr"/>
+                    <connections>
+                        <outlet property="cameraPreviewView" destination="m4d-pt-F7T" id="MTA-4c-mhP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LVD-oN-5rc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1148" y="-271"/>
+            <point key="canvasLocation" x="1147.6923076923076" y="-271.56398104265401"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="m8Q-Uj-eTn">
@@ -284,6 +294,9 @@
         </namedColor>
         <systemColor name="opaqueSeparatorColor">
             <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPurpleColor">
+            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
