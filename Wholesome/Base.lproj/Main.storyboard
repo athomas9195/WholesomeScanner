@@ -286,59 +286,84 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s0f-bb-XaE">
                                                 <rect key="frame" x="0.0" y="0.0" width="390" height="1200"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tfP-5t-1DU">
-                                                        <rect key="frame" x="16" y="33" width="35" height="35"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image-11" translatesAutoresizingMaskIntoConstraints="NO" id="tfP-5t-1DU">
+                                                        <rect key="frame" x="16" y="33" width="27" height="27"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="27" id="Jy9-Wm-RVH"/>
+                                                            <constraint firstAttribute="height" constant="27" id="V1y-rh-Jbb"/>
+                                                        </constraints>
                                                     </imageView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="CONTAINS GLUTEN" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="61s-Yl-Pii">
-                                                        <rect key="frame" x="73" y="40" width="196" height="21"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <nil key="textColor"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CONTAINS GLUTEN" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="61s-Yl-Pii">
+                                                        <rect key="frame" x="50.999999999999986" y="36" width="155.66666666666663" height="21"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="21" id="Lyq-Ch-BdO"/>
+                                                            <constraint firstAttribute="width" constant="155.66999999999999" id="W9e-mt-olg"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                                        <color key="textColor" red="0.5729626417" green="0.52773392200000002" blue="0.6470781565" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Product name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lPR-5N-W4H">
-                                                        <rect key="frame" x="16" y="92" width="358" height="48"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <nil key="textColor"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Roasted and Unsalted Almonds" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lPR-5N-W4H">
+                                                        <rect key="frame" x="16" y="77" width="261" height="69.333333333333314"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="29"/>
+                                                        <color key="textColor" red="0.16213673349999999" green="0.057003185150000003" blue="0.32551279659999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Image-13" translatesAutoresizingMaskIntoConstraints="NO" id="dBp-1d-clt">
-                                                        <rect key="frame" x="16" y="148" width="81" height="43"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Image-13" translatesAutoresizingMaskIntoConstraints="NO" id="qcc-J1-XfZ">
-                                                        <rect key="frame" x="116" y="148" width="81" height="43"/>
+                                                        <rect key="frame" x="16" y="154" width="60" height="32"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     </imageView>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Image-13" translatesAutoresizingMaskIntoConstraints="NO" id="GEY-g5-DCi">
-                                                        <rect key="frame" x="219" y="148" width="81" height="43"/>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Image-13" translatesAutoresizingMaskIntoConstraints="NO" id="Mkn-Id-mpB">
+                                                        <rect key="frame" x="84" y="154" width="60" height="32"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     </imageView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ingredients" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4ia-10-Aic">
-                                                        <rect key="frame" x="16" y="230" width="86" height="21"/>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Image-13" translatesAutoresizingMaskIntoConstraints="NO" id="579-Jv-EiI">
+                                                        <rect key="frame" x="152" y="154" width="60" height="32"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <nil key="textColor"/>
+                                                    </imageView>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="almonds" translatesAutoresizingMaskIntoConstraints="NO" id="SI7-xe-Vj4">
+                                                        <rect key="frame" x="285" y="33" width="82" height="83"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="82" id="GuT-Ro-IiC"/>
+                                                            <constraint firstAttribute="height" constant="83" id="bLJ-Uz-ZzU"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TgL-6O-QTZ">
+                                                        <rect key="frame" x="16" y="252" width="358" height="385"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
+                                                        <color key="textColor" red="0.5729626417" green="0.52773392200000002" blue="0.6470781565" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TgL-6O-QTZ">
-                                                        <rect key="frame" x="16" y="274" width="358" height="385"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ingredients" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4ia-10-Aic">
+                                                        <rect key="frame" x="16" y="215" width="94" height="21"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                        <color key="textColor" red="0.16213673349999999" green="0.057003185150000003" blue="0.32551279659999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="1200" id="79I-yR-Y2R"/>
+                                                    <constraint firstItem="lPR-5N-W4H" firstAttribute="top" secondItem="tfP-5t-1DU" secondAttribute="bottom" constant="17" id="8Fa-0n-Kq9"/>
+                                                    <constraint firstItem="SI7-xe-Vj4" firstAttribute="leading" secondItem="lPR-5N-W4H" secondAttribute="trailing" constant="8" id="8zC-2O-2r0"/>
+                                                    <constraint firstItem="lPR-5N-W4H" firstAttribute="top" secondItem="61s-Yl-Pii" secondAttribute="bottom" constant="20" id="9s0-Yb-FM3"/>
+                                                    <constraint firstItem="lPR-5N-W4H" firstAttribute="leading" secondItem="s0f-bb-XaE" secondAttribute="leading" constant="16" id="GFs-6Q-UYg"/>
+                                                    <constraint firstItem="tfP-5t-1DU" firstAttribute="top" secondItem="s0f-bb-XaE" secondAttribute="top" constant="33" id="Ltv-VV-WUt"/>
+                                                    <constraint firstItem="61s-Yl-Pii" firstAttribute="leading" secondItem="tfP-5t-1DU" secondAttribute="trailing" constant="8" symbolic="YES" id="RYT-xM-0Pq"/>
+                                                    <constraint firstItem="tfP-5t-1DU" firstAttribute="leading" secondItem="s0f-bb-XaE" secondAttribute="leading" constant="16" id="Tck-3W-SkG"/>
+                                                    <constraint firstAttribute="trailing" secondItem="SI7-xe-Vj4" secondAttribute="trailing" constant="23" id="WQp-yH-9Y9"/>
+                                                    <constraint firstItem="SI7-xe-Vj4" firstAttribute="top" secondItem="s0f-bb-XaE" secondAttribute="top" constant="33" id="ZEW-mF-kFb"/>
+                                                    <constraint firstItem="61s-Yl-Pii" firstAttribute="top" secondItem="s0f-bb-XaE" secondAttribute="top" constant="36" id="hoA-7b-69I"/>
+                                                    <constraint firstAttribute="trailing" secondItem="61s-Yl-Pii" secondAttribute="trailing" constant="183.33000000000001" id="ruz-xP-3Mn"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </stackView>
                                 </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="y26-kr-eDm" firstAttribute="leading" secondItem="vPO-3h-ue4" secondAttribute="leading" id="4fN-3p-ss6"/>
                                     <constraint firstItem="y26-kr-eDm" firstAttribute="top" secondItem="vPO-3h-ue4" secondAttribute="top" id="Sz1-2Z-JrM"/>
@@ -351,7 +376,7 @@
                             </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="eVf-OK-zDZ"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="gWY-TB-Rd4" firstAttribute="top" secondItem="P6i-yM-98b" secondAttribute="top" id="922-cv-cLI"/>
                             <constraint firstItem="gWY-TB-Rd4" firstAttribute="leading" secondItem="P6i-yM-98b" secondAttribute="leading" id="9jy-cE-fKU"/>
@@ -389,6 +414,7 @@
         <image name="Image" width="50.666667938232422" height="50.666667938232422"/>
         <image name="Image-1" width="22" height="19.333333969116211"/>
         <image name="Image-10" width="118" height="140.66667175292969"/>
+        <image name="Image-11" width="16" height="16"/>
         <image name="Image-13" width="41.333332061767578" height="20.666666030883789"/>
         <image name="Image-2" width="18.666666030883789" height="21.333333969116211"/>
         <image name="Image-3" width="18.666666030883789" height="21.333333969116211"/>
@@ -398,6 +424,7 @@
         <image name="Image-7" width="118" height="140.66667175292969"/>
         <image name="Image-8" width="118" height="140.66667175292969"/>
         <image name="Image-9" width="118" height="140.66667175292969"/>
+        <image name="almonds" width="400" height="400"/>
         <image name="iconmonstr-user-male-thin-96" width="32" height="32"/>
         <image name="logo" width="666.66668701171875" height="666.66668701171875"/>
         <image name="—Pngtree—purple scan code_4420543-1" width="33.333332061767578" height="33.333332061767578"/>
@@ -406,9 +433,6 @@
         </namedColor>
         <systemColor name="opaqueSeparatorColor">
             <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemPurpleColor">
             <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
