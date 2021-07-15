@@ -21,6 +21,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setupScanningSession];
+    [self.captureSession startRunning]; 
     // Do any additional setup after loading the view.
 }
 
@@ -35,15 +36,10 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)rescanButtonPressed:(id)sender {
-    // Start scanning again.
-    [self.captureSession startRunning];
-}
-
-- (IBAction)copyButtonPressed:(id)sender {
-    // Copy the barcode text to the clipboard.
-    [UIPasteboard generalPasteboard].string = self.scannedBarcode.text;
-}
+//- (IBAction)rescanButtonPressed:(id)sender {
+//    // Start scanning again.
+//    [self.captureSession startRunning];
+//}
 
 - (IBAction)doneButtonPressed:(id)sender {
     [self.captureSession stopRunning];
@@ -119,7 +115,8 @@
                 
                 dispatch_sync(dispatch_get_main_queue(), ^{
                     [self.captureSession stopRunning];
-                    self.scannedBarcode.text = capturedBarcode;
+                   // self.scannedBarcode.text = capturedBarcode;
+                    NSLog(@"%@", capturedBarcode);
                 });
                 return;
             }

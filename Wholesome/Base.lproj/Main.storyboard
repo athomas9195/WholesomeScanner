@@ -238,6 +238,21 @@
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="m4d-pt-F7T">
                                 <rect key="frame" x="0.0" y="0.0" width="390" height="761"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="inS-2J-e3L">
+                                        <rect key="frame" x="0.0" y="0.0" width="390" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                        <items>
+                                            <navigationItem title="Title" id="qiY-y6-zI2">
+                                                <barButtonItem key="rightBarButtonItem" title="Done" id="LkC-ZS-CKE">
+                                                    <connections>
+                                                        <action selector="doneButtonPressed:" destination="q4Q-bn-dXR" id="Zdi-WT-3Xp"/>
+                                                    </connections>
+                                                </barButtonItem>
+                                            </navigationItem>
+                                        </items>
+                                    </navigationBar>
+                                </subviews>
                                 <color key="backgroundColor" systemColor="systemPurpleColor"/>
                             </view>
                         </subviews>
