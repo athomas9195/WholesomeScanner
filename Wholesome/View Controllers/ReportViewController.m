@@ -32,9 +32,11 @@
     NSArray *ingreds = [self.ingredientsLabel.text componentsSeparatedByString:@","];
     
     NSString *firstIngred = [ingreds objectAtIndex:0];
-    self.containsLabel.text = firstIngred;
+    NSString *uppercase = [firstIngred uppercaseString];
+
+    self.containsLabel.text = uppercase; 
     
-    //profile image 
+    //profile image
     NSString *URLString = self.product.image;
     NSURL *url = [NSURL URLWithString:URLString];
     NSData *urlData = [NSData dataWithContentsOfURL:url];
