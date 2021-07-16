@@ -326,7 +326,7 @@
                                                         <rect key="frame" x="152" y="154" width="60" height="32"/>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="almonds" translatesAutoresizingMaskIntoConstraints="NO" id="SI7-xe-Vj4">
-                                                        <rect key="frame" x="293" y="33" width="82" height="110"/>
+                                                        <rect key="frame" x="293" y="54" width="82" height="110"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="82" id="GuT-Ro-IiC"/>
                                                             <constraint firstAttribute="height" constant="110" id="bLJ-Uz-ZzU"/>
@@ -348,7 +348,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NUTS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zEW-l0-ZDn">
-                                                        <rect key="frame" x="142" y="36" width="111" height="21"/>
+                                                        <rect key="frame" x="142" y="36" width="232" height="21"/>
                                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                                         <color key="textColor" red="0.5729626417" green="0.52773392200000002" blue="0.6470781565" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <nil key="highlightedColor"/>
@@ -379,19 +379,19 @@
                                                     <constraint firstAttribute="trailing" secondItem="SI7-xe-Vj4" secondAttribute="trailing" constant="15" id="WQp-yH-9Y9"/>
                                                     <constraint firstItem="4ia-10-Aic" firstAttribute="leading" secondItem="qcc-J1-XfZ" secondAttribute="leading" id="X6c-pa-KQG"/>
                                                     <constraint firstItem="lPR-5N-W4H" firstAttribute="top" secondItem="zEW-l0-ZDn" secondAttribute="bottom" constant="20" id="Z4t-vT-BLG"/>
-                                                    <constraint firstItem="SI7-xe-Vj4" firstAttribute="top" secondItem="s0f-bb-XaE" secondAttribute="top" constant="33" id="ZEW-mF-kFb"/>
+                                                    <constraint firstItem="SI7-xe-Vj4" firstAttribute="top" secondItem="s0f-bb-XaE" secondAttribute="top" constant="54" id="ZEW-mF-kFb"/>
                                                     <constraint firstItem="Mkn-Id-mpB" firstAttribute="centerY" secondItem="qcc-J1-XfZ" secondAttribute="centerY" id="ZYw-tl-kGi"/>
                                                     <constraint firstItem="579-Jv-EiI" firstAttribute="bottom" secondItem="Mkn-Id-mpB" secondAttribute="bottom" id="Zbe-Mh-EXY"/>
                                                     <constraint firstItem="TgL-6O-QTZ" firstAttribute="leading" secondItem="s0f-bb-XaE" secondAttribute="leading" constant="16" id="cld-fj-8qY"/>
                                                     <constraint firstItem="61s-Yl-Pii" firstAttribute="top" secondItem="s0f-bb-XaE" secondAttribute="top" constant="36" id="eb2-Qv-ZS1"/>
                                                     <constraint firstItem="Mkn-Id-mpB" firstAttribute="bottom" secondItem="qcc-J1-XfZ" secondAttribute="bottom" id="eqC-MK-snO"/>
                                                     <constraint firstItem="qcc-J1-XfZ" firstAttribute="leading" secondItem="lPR-5N-W4H" secondAttribute="leading" id="fEK-7N-tzB"/>
+                                                    <constraint firstAttribute="trailing" secondItem="zEW-l0-ZDn" secondAttribute="trailing" constant="16" id="h37-AD-ic7"/>
                                                     <constraint firstItem="4ia-10-Aic" firstAttribute="top" secondItem="qcc-J1-XfZ" secondAttribute="bottom" constant="29" id="hbD-Nn-84d"/>
                                                     <constraint firstItem="zEW-l0-ZDn" firstAttribute="leading" secondItem="61s-Yl-Pii" secondAttribute="trailing" constant="2" id="jka-y4-NEQ"/>
                                                     <constraint firstItem="qcc-J1-XfZ" firstAttribute="top" secondItem="lPR-5N-W4H" secondAttribute="bottom" constant="7.6666666666666856" id="odh-iy-bfC"/>
                                                     <constraint firstItem="61s-Yl-Pii" firstAttribute="leading" secondItem="tfP-5t-1DU" secondAttribute="trailing" constant="8" id="qSr-Pm-Hwb"/>
                                                     <constraint firstItem="Mkn-Id-mpB" firstAttribute="height" secondItem="qcc-J1-XfZ" secondAttribute="height" id="qgw-OI-6ZH"/>
-                                                    <constraint firstItem="SI7-xe-Vj4" firstAttribute="leading" secondItem="zEW-l0-ZDn" secondAttribute="trailing" constant="40" id="qpO-Em-w3M"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
