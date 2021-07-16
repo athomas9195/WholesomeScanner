@@ -8,6 +8,9 @@
 #import "ScanViewController.h"
 #import <AVFoundation/AVFoundation.h>
 #import "APIManager.h"
+#import "Scan.h"
+#import "ReportViewController.h"
+#import "Product.h"
 
 @interface ScanViewController () <AVCaptureMetadataOutputObjectsDelegate>
 @property (weak, nonatomic) IBOutlet UIView *cameraPreviewView;
@@ -15,6 +18,8 @@
 
 @property (nonatomic, strong) AVCaptureSession *captureSession;
 @property (nonatomic, strong) AVCaptureVideoPreviewLayer *captureLayer;
+
+@property (nonatomic, strong) Product *product;
 
 @end
 
@@ -94,7 +99,7 @@
 }
 
 // AVCaptureMetadataOutputObjectsDelegate method
-//calls the api 
+//calls the api
 - (void)captureOutput:(AVCaptureOutput *)captureOutput didOutputMetadataObjects:(NSArray *)metadataObjects fromConnection:(AVCaptureConnection *)connection {
     // Do your action on barcode capture here:
     NSString *capturedBarcode = nil;
@@ -126,7 +131,7 @@
                 
                 dispatch_sync(dispatch_get_main_queue(), ^{
                     [self.captureSession stopRunning];
-                    [self performSegueWithIdentifier:@"toReport" sender:self]; 
+             
                    // self.scannedBarcode.text = capturedBarcode;
                     NSLog(@"%@", capturedBarcode);
     
@@ -140,10 +145,12 @@
                         }
                     }];
                 });
+            
                 return;
             }
         }
     }
+   
 }
 
 //retrieves item info from Nutritionix (ingredients, item name, brand, and nutrition info).
@@ -162,45 +169,72 @@
     NSString *base = @"https://trackapi.nutritionix.com/v2/search/item?upc=";
     NSString *fullURL = [base stringByAppendingString:upc];
     
+    //create request
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:fullURL]
                                                            cachePolicy:NSURLRequestUseProtocolCachePolicy
                                                        timeoutInterval:10.0];
     [request setHTTPMethod:@"GET"];
     [request setAllHTTPHeaderFields:headers];
 
+    //send request
     NSURLSession *session = [NSURLSession sharedSession];
     NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request
                                                 completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
                                                     if (error) {
                                                         NSLog(@"%@", error);
                                                     } else {
+                                                        //print out the http response
                                                         NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
                                                         NSLog(@"%@", httpResponse);
                                                          
-                                                        
+                                                        //use json serialization to print out dictionary
                                                         NSString *strISOLatin = [[NSString alloc] initWithData:data encoding:NSISOLatin1StringEncoding];
                                                         NSData *dataUTF8 = [strISOLatin dataUsingEncoding:NSUTF8StringEncoding];
 
                                                         id dict = [NSJSONSerialization JSONObjectWithData:dataUTF8 options:0 error:&error];
                                                         if (dict != nil) {
                                                             NSLog(@"Dict: %@", dict);
-                                                        } else {
+                                                            NSArray *temp = dict[@"foods"];
+                                                            NSDictionary *foodDict = [temp objectAtIndex:0];
+                                                            //set product
+                                                            self.product = [[Product alloc]initWithDictionary:foodDict];
+                                                            
+                                                            
+                                                            dispatch_async(dispatch_get_main_queue(), ^{
+                                                                [self performSegueWithIdentifier:@"toReport" sender:self];
+                                                            }); 
+                                                            
+                                                            
+                                                        } else { 
                                                             NSLog(@"Error: %@", error);
                                                         }
-                                                    }
+                                                        
+                                                
+                                                     
+                                                    } 
                                                 }];
     [dataTask resume];
+   
 }
 
 
-/*
+//send toreport segue data here (post object)
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    
+    if ([[segue identifier] isEqualToString:@"toReport"]){
+        //report details segue
+        
+        ReportViewController *reportViewController = [segue destinationViewController];
+        
+        reportViewController.product = self.product;
+    }
 }
-*/
+
 
 @end

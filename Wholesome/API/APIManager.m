@@ -16,7 +16,7 @@ static NSString * const baseURLString = @"https://trackapi.nutritionix.com";
 @interface APIManager()
 @end
 
-@implementation APIManager
+@implementation APIManager 
 
 //+ (instancetype)shared {
 //    static APIManager *sharedManager = nil;

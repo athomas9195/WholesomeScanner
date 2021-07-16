@@ -6,10 +6,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Product.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ReportViewController : UIViewController
+
+@property (nonatomic, strong) Product *product; 
+
 
 @end
 

@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface Product : NSObject
 
 // MARK: Properties
-//@property (nonatomic, strong) UIImage *image;
+@property (nonatomic, strong) NSURL *image; 
 @property (nonatomic, strong) NSNumber *rating;
 @property (nonatomic, strong) NSNumber *safetyRating;
 

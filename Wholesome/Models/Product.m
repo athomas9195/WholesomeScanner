@@ -14,12 +14,13 @@
      self = [super init];
      if (self) {
 
-         self.itemID = dictionary[@"item_id"];
+         self.itemID = dictionary[@"nix_item_id"]; 
          
-//         self.foodName = dictionary[@"food_name"];
-//         self.brandName = dictionary[@"brand_name"];
+         //get the image of the food 
+         NSDictionary *photo = dictionary[@"photo"];
+         self.image = photo[@"thumb"];
          
-         self.foodName = dictionary[@"item_name"];
+         self.foodName = dictionary[@"food_name"];
          self.brandName = dictionary[@"brand_name"];
          
          self.allIngred = dictionary[@"nf_ingredient_statement"];
