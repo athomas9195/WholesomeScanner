@@ -12,6 +12,7 @@
 
 @interface ReportViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *foodNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *containsLabel;
 @property (weak, nonatomic) IBOutlet PFImageView *imageView;
 @property (weak, nonatomic) IBOutlet UILabel *ingredientsLabel;
 
@@ -27,7 +28,13 @@
     self.foodNameLabel.text = self.product.foodName;
     self.ingredientsLabel.text = self.product.allIngred;
     
-    //profile image
+    //get the contains label
+    NSArray *ingreds = [self.ingredientsLabel.text componentsSeparatedByString:@","];
+    
+    NSString *firstIngred = [ingreds objectAtIndex:0];
+    self.containsLabel.text = firstIngred;
+    
+    //profile image 
     NSString *URLString = self.product.image;
     NSURL *url = [NSURL URLWithString:URLString];
     NSData *urlData = [NSData dataWithContentsOfURL:url];
