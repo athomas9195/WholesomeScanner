@@ -307,7 +307,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Roasted and Unsalted Almonds" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lPR-5N-W4H">
-                                                        <rect key="frame" x="16" y="77" width="261" height="69.333333333333314"/>
+                                                        <rect key="frame" x="16" y="77" width="271" height="69.333333333333314"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="29"/>
                                                         <color key="textColor" red="0.16213673349999999" green="0.057003185150000003" blue="0.32551279659999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <nil key="highlightedColor"/>
@@ -324,11 +324,11 @@
                                                         <rect key="frame" x="152" y="154" width="60" height="32"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     </imageView>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="almonds" translatesAutoresizingMaskIntoConstraints="NO" id="SI7-xe-Vj4" customClass="PFImageView">
-                                                        <rect key="frame" x="285" y="33" width="82" height="83"/>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="almonds" translatesAutoresizingMaskIntoConstraints="NO" id="SI7-xe-Vj4">
+                                                        <rect key="frame" x="293" y="33" width="82" height="110"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="82" id="GuT-Ro-IiC"/>
-                                                            <constraint firstAttribute="height" constant="83" id="bLJ-Uz-ZzU"/>
+                                                            <constraint firstAttribute="height" constant="110" id="bLJ-Uz-ZzU"/>
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Almonds, Expeller Pressed Canola Oil" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TgL-6O-QTZ">
@@ -350,13 +350,13 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="1200" id="79I-yR-Y2R"/>
                                                     <constraint firstItem="lPR-5N-W4H" firstAttribute="top" secondItem="tfP-5t-1DU" secondAttribute="bottom" constant="17" id="8Fa-0n-Kq9"/>
-                                                    <constraint firstItem="SI7-xe-Vj4" firstAttribute="leading" secondItem="lPR-5N-W4H" secondAttribute="trailing" constant="8" id="8zC-2O-2r0"/>
+                                                    <constraint firstItem="SI7-xe-Vj4" firstAttribute="leading" secondItem="lPR-5N-W4H" secondAttribute="trailing" constant="6" id="8zC-2O-2r0"/>
                                                     <constraint firstItem="lPR-5N-W4H" firstAttribute="top" secondItem="61s-Yl-Pii" secondAttribute="bottom" constant="20" id="9s0-Yb-FM3"/>
                                                     <constraint firstItem="lPR-5N-W4H" firstAttribute="leading" secondItem="s0f-bb-XaE" secondAttribute="leading" constant="16" id="GFs-6Q-UYg"/>
                                                     <constraint firstItem="tfP-5t-1DU" firstAttribute="top" secondItem="s0f-bb-XaE" secondAttribute="top" constant="33" id="Ltv-VV-WUt"/>
                                                     <constraint firstItem="61s-Yl-Pii" firstAttribute="leading" secondItem="tfP-5t-1DU" secondAttribute="trailing" constant="8" symbolic="YES" id="RYT-xM-0Pq"/>
                                                     <constraint firstItem="tfP-5t-1DU" firstAttribute="leading" secondItem="s0f-bb-XaE" secondAttribute="leading" constant="16" id="Tck-3W-SkG"/>
-                                                    <constraint firstAttribute="trailing" secondItem="SI7-xe-Vj4" secondAttribute="trailing" constant="23" id="WQp-yH-9Y9"/>
+                                                    <constraint firstAttribute="trailing" secondItem="SI7-xe-Vj4" secondAttribute="trailing" constant="15" id="WQp-yH-9Y9"/>
                                                     <constraint firstItem="SI7-xe-Vj4" firstAttribute="top" secondItem="s0f-bb-XaE" secondAttribute="top" constant="33" id="ZEW-mF-kFb"/>
                                                     <constraint firstItem="61s-Yl-Pii" firstAttribute="top" secondItem="s0f-bb-XaE" secondAttribute="top" constant="36" id="hoA-7b-69I"/>
                                                     <constraint firstAttribute="trailing" secondItem="61s-Yl-Pii" secondAttribute="trailing" constant="183.33000000000001" id="ruz-xP-3Mn"/>
@@ -387,6 +387,11 @@
                             <constraint firstAttribute="trailing" secondItem="gWY-TB-Rd4" secondAttribute="trailing" id="KhG-NC-Riw"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="foodNameLabel" destination="lPR-5N-W4H" id="4xB-4c-RbP"/>
+                        <outlet property="imageView" destination="SI7-xe-Vj4" id="5y6-JS-Ybx"/>
+                        <outlet property="ingredientsLabel" destination="TgL-6O-QTZ" id="J8m-8c-pOk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WKq-nk-JM5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

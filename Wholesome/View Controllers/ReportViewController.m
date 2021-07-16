@@ -6,8 +6,14 @@
 //
 
 #import "ReportViewController.h"
+#import <Parse/Parse.h>
+#import <Parse/PFImageView.h>
+
 
 @interface ReportViewController ()
+@property (weak, nonatomic) IBOutlet UILabel *foodNameLabel;
+@property (weak, nonatomic) IBOutlet PFImageView *imageView;
+@property (weak, nonatomic) IBOutlet UILabel *ingredientsLabel;
 
 @end
 
@@ -16,7 +22,21 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    NSLog(@"%@", self.product.allIngred);  
+   // NSLog(@"%@", self.product.allIngred);
+    
+    self.foodNameLabel.text = self.product.foodName;
+    self.ingredientsLabel.text = self.product.allIngred;
+    
+    //profile image
+    NSString *URLString = self.product.image;
+    NSURL *url = [NSURL URLWithString:URLString];
+    NSData *urlData = [NSData dataWithContentsOfURL:url];
+
+    if (urlData.length != 0) {
+        self.imageView.image = nil;
+        self.imageView.image = [UIImage imageWithData: urlData];
+    }
+    
 }
 
 /*
