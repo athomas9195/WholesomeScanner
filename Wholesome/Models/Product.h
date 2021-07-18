@@ -14,17 +14,27 @@ NS_ASSUME_NONNULL_BEGIN
 // MARK: Properties
 @property (nonatomic, strong) NSURL *image; 
 @property (nonatomic, strong) NSNumber *rating;
-@property (nonatomic, strong) NSNumber *safetyRating;
+@property (nonatomic, strong) NSString *nutriscore;
+@property (nonatomic, strong) NSNumber *nova; 
+
 
 @property (nonatomic, strong) NSNumber *itemID;
 
 @property (nonatomic, strong) NSString *foodName;
 @property (nonatomic, strong) NSString *brandName;
+//@property (nonatomic, strong) NSString *category;
 
 @property (nonatomic, strong) NSArray *allIngred;
 @property (nonatomic, strong) NSArray *keyIngred;
-@property (nonatomic, strong) NSArray *badIngred;
-@property (nonatomic, strong) NSArray *goodIngred;
+@property (nonatomic, strong) NSArray *novaGroup;  
+//@property (nonatomic, strong) NSArray *badIngred;
+//@property (nonatomic, strong) NSArray *goodIngred;
+
+@property (nonatomic, strong) NSArray *additives;
+@property (nonatomic, strong) NSArray *allergens;
+@property (nonatomic, strong) NSArray *traces; 
+
+
 
 //@property (nonatomic, strong) NSString *createdAtString; // Display date
 
@@ -33,7 +43,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 //methods
-- (instancetype)initWithDictionary:(NSDictionary *)dictionary;
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary :(NSDictionary *)openFoodFacts; 
 
 //+ (NSMutableArray *)tweetsWithArray:(NSArray *)dictionaries; 
 

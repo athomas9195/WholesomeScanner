@@ -10,7 +10,7 @@
 #import "APIManager.h"
 #import "Scan.h"
 #import "ReportViewController.h"
-#import "Product.h"
+#import "Product.h" 
 
 @interface ScanViewController () <AVCaptureMetadataOutputObjectsDelegate>
 @property (weak, nonatomic) IBOutlet UIView *cameraPreviewView;
@@ -20,6 +20,7 @@
 @property (nonatomic, strong) AVCaptureVideoPreviewLayer *captureLayer;
 
 @property (nonatomic, strong) Product *product;
+@property (nonatomic, strong) NSDictionary *nutritionixDict;
 
 @end
 
@@ -164,6 +165,7 @@
     
     NSDictionary *headers = @{ @"x-app-id": appID,
                                @"x-app-key": appKey };
+      
     
     //START
     NSString *base = @"https://trackapi.nutritionix.com/v2/search/item?upc=";
@@ -197,12 +199,10 @@
                                                             NSArray *temp = dict[@"foods"];
                                                             NSDictionary *foodDict = [temp objectAtIndex:0];
                                                             //set product
-                                                            self.product = [[Product alloc]initWithDictionary:foodDict];
+                                                            self.nutritionixDict = foodDict;
                                                             
                                                             
-                                                            dispatch_async(dispatch_get_main_queue(), ^{
-                                                                [self performSegueWithIdentifier:@"toReport" sender:self];
-                                                            }); 
+                                            
                                                             
                                                             
                                                         } else { 
@@ -214,6 +214,78 @@
                                                     } 
                                                 }];
     [dataTask resume];
+    
+    //open food facts api call
+    //_keywords:
+    //additives_old_tags:
+    //allergens
+    //categories
+    //nova_group: 4
+    //nova_groups_tags:
+    //nutriscore_grade
+    //traces: "en:peanuts"
+    
+    
+    //https://us.openfoodfacts.org/api/v0/product/04963406
+    //curl --location --request GET 'https://world.openfoodfacts.org/api/v0/product/04963406' \
+    --header 'Content-Type: application/x-www-form-urlencoded'
+    
+    //START
+    NSString *newBase = @"https://us.openfoodfacts.org/api/v0/product/";
+    NSString *newFullURL = [newBase stringByAppendingString:upc];
+     
+    //create request
+    NSMutableURLRequest *newRequest = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:newFullURL]
+                                                           cachePolicy:NSURLRequestUseProtocolCachePolicy
+                                                       timeoutInterval:10.0];
+    [request setHTTPMethod:@"GET"];
+//    [request setAllHTTPHeaderFields:headers];
+
+    //send request
+    NSURLSession *newSession = [NSURLSession sharedSession];
+    NSURLSessionDataTask *newDataTask = [newSession dataTaskWithRequest:newRequest
+                                                completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+                                                    if (error) {
+                                                        NSLog(@"%@", error);
+                                                    } else {
+                                                        //print out the http response
+                                                        NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
+                                                        NSLog(@"%@", httpResponse);
+                                                         
+                                                        //use json serialization to print out dictionary
+                                                        NSString *strISOLatin = [[NSString alloc] initWithData:data encoding:NSISOLatin1StringEncoding];
+                                                        NSData *dataUTF8 = [strISOLatin dataUsingEncoding:NSUTF8StringEncoding];
+
+                                                        id dict = [NSJSONSerialization JSONObjectWithData:dataUTF8 options:0 error:&error];
+                                                        if (dict != nil) {
+                                                            NSLog(@"Dict: %@", dict);
+                                                            NSDictionary *foodDict = dict[@"product"];
+                                                            
+                                                            //set product
+                                                            self.product = [[Product alloc]initWithDictionary:self.nutritionixDict:foodDict];
+                                                            
+                                                            //activate the report page
+                                                            dispatch_async(dispatch_get_main_queue(), ^{
+                                                                [self performSegueWithIdentifier:@"toReport" sender:self];
+                                                            });
+                                              
+                                                            
+                                                            
+                                                        } else {
+                                                            NSLog(@"Error: %@", error);
+                                                        }
+                                                        
+                                                
+                                                     
+                                                    }
+                                                }];
+    [newDataTask resume];
+    
+    
+//    //activate the report page
+//    dispatch_async(dispatch_get_main_queue(), ^{
+//        [self performSegueWithIdentifier:@"toReport" sender:self];
+//    });
    
 }
 

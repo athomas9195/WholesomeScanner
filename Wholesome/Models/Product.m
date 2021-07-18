@@ -10,21 +10,30 @@
 @implementation Product
 
 //PHOTO?
-- (instancetype)initWithDictionary:(NSDictionary *)dictionary {
+- (instancetype)initWithDictionary:(NSDictionary *)nutritionix :(NSDictionary *)openFoodFacts {
      self = [super init];
      if (self) {
 
-         self.itemID = dictionary[@"nix_item_id"]; 
+         self.itemID = nutritionix[@"nix_item_id"];
          
          //get the image of the food 
-         NSDictionary *photo = dictionary[@"photo"];
+         NSDictionary *photo = nutritionix[@"photo"];
          self.image = photo[@"thumb"];
          
-         self.foodName = dictionary[@"food_name"];
-         self.brandName = dictionary[@"brand_name"];
+         self.foodName = nutritionix[@"food_name"];
+         self.brandName = nutritionix[@"brand_name"];
          
-         self.allIngred = dictionary[@"nf_ingredient_statement"];
+         self.allIngred = nutritionix[@"nf_ingredient_statement"];
           
+         
+         //open food facts
+         self.keyIngred = openFoodFacts[@"categories_hierarchy"];
+         self.additives = openFoodFacts[@"additives_old_tags"];
+         self.nova = openFoodFacts[@"nova_group"];
+         self.novaGroup = openFoodFacts[@"nova_groups_tags"]; 
+         self.nutriscore = openFoodFacts[@"nutriscore_grade"];
+         self.allergens = openFoodFacts[@"allergens"];
+         //self.traces = openFoodFacts[@"traces"];
      }
      return self;
  }
