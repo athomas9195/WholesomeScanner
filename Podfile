@@ -15,6 +15,7 @@ target 'Wholesome' do
     pod 'Parse/UI'
     pod 'SVPullToRefresh'
     pod 'MBProgressHUD'
+    pod 'Charts'
 
   target 'WholesomeTests' do
     inherit! :search_paths

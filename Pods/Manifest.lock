@@ -17,6 +17,9 @@ PODS:
   - BDBOAuth1Manager (2.0.0):
     - AFNetworking/NSURLSession (~> 3.0.0)
   - Bolts/Tasks (1.9.1)
+  - Charts (3.6.0):
+    - Charts/Core (= 3.6.0)
+  - Charts/Core (3.6.0)
   - DateTools (2.0.0)
   - FigmaExport (0.23.1)
   - Mantle (2.1.6):
@@ -34,6 +37,7 @@ PODS:
 DEPENDENCIES:
   - AFNetworking
   - BDBOAuth1Manager
+  - Charts
   - DateTools
   - FigmaExport
   - Mantle
@@ -47,6 +51,7 @@ SPEC REPOS:
     - AFNetworking
     - BDBOAuth1Manager
     - Bolts
+    - Charts
     - DateTools
     - FigmaExport
     - Mantle
@@ -58,6 +63,7 @@ SPEC CHECKSUMS:
   AFNetworking: a0075feb321559dc78d9d85b55d11caa19eabb93
   BDBOAuth1Manager: 92d17d06f8a648602962304cd2f35ae7394fa001
   Bolts: 8c1e8aab2f603387b8b9924f57d1d64f43d3ffdc
+  Charts: b1e3a1f5a1c9ba5394438ca3b91bd8c9076310af
   DateTools: 933ac9c490f21f92127cf690ccd8c397e0126caf
   FigmaExport: 2e678e6e201196786d917f2aec63937295237a1b
   Mantle: 4c0ed6ce47c96eccc4dc3bb071deb3def0e2c3be
@@ -65,6 +71,6 @@ SPEC CHECKSUMS:
   Parse: 081fb8755c3000fd11df817eec235def233d0af3
   SVPullToRefresh: ba2e718695a43253d8bea6852d2960097dc15d8c
 
-PODFILE CHECKSUM: d57a9de607de680e054cb201a0019c72b5cb893e
+PODFILE CHECKSUM: 40d99b12bb37f9a14d669329ba1f18d2cdc5faa5
 
 COCOAPODS: 1.10.1
