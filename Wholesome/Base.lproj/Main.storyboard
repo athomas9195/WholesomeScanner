@@ -394,6 +394,13 @@
                                                                 <rect key="frame" x="49" y="0.0" width="42" height="56"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             </imageView>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fbb-XL-t4j">
+                                                                <rect key="frame" x="4" y="18" width="37" height="38"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="NOVA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="peJ-6m-wdq">
                                                                 <rect key="frame" x="4" y="0.0" width="37" height="16"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -402,7 +409,7 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                         </subviews>
-                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="E-300" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wfm-k1-9Jd">
                                                         <rect key="frame" x="16" y="433" width="358" height="21"/>
@@ -479,10 +486,18 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="additivesLabel" destination="Wfm-k1-9Jd" id="6Jz-rY-zPU"/>
+                        <outlet property="allergensLabel" destination="ZHM-2S-rCJ" id="hi6-J1-TRA"/>
                         <outlet property="containsLabel" destination="zEW-l0-ZDn" id="HPG-3b-Lf0"/>
                         <outlet property="foodNameLabel" destination="lPR-5N-W4H" id="4xB-4c-RbP"/>
                         <outlet property="imageView" destination="SI7-xe-Vj4" id="5y6-JS-Ybx"/>
                         <outlet property="ingredientsLabel" destination="TgL-6O-QTZ" id="J8m-8c-pOk"/>
+                        <outlet property="key1" destination="f8s-oa-fee" id="IBo-Uk-RA9"/>
+                        <outlet property="key2" destination="el9-Z2-9zn" id="nAR-8Z-nHa"/>
+                        <outlet property="key3" destination="gir-aa-C9u" id="hDG-9k-LoL"/>
+                        <outlet property="novaDescLabel" destination="Fbb-XL-t4j" id="eb0-1g-1Ng"/>
+                        <outlet property="novaImage" destination="GBZ-fC-S2a" id="ogj-1t-C5n"/>
+                        <outlet property="nutriscoreImage" destination="WpS-2w-LGi" id="73I-Kt-Q9I"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WKq-nk-JM5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -534,9 +549,6 @@
         </namedColor>
         <systemColor name="opaqueSeparatorColor">
             <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemPurpleColor">
             <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

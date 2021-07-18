@@ -10,7 +10,7 @@
 #import "APIManager.h"
 #import "Scan.h"
 #import "ReportViewController.h"
-#import "Product.h" 
+#import "Product.h"
 
 @interface ScanViewController () <AVCaptureMetadataOutputObjectsDelegate>
 @property (weak, nonatomic) IBOutlet UIView *cameraPreviewView;
@@ -21,6 +21,8 @@
 
 @property (nonatomic, strong) Product *product;
 @property (nonatomic, strong) NSDictionary *nutritionixDict;
+
+
 
 @end
 
@@ -225,10 +227,6 @@
     //nutriscore_grade
     //traces: "en:peanuts"
     
-    
-    //https://us.openfoodfacts.org/api/v0/product/04963406
-    //curl --location --request GET 'https://world.openfoodfacts.org/api/v0/product/04963406' \
-    --header 'Content-Type: application/x-www-form-urlencoded'
     
     //START
     NSString *newBase = @"https://us.openfoodfacts.org/api/v0/product/";

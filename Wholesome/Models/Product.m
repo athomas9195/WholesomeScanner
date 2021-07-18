@@ -27,7 +27,7 @@
           
          
          //open food facts
-         self.keyIngred = openFoodFacts[@"categories_hierarchy"];
+         self.keyIngred = openFoodFacts[@"_keywords"]; 
          self.additives = openFoodFacts[@"additives_old_tags"];
          self.nova = openFoodFacts[@"nova_group"];
          self.novaGroup = openFoodFacts[@"nova_groups_tags"]; 
