@@ -83,7 +83,7 @@
         self.novaImage.image = [UIImage imageNamed:@"nova 4"];
     }
     
-    self.novaDescLabel.text = [self.product.novaGroup objectAtIndex:0]; 
+    self.novaDescLabel.text = [self.product.novaGroup objectAtIndex:0];
     
     //nutri
     if([self.product.nutriscore isEqual:@"a"]) {
