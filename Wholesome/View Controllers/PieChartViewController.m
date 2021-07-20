@@ -33,11 +33,11 @@
     [self.pieChart setDataSource:self];
     [self.pieChart setStartPieAngle:M_PI_2];
     [self.pieChart setAnimationSpeed:1.5];
-    //[self.pieChart setLabelColor:[UIColor colorWithWhite:0.95 alpha:1]];
-    [self.pieChart setLabelFont:[UIFont fontWithName:@"DBLCDTempBlack" size:24]];
+    [self.pieChart setLabelColor:[UIColor colorWithWhite:0.95 alpha:1]];
+    [self.pieChart setLabelFont:[UIFont fontWithName:@"HelveticaNeue-Bold" size:12]];
     [self.pieChart setLabelShadowColor:[UIColor darkGrayColor]];
     [self.pieChart setShowPercentage:NO];
-    [self.pieChart setPieBackgroundColor:[UIColor purpleColor]];
+    [self.pieChart setPieBackgroundColor:[UIColor whiteColor]];
     [self.pieChart setLabelRadius:160];
 
     //To make the chart at the center of view
@@ -54,11 +54,6 @@
     [self.pieChart reloadData];
 }
 
-
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-}
 
 - (void)viewDidAppear:(BOOL)animated
 {
