@@ -33,9 +33,10 @@
     [self.pieChart setDataSource:self];
     [self.pieChart setStartPieAngle:M_PI_2];
     [self.pieChart setAnimationSpeed:1.5];
-    [self.pieChart setLabelColor:[UIColor colorWithWhite:0.95 alpha:1]];
-    [self.pieChart setLabelShadowColor:[UIColor blackColor]];
-    [self.pieChart setShowPercentage:YES];
+    //[self.pieChart setLabelColor:[UIColor colorWithWhite:0.95 alpha:1]];
+    [self.pieChart setLabelFont:[UIFont fontWithName:@"DBLCDTempBlack" size:24]];
+    [self.pieChart setLabelShadowColor:[UIColor darkGrayColor]];
+    [self.pieChart setShowPercentage:NO];
     [self.pieChart setPieBackgroundColor:[UIColor purpleColor]];
     [self.pieChart setLabelRadius:160];
 
@@ -43,10 +44,10 @@
     [self.pieChart setPieCenter:CGPointMake(self.pieChart.bounds.origin.x + viewWidth, self.pieChart.bounds.origin.y + viewHeight)];
     
     self.sliceColors =[NSArray arrayWithObjects:
+                       [UIColor systemYellowColor],
+                       [UIColor systemOrangeColor],
                        [UIColor orangeColor],
-                       [UIColor orangeColor],
-                       [UIColor orangeColor],
-                       [UIColor greenColor],
+                       [UIColor systemGreenColor],
                        [UIColor greenColor],nil];
 
     //Method to display the pie chart with values.
@@ -75,6 +76,20 @@
 - (CGFloat)pieChart:(XYPieChart *)pieChart valueForSliceAtIndex:(NSUInteger)index
 {
     return [[self.slices objectAtIndex:index] intValue];
+}
+
+- (NSString *)pieChart:(XYPieChart *)pieChart textForSliceAtIndex:(NSUInteger)index {
+    if(index == 0) {
+        return @"Carbs";
+    } else if(index == 1) {
+        return @"Fat";
+    } else if(index == 2) {
+        return @"Sodium";
+    } else if(index == 3) {
+        return @"Fiber";
+    } else {
+        return @"Protein";
+    }
 }
 
 //Specify color for each sector
