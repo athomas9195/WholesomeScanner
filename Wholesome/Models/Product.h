@@ -32,7 +32,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong) NSArray *additives;
 @property (nonatomic, strong) NSArray *allergens;
-@property (nonatomic, strong) NSArray *traces; 
+@property (nonatomic, strong) NSArray *traces;
+
+@property (nonatomic, strong) NSMutableArray *pieChartSlices; 
 
 
 

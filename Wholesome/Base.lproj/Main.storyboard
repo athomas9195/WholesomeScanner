@@ -326,7 +326,7 @@
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Almonds, Expeller Pressed Canola Oil" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TgL-6O-QTZ">
-                                                        <rect key="frame" x="16" y="626.66666666666663" width="358" height="20.333333333333371"/>
+                                                        <rect key="frame" x="16" y="656.66666666666663" width="358" height="20.333333333333371"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="358" id="78n-NJ-pBt"/>
                                                         </constraints>
@@ -335,7 +335,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingredients" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4ia-10-Aic">
-                                                        <rect key="frame" x="16" y="589.66666666666663" width="93.333333333333329" height="20.333333333333371"/>
+                                                        <rect key="frame" x="16" y="619.66666666666663" width="93.333333333333329" height="20.333333333333371"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                         <color key="textColor" red="0.16213673349999999" green="0.057003185150000003" blue="0.32551279659999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <nil key="highlightedColor"/>
@@ -397,41 +397,41 @@
                                                         </subviews>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </view>
+                                                    <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1wo-ki-uf5">
+                                                        <rect key="frame" x="15" y="278" width="359" height="289"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                                        <connections>
+                                                            <segue destination="e5f-pu-li6" kind="embed" identifier="EmbedSegue" id="MDg-GD-g8E"/>
+                                                        </connections>
+                                                    </containerView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Peanuts" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZHM-2S-rCJ">
-                                                        <rect key="frame" x="16" y="471" width="358" height="21"/>
+                                                        <rect key="frame" x="16" y="732" width="358" height="21"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
                                                         <color key="textColor" red="0.5729626417" green="0.52773392200000002" blue="0.6470781565" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Allergens" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SFp-0L-31L">
-                                                        <rect key="frame" x="16" y="434" width="78" height="21"/>
+                                                        <rect key="frame" x="16" y="695" width="78" height="21"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                         <color key="textColor" red="0.16213673349999999" green="0.057003185150000003" blue="0.32551279659999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="E-300" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wfm-k1-9Jd">
-                                                        <rect key="frame" x="16" y="552" width="358" height="21"/>
+                                                        <rect key="frame" x="16" y="813" width="358" height="21"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
                                                         <color key="textColor" red="0.5729626417" green="0.52773392200000002" blue="0.6470781565" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Additives" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Lu-lY-EXB">
-                                                        <rect key="frame" x="16" y="515" width="77" height="21"/>
+                                                        <rect key="frame" x="16" y="776" width="77" height="21"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                         <color key="textColor" red="0.16213673349999999" green="0.057003185150000003" blue="0.32551279659999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1wo-ki-uf5">
-                                                        <rect key="frame" x="15" y="278" width="240" height="128"/>
-                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                                        <connections>
-                                                            <segue destination="e5f-pu-li6" kind="embed" id="MDg-GD-g8E"/>
-                                                        </connections>
-                                                    </containerView>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
@@ -459,7 +459,7 @@
                                                     <constraint firstItem="gir-aa-C9u" firstAttribute="leading" secondItem="el9-Z2-9zn" secondAttribute="trailing" constant="17.333333333333343" id="c7Y-3j-rKM"/>
                                                     <constraint firstItem="TgL-6O-QTZ" firstAttribute="leading" secondItem="s0f-bb-XaE" secondAttribute="leading" constant="16" id="cld-fj-8qY"/>
                                                     <constraint firstItem="gir-aa-C9u" firstAttribute="centerY" secondItem="el9-Z2-9zn" secondAttribute="centerY" id="cvL-Ra-bNR"/>
-                                                    <constraint firstItem="4ia-10-Aic" firstAttribute="top" secondItem="f8s-oa-fee" secondAttribute="bottom" constant="400" id="dfN-sk-5uv"/>
+                                                    <constraint firstItem="4ia-10-Aic" firstAttribute="top" secondItem="f8s-oa-fee" secondAttribute="bottom" constant="430" id="dfN-sk-5uv"/>
                                                     <constraint firstItem="61s-Yl-Pii" firstAttribute="top" secondItem="s0f-bb-XaE" secondAttribute="top" constant="36" id="eb2-Qv-ZS1"/>
                                                     <constraint firstAttribute="trailing" secondItem="zEW-l0-ZDn" secondAttribute="trailing" constant="16" id="h37-AD-ic7"/>
                                                     <constraint firstItem="zEW-l0-ZDn" firstAttribute="leading" secondItem="61s-Yl-Pii" secondAttribute="trailing" constant="2" id="jka-y4-NEQ"/>
@@ -531,19 +531,30 @@
             </objects>
             <point key="canvasLocation" x="371" y="-41"/>
         </scene>
-        <!--View Controller-->
+        <!--Pie Chart View Controller-->
         <scene sceneID="aFj-xn-m5C">
             <objects>
-                <viewController id="e5f-pu-li6" sceneMemberID="viewController">
+                <viewController id="e5f-pu-li6" customClass="PieChartViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aT5-oF-BKP">
-                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                        <rect key="frame" x="0.0" y="0.0" width="359" height="289"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TmJ-D8-Swd" customClass="XYPieChart">
+                                <rect key="frame" x="0.0" y="0.0" width="359" height="304"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="pYX-Zj-df5"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <connections>
+                        <outlet property="pieChart" destination="TmJ-D8-Swd" id="VJ0-Et-JKF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TI6-BU-NOC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2600" y="-483"/>
+            <point key="canvasLocation" x="2599.2307692307691" y="-483.41232227488149"/>
         </scene>
     </scenes>
     <resources>

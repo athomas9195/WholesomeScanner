@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B9A701F26A7616800469D20 /* XYPieChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B9A701E26A7616800469D20 /* XYPieChart.m */; };
+		0B9A702226A761CD00469D20 /* PieChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B9A702126A761CD00469D20 /* PieChartViewController.m */; };
 		0BF66F1F269D8B9D007BE9F2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BF66F1E269D8B9D007BE9F2 /* AppDelegate.m */; };
 		0BF66F22269D8B9D007BE9F2 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BF66F21269D8B9D007BE9F2 /* SceneDelegate.m */; };
 		0BF66F28269D8B9D007BE9F2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BF66F26269D8B9D007BE9F2 /* Main.storyboard */; };
@@ -47,6 +49,10 @@
 
 /* Begin PBXFileReference section */
 		06D2DF84CCC9325432C3C375 /* Pods-Wholesome-WholesomeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wholesome-WholesomeUITests.release.xcconfig"; path = "Target Support Files/Pods-Wholesome-WholesomeUITests/Pods-Wholesome-WholesomeUITests.release.xcconfig"; sourceTree = "<group>"; };
+		0B9A701D26A7616800469D20 /* XYPieChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XYPieChart.h; path = ../../XYPieChart/XYPieChart/XYPieChart.h; sourceTree = "<group>"; };
+		0B9A701E26A7616800469D20 /* XYPieChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XYPieChart.m; path = ../../XYPieChart/XYPieChart/XYPieChart.m; sourceTree = "<group>"; };
+		0B9A702026A761CD00469D20 /* PieChartViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PieChartViewController.h; sourceTree = "<group>"; };
+		0B9A702126A761CD00469D20 /* PieChartViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PieChartViewController.m; sourceTree = "<group>"; };
 		0BF66F1A269D8B9C007BE9F2 /* Wholesome.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wholesome.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BF66F1D269D8B9D007BE9F2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		0BF66F1E269D8B9D007BE9F2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -141,6 +147,8 @@
 		0BF66F1C269D8B9C007BE9F2 /* Wholesome */ = {
 			isa = PBXGroup;
 			children = (
+				0B9A701D26A7616800469D20 /* XYPieChart.h */,
+				0B9A701E26A7616800469D20 /* XYPieChart.m */,
 				0BF66F7226A01DFC007BE9F2 /* API */,
 				0BF66F5F26A00B4B007BE9F2 /* Models */,
 				0BF66F52269D922D007BE9F2 /* View Controllers */,
@@ -187,6 +195,8 @@
 				0BF66F5A269FD5BC007BE9F2 /* ScanViewController.m */,
 				0BF66F5C269FD90E007BE9F2 /* ReportViewController.h */,
 				0BF66F5D269FD90E007BE9F2 /* ReportViewController.m */,
+				0B9A702026A761CD00469D20 /* PieChartViewController.h */,
+				0B9A702126A761CD00469D20 /* PieChartViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -474,6 +484,7 @@
 			files = (
 				0BF66F1F269D8B9D007BE9F2 /* AppDelegate.m in Sources */,
 				0BF66F5B269FD5BC007BE9F2 /* ScanViewController.m in Sources */,
+				0B9A701F26A7616800469D20 /* XYPieChart.m in Sources */,
 				0BF66F30269D8B9E007BE9F2 /* main.m in Sources */,
 				0BF66F7126A0160C007BE9F2 /* Product.m in Sources */,
 				0BF66F7526A01E20007BE9F2 /* APIManager.m in Sources */,
@@ -481,6 +492,7 @@
 				0BF66F22269D8B9D007BE9F2 /* SceneDelegate.m in Sources */,
 				0BF66F55269D923F007BE9F2 /* LoginViewController.m in Sources */,
 				0BF66F6E26A010C7007BE9F2 /* Scan.m in Sources */,
+				0B9A702226A761CD00469D20 /* PieChartViewController.m in Sources */,
 				0BF66F58269E5866007BE9F2 /* ProfileViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

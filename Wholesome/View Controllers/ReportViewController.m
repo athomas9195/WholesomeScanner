@@ -8,6 +8,7 @@
 #import "ReportViewController.h"
 #import <Parse/Parse.h>
 #import <Parse/PFImageView.h>
+#import "PieChartViewController.h"
 
 
 @interface ReportViewController ()
@@ -125,14 +126,18 @@
     
 }
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    if ([[segue identifier] isEqualToString:@"EmbedSegue"]) {
+            PieChartViewController *embed = segue.destinationViewController;
+            embed.slices = self.product.pieChartSlices;  
+    } 
 }
-*/
+
 
 @end

@@ -34,6 +34,34 @@
          self.nutriscore = openFoodFacts[@"nutriscore_grade"];
          self.allergens = openFoodFacts[@"allergens"];
          //self.traces = openFoodFacts[@"traces"];
+         
+         //implement pie chart slices
+        
+     
+             //"nf_total_carbohydrate" = 11;
+             //"nf_saturated_fat" = 0;
+             //"nf_sodium" = 300;
+             //"nf_dietary_fiber" = 4;
+             //"nf_protein" = 3;
+
+         self.pieChartSlices = [NSMutableArray arrayWithCapacity:5];
+         NSNumber *carbs = nutritionix[@"nf_total_carbohydrate"];
+         [_pieChartSlices addObject:carbs];
+         
+         NSNumber *fat = nutritionix[@"nf_saturated_fat"];
+         [_pieChartSlices addObject:fat];
+         
+         NSNumber *sodium = nutritionix[@"nf_sodium"];
+         [_pieChartSlices addObject:sodium];
+         
+         NSNumber *fiber = nutritionix[@"nf_dietary_fiber"];
+         [_pieChartSlices addObject:fiber];
+         
+         NSNumber *protein = nutritionix[@"nf_protein"];
+         [_pieChartSlices addObject:protein];  
+         
+        
+        
      }
      return self;
  }
