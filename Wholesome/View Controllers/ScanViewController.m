@@ -259,14 +259,24 @@
                                                             NSLog(@"Dict: %@", dict);
                                                             NSDictionary *foodDict = dict[@"product"];
                                                             
-                                                            //set product
-                                                            self.product = [[Product alloc]initWithDictionary:self.nutritionixDict:foodDict];
+                                             
+                                                            
                                                             
                                                             //activate the report page
                                                             dispatch_async(dispatch_get_main_queue(), ^{
+                                                                //set product
+                                                                self.product = [[Product alloc]initWithDictionary:self.nutritionixDict:foodDict:upc];
+                                                                
+                                                                //post to parse
+                                                                [Scan postScan: self.product withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
+                                                                    if(error) {
+                                                                        NSLog(@"%@", error.localizedDescription);
+                                                                    }
+                                                                }];
+                                                                  
                                                                 [self performSegueWithIdentifier:@"toReport" sender:self];
                                                             });
-                                              
+                                                            self.product = nil;
                                                             
                                                             
                                                         } else {

@@ -6,6 +6,7 @@
 //
 
 #import "Scan.h"
+#import "Product.h"
 
 @implementation Scan
 
@@ -18,55 +19,52 @@
 @dynamic allIngred;
 @dynamic keyIngred;
 @dynamic badIngred;
-@dynamic goodIngred;
 @dynamic itemID;
 @dynamic foodName;
-@dynamic brandName; 
+@dynamic brandName;
+@dynamic upc;
+@dynamic nutriscore;
+@dynamic nova;
+@dynamic novaGroup;
+@dynamic additives;
+@dynamic allergens;
+@dynamic pieChartSlices;
 
 
 + (nonnull NSString *)parseClassName {
     return @"Scan";
 }
- 
-//UNCOMMENT LATER 
-////post new upc and user info to parse backend
-//+ (void) postScan: ( NSNumber * _Nullable )UPC withAllIngred: (NSArray * _Nullable)all withImage:(UIImage * _Nullable)image withCompletion: (PFBooleanResultBlock  _Nullable)completion {
-//
-//    Scan *newScan = [Scan new];
-//    newScan.image = [self getPFFileFromImage:image];
-//    newScan.author = [PFUser currentUser];
-//    newScan.upc = UPC;
-//    newScan.allIngred = all;
-//
-//    [newScan saveInBackgroundWithBlock: completion];
-//}
+   
+//post new upc and scan info to parse backend
++ (void) postScan: (Product *) product withCompletion: (PFBooleanResultBlock  _Nullable)completion {
 
+    Scan *newScan = [Scan new];
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-////post new ingred to parse backend
-//+ (void) postIngred: ( UIImage * _Nullable )image withCaption: ( NSString * _Nullable )caption withCompletion: (PFBooleanResultBlock  _Nullable)completion {
-//
-//    Post *newPost = [Post new];
-//    newPost.image = [self getPFFileFromImage:image];
-//    newPost.author = [PFUser currentUser];
-//    newPost.caption = caption;
-//    newPost.likeCount = @(0);
-//    newPost.commentCount = @(0);
-//
-//    [newPost saveInBackgroundWithBlock: completion];
-//}
+    newScan.author = [PFUser currentUser];
+    newScan.upc = product.upc;
+    newScan.allIngred = product.allIngred; 
+    newScan.keyIngred = product.keyIngred;
+    newScan.itemID = product.itemID;
+    newScan.foodName = product.foodName;
+    newScan.brandName = product.brandName;
+    newScan.nutriscore = product.nutriscore;
+    newScan.nova = product.nova;
+    newScan.novaGroup = product.novaGroup;
+    newScan.additives = product.additives;
+    newScan.allergens = product.allergens;
+    newScan.pieChartSlices = product.pieChartSlices;
+    
+    //post image
+    NSURL *url =[NSURL URLWithString:product.image];
+    NSData *urlData = [NSData dataWithContentsOfURL:url];
+  
+    if (urlData.length != 0) {
+        UIImage *productImage = [UIImage imageWithData: urlData];
+        newScan.image = [self getPFFileFromImage:productImage];
+    } 
+   
+    [newScan saveInBackgroundWithBlock: completion];
+}
 
 //get the pffile from an uimage
 + (PFFileObject *)getPFFileFromImage: (UIImage * _Nullable)image {
@@ -84,5 +82,6 @@
     
     return [PFFileObject fileObjectWithName:@"image.png" data:imageData];
 }
+ 
 
 @end

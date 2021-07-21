@@ -6,6 +6,7 @@
 //
 
 #import <Parse/Parse.h>
+#import "Product.h" 
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -15,22 +16,32 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSString *userID;
 @property (nonatomic, strong) PFUser *author;
 
-@property (nonatomic, strong) PFFileObject *image;
+@property (nonatomic, strong) NSString *upc;
+
+@property (nonatomic, strong) NSURL *image;
 @property (nonatomic, strong) NSNumber *rating;
 @property (nonatomic, strong) NSNumber *safetyRating;
+@property (nonatomic, strong) NSString *nutriscore;
+@property (nonatomic, strong) NSNumber *nova;
+@property (nonatomic, strong) NSArray *novaGroup;
 
 @property (nonatomic, strong) NSNumber *itemID;
 
-@property (nonatomic, strong) NSArray *allIngred;
-@property (nonatomic, strong) NSArray *keyIngred;
-@property (nonatomic, strong) NSArray *badIngred;
-@property (nonatomic, strong) NSArray *goodIngred;
-
-
 @property (nonatomic, strong) NSString *foodName;
 @property (nonatomic, strong) NSString *brandName;
+//@property (nonatomic, strong) NSString *category;
 
-+ (void) postScan: ( NSNumber * _Nullable )UPC withAllIngred: (NSArray * _Nullable)all withImage:(UIImage * _Nullable)image withCompletion: (PFBooleanResultBlock  _Nullable)completion; 
+@property (nonatomic, strong) NSArray *allIngred;
+@property (nonatomic, strong) NSArray *keyIngred;
+
+@property (nonatomic, strong) NSArray *additives;
+@property (nonatomic, strong) NSArray *allergens;
+
+@property (nonatomic, strong) NSArray *badIngred; 
+
+@property (nonatomic, strong) NSMutableArray *pieChartSlices;
+
++ (void) postScan: (Product *) product withCompletion: (PFBooleanResultBlock  _Nullable)completion;
 + (PFFileObject *)getPFFileFromImage: (UIImage * _Nullable)image;
 
 @end

@@ -63,7 +63,7 @@
     
     
     //profile image
-    NSString *URLString = self.product.image;
+    NSString *URLString = self.product.image;  
     NSURL *url = [NSURL URLWithString:URLString];
     NSData *urlData = [NSData dataWithContentsOfURL:url];
 
@@ -85,6 +85,7 @@
     }
     
     self.novaDescLabel.text = [self.product.novaGroup objectAtIndex:0];
+    //self.novaDescLabel.text = self.product.novaGroup;  
     
     //nutri
     if([self.product.nutriscore isEqual:@"a"]) {
@@ -97,7 +98,7 @@
         self.nutriscoreImage.image = [UIImage imageNamed:@"nutriscore d"];
     } else if([self.product.nutriscore isEqual:@"e"]) {
         self.nutriscoreImage.image = [UIImage imageNamed:@"nutriscore e"];
-    }
+    } 
     
     self.allergensLabel.text = self.product.allergens;
     

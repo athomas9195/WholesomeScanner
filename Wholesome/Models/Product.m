@@ -10,10 +10,11 @@
 @implementation Product
 
 //PHOTO?
-- (instancetype)initWithDictionary:(NSDictionary *)nutritionix :(NSDictionary *)openFoodFacts {
+- (instancetype)initWithDictionary:(NSDictionary *)nutritionix :(NSDictionary *)openFoodFacts: (NSString *)upc {
      self = [super init];
      if (self) {
-
+         self.upc = upc;
+         
          self.itemID = nutritionix[@"nix_item_id"];
          
          //get the image of the food 
@@ -52,16 +53,16 @@
          [_pieChartSlices addObject:fat];
          
          NSNumber *sodium = nutritionix[@"nf_sodium"];
-         [_pieChartSlices addObject:sodium];
+         double newSodium = [sodium floatValue] * 0.01;  
+         [_pieChartSlices addObject: [NSNumber numberWithDouble:newSodium]];
          
          NSNumber *fiber = nutritionix[@"nf_dietary_fiber"];
          [_pieChartSlices addObject:fiber];
          
          NSNumber *protein = nutritionix[@"nf_protein"];
-         [_pieChartSlices addObject:protein];  
+         [_pieChartSlices addObject:protein];
          
-        
-        
+    
      }
      return self;
  }
