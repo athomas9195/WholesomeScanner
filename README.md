@@ -185,7 +185,7 @@ The ingredient scanner lets the user scan a barcode of any item at the store or 
       - (Create/POST) Create a new scan object 
       - (Read/GET) Query custom good/bad ingredients and user's selected ingredients
       
-#### [OPTIONAL:] Existing API Endpoints
+<!-- #### [OPTIONAL:] Existing API Endpoints
 ##### Chomp API
 - Base URL - https://github.com/chompfoods?tab=repositories&q=SDK ??SDK? $0.01 per request?
 
@@ -207,7 +207,7 @@ The ingredient scanner lets the user scan a barcode of any item at the store or 
     `GET`    | /continents/byId/:id | 
     `GET`    | /regions | 
     `GET`    | /regions/byId/:id | 
-    `GET`    | /characters/paths/:name | 
+    `GET`    | /characters/paths/:name |  -->
 
 
 
