@@ -10,7 +10,7 @@
 
 @implementation Product
 
-//PHOTO?
+//initialized product with the nutritionix and open food facts dictionaries
 - (instancetype)initWithDictionary:(NSDictionary *)nutritionix :(NSDictionary *)openFoodFacts: (NSString *)upc {
      self = [super init];
      if (self) {
@@ -73,6 +73,7 @@
      return self;
  }
 
+//initialize with scan from parse backend 
 - (instancetype)initWithScan:(Scan *)scan {
      self = [super init];
      if (self) {

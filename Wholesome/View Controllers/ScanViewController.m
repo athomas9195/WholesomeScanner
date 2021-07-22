@@ -182,9 +182,7 @@ static Product *product;
 
 //retrieves item info from APIs (ingredients, item name, brand, and nutrition info).
 - (void)getItem:(NSString *)upc completion:(void(^)(Product *product, NSError *error))completion {
-    //activate the report page
-    //set product 
-     
+  
     [API getItemWithUPC:upc completion:^(NSDictionary * _Nonnull dict, NSError * _Nonnull error) {
           
     }];
@@ -197,6 +195,7 @@ static Product *product;
 }
   
 
+//update the data once the async api call returns
 +(void)updateData:(NSDictionary *) dict : (NSDictionary *) dict1 : (NSString *)capturedBarcode {
         product = [[Product alloc]initWithDictionary:dict:dict1:capturedBarcode];
            
@@ -209,7 +208,7 @@ static Product *product;
          
 }
 
-
+//activate the report segue to display report view
 -(void)reportSegue {
     
     if(product != nil) {
@@ -217,9 +216,7 @@ static Product *product;
         product = nil;
     }
 }
-
-
-//send toreport segue data here (post object)
+ 
 
 #pragma mark - Navigation
 

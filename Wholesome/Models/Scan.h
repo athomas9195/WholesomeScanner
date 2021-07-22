@@ -24,12 +24,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong) NSString *upc;
 
-@property (nonatomic, strong) PFFileObject *image; 
+@property (nonatomic, strong) PFFileObject *image;
 @property (nonatomic, strong) NSNumber *rating;
 @property (nonatomic, strong) NSNumber *safetyRating;
 @property (nonatomic, strong) NSString *nutriscore;
-@property (nonatomic, strong) NSNumber *nova;
-@property (nonatomic, strong) NSArray *novaGroup;
+@property (nonatomic, strong) NSNumber *nova; //nova rating
+@property (nonatomic, strong) NSArray *novaGroup; //nova group description
 
 @property (nonatomic, strong) NSNumber *itemID;
 
@@ -38,14 +38,14 @@ NS_ASSUME_NONNULL_BEGIN
 //@property (nonatomic, strong) NSString *category;
 
 @property (nonatomic, strong) NSArray *allIngred;
-@property (nonatomic, strong) NSArray *keyIngred;
+@property (nonatomic, strong) NSArray *keyIngred; //keywords
 
 @property (nonatomic, strong) NSArray *additives;
 @property (nonatomic, strong) NSArray *allergens;
 
-@property (nonatomic, strong) NSArray *badIngred; 
+@property (nonatomic, strong) NSArray *badIngred; //ingredients the user wants to avoid
 
-@property (nonatomic, strong) NSMutableArray *pieChartSlices;
+@property (nonatomic, strong) NSMutableArray *pieChartSlices; //array used to display pie chart 
 
 + (void) postScan: (Product *) product withCompletion: (PFBooleanResultBlock  _Nullable)completion;
 + (PFFileObject *)getPFFileFromImage: (UIImage * _Nullable)image;

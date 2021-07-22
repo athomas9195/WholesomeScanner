@@ -12,11 +12,11 @@
 
 static NSString * const baseURLString = @"https://trackapi.nutritionix.com/v2/search/item?upc=";
 static NSString * const newBase = @"https://us.openfoodfacts.org/api/v0/product/";
-static NSDictionary *foodDict;
-static NSDictionary *headers;
+static NSDictionary *foodDict;  //stores the nutritionix dictionary
+static NSDictionary *headers; //stores the headers like app id and key
 static NSString *appID;
 static NSString *appKey;
-static NSDictionary *foodFactsDict;
+static NSDictionary *foodFactsDict; //stores the dict from open food facts
 
 @implementation API
 
@@ -93,11 +93,7 @@ static NSDictionary *foodFactsDict;
                                                     if (error) {
                                                         NSLog(@"%@", error.localizedDescription); 
                                                     } else {
-                                                        //print out the http response
-//                                                        NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
-//                                                        NSLog(@"%@", httpResponse);
-                                                         
-                                                        
+                                            
                                                         //use json serialization to print out dictionary
                                                         NSString *strISOLatin = [[NSString alloc] initWithData:data encoding:NSISOLatin1StringEncoding];
                                                         NSData *dataUTF8 = [strISOLatin dataUsingEncoding:NSUTF8StringEncoding];

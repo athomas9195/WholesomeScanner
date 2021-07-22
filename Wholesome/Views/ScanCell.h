@@ -11,8 +11,8 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ScanCell : UICollectionViewCell
-@property (nonatomic, strong) Product *product;  
-@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (nonatomic, strong) Product *product;  //stores the product 
+@property (weak, nonatomic) IBOutlet UIImageView *imageView; //product image in cell
  
 @end
 

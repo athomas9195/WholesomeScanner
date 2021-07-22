@@ -18,9 +18,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *ingredientsLabel;
 
 
-@property (weak, nonatomic) IBOutlet UILabel *key1;
-@property (weak, nonatomic) IBOutlet UILabel *key2;
-@property (weak, nonatomic) IBOutlet UILabel *key3;
+@property (weak, nonatomic) IBOutlet UILabel *key1; //keyword tag
+@property (weak, nonatomic) IBOutlet UILabel *key2;//keyword tag
+@property (weak, nonatomic) IBOutlet UILabel *key3;//keyword tag
 @property (weak, nonatomic) IBOutlet UILabel *novaDescLabel;
 
 @property (weak, nonatomic) IBOutlet UILabel *allergensLabel;
@@ -39,8 +39,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-   // NSLog(@"%@", self.product.allIngred);
     
     self.foodNameLabel.text = self.product.foodName;
     self.ingredientsLabel.text = self.product.allIngred;
@@ -62,16 +60,15 @@
     }
       
 
-     
+    //display image
     PFFileObject *file = self.product.image;
     [file getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
 
        self.imageView.image = [UIImage imageWithData:data];
    }];
-    //self.imageView.file = self.product.image;
-    
+   
     //open food facts  
-    //nova
+    //nova display
     if(self.product.nova.longValue ==1) {
         self.novaImage.image = [UIImage imageNamed:@"nova 1"];
     } else if(self.product.nova.longValue ==2) {
@@ -83,9 +80,8 @@
     }
     
     self.novaDescLabel.text = [self.product.novaGroup objectAtIndex:0];
-    //self.novaDescLabel.text = self.product.novaGroup;  
     
-    //nutri
+    //nutriscore display 
     if([self.product.nutriscore isEqual:@"a"]) {
         self.nutriscoreImage.image = [UIImage imageNamed:@"nutriscore a"];
     } else if([self.product.nutriscore isEqual:@"b"]) {

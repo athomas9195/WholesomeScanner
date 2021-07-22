@@ -16,7 +16,7 @@
 @interface ScanHistoryViewController () <UICollectionViewDataSource, UICollectionViewDelegate, UICollisionBehaviorDelegate>
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
  
-@property (nonatomic, strong) NSMutableArray *scans; //stores posts
+@property (nonatomic, strong) NSMutableArray *scans; //stores scans
     
 @end
  
@@ -28,7 +28,7 @@
     self.collectionView.dataSource = self;
     self.collectionView.delegate = self;
       
-    [self getData:30];  
+    [self getData:30];
 
     //set the layout of the collection view
     UICollectionViewFlowLayout *layout = (UICollectionViewFlowLayout *) self.collectionView.collectionViewLayout;
@@ -98,7 +98,7 @@
     return cell;
 }
 
-//layout
+//layout for collection view  
 -(CGSize) collectionView:(UICollectionView *) collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(nonnull NSIndexPath *)indexPath{
   
     return CGSizeMake((CGRectGetWidth(collectionView.frame))/2.0,

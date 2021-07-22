@@ -73,6 +73,7 @@
     return [[self.slices objectAtIndex:index] intValue];
 }
 
+//configure the pie chart slice labels 
 - (NSString *)pieChart:(XYPieChart *)pieChart textForSliceAtIndex:(NSUInteger)index {
     if(index == 0) {
         return @"Carbs";
