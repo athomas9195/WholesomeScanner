@@ -10,6 +10,8 @@
 		0B9A701F26A7616800469D20 /* XYPieChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B9A701E26A7616800469D20 /* XYPieChart.m */; };
 		0B9A702226A761CD00469D20 /* PieChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B9A702126A761CD00469D20 /* PieChartViewController.m */; };
 		0B9A702826A8D64200469D20 /* API.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B9A702726A8D64200469D20 /* API.m */; };
+		0B9A702B26A9534400469D20 /* ScanHistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B9A702A26A9534400469D20 /* ScanHistoryViewController.m */; };
+		0B9A702F26A955A800469D20 /* ScanCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B9A702E26A955A800469D20 /* ScanCell.m */; };
 		0BF66F1F269D8B9D007BE9F2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BF66F1E269D8B9D007BE9F2 /* AppDelegate.m */; };
 		0BF66F22269D8B9D007BE9F2 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BF66F21269D8B9D007BE9F2 /* SceneDelegate.m */; };
 		0BF66F28269D8B9D007BE9F2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BF66F26269D8B9D007BE9F2 /* Main.storyboard */; };
@@ -55,6 +57,10 @@
 		0B9A702126A761CD00469D20 /* PieChartViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PieChartViewController.m; sourceTree = "<group>"; };
 		0B9A702626A8D64200469D20 /* API.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = API.h; sourceTree = "<group>"; };
 		0B9A702726A8D64200469D20 /* API.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = API.m; sourceTree = "<group>"; };
+		0B9A702926A9534400469D20 /* ScanHistoryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScanHistoryViewController.h; sourceTree = "<group>"; };
+		0B9A702A26A9534400469D20 /* ScanHistoryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScanHistoryViewController.m; sourceTree = "<group>"; };
+		0B9A702D26A955A800469D20 /* ScanCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScanCell.h; sourceTree = "<group>"; };
+		0B9A702E26A955A800469D20 /* ScanCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScanCell.m; sourceTree = "<group>"; };
 		0BF66F1A269D8B9C007BE9F2 /* Wholesome.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wholesome.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BF66F1D269D8B9D007BE9F2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		0BF66F1E269D8B9D007BE9F2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -122,6 +128,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0B9A702C26A9559500469D20 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0B9A702D26A955A800469D20 /* ScanCell.h */,
+				0B9A702E26A955A800469D20 /* ScanCell.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		0BF66F11269D8B9C007BE9F2 = {
 			isa = PBXGroup;
 			children = (
@@ -147,6 +162,7 @@
 		0BF66F1C269D8B9C007BE9F2 /* Wholesome */ = {
 			isa = PBXGroup;
 			children = (
+				0B9A702C26A9559500469D20 /* Views */,
 				0B9A701D26A7616800469D20 /* XYPieChart.h */,
 				0B9A701E26A7616800469D20 /* XYPieChart.m */,
 				0BF66F7226A01DFC007BE9F2 /* API */,
@@ -197,6 +213,8 @@
 				0BF66F5D269FD90E007BE9F2 /* ReportViewController.m */,
 				0B9A702026A761CD00469D20 /* PieChartViewController.h */,
 				0B9A702126A761CD00469D20 /* PieChartViewController.m */,
+				0B9A702926A9534400469D20 /* ScanHistoryViewController.h */,
+				0B9A702A26A9534400469D20 /* ScanHistoryViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -486,6 +504,7 @@
 				0BF66F5B269FD5BC007BE9F2 /* ScanViewController.m in Sources */,
 				0B9A701F26A7616800469D20 /* XYPieChart.m in Sources */,
 				0BF66F30269D8B9E007BE9F2 /* main.m in Sources */,
+				0B9A702F26A955A800469D20 /* ScanCell.m in Sources */,
 				0BF66F7126A0160C007BE9F2 /* Product.m in Sources */,
 				0BF66F5E269FD90E007BE9F2 /* ReportViewController.m in Sources */,
 				0B9A702826A8D64200469D20 /* API.m in Sources */,
@@ -494,6 +513,7 @@
 				0BF66F6E26A010C7007BE9F2 /* Scan.m in Sources */,
 				0B9A702226A761CD00469D20 /* PieChartViewController.m in Sources */,
 				0BF66F58269E5866007BE9F2 /* ProfileViewController.m in Sources */,
+				0B9A702B26A9534400469D20 /* ScanHistoryViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

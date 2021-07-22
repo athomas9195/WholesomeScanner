@@ -61,8 +61,7 @@
         self.containsLabel.text = uppercase; 
     }
       
-    
-    //profile image
+
      
     PFFileObject *file = self.product.image;
     [file getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
@@ -71,7 +70,7 @@
    }];
     //self.imageView.file = self.product.image;
     
-    //open food facts 
+    //open food facts  
     //nova
     if(self.product.nova.longValue ==1) {
         self.novaImage.image = [UIImage imageNamed:@"nova 1"];

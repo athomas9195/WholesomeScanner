@@ -24,12 +24,12 @@
          
          NSURL *url =[NSURL URLWithString:imageURL ];
          NSData *urlData = [NSData dataWithContentsOfURL:url];
-        
+         
          if (urlData.length != 0) {
              UIImage *productImage = [UIImage imageWithData: urlData];
              self.image = [self getPFFileFromImage:productImage];
          }
-
+ 
          self.foodName = nutritionix[@"food_name"];
          self.brandName = nutritionix[@"brand_name"];
          
