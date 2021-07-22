@@ -53,7 +53,7 @@
          [_pieChartSlices addObject:fat];
          
          NSNumber *sodium = nutritionix[@"nf_sodium"];
-         double newSodium = [sodium floatValue] * 0.01;  
+         double newSodium = [sodium floatValue] * 0.01;
          [_pieChartSlices addObject: [NSNumber numberWithDouble:newSodium]];
          
          NSNumber *fiber = nutritionix[@"nf_dietary_fiber"];
@@ -65,17 +65,7 @@
     
      }
      return self;
- }
-
-////a factory method that returns Tweets when initialized with an array of Tweet Dictionaries
-//+ (NSMutableArray *)tweetsWithArray:(NSArray *)dictionaries{
-//    NSMutableArray *tweets = [NSMutableArray array];
-//    for (NSDictionary *dictionary in dictionaries) {
-//        Tweet *tweet = [[Tweet alloc] initWithDictionary:dictionary];
-//        [tweets addObject:tweet];
-//    }
-//    return tweets;
-//}
+ } 
 
 
 @end

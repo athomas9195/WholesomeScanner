@@ -1,13 +1,14 @@
 //
-//  APIManager.m
+//  API.m
 //  Wholesome
 //
-//  Created by Anna Thomas on 7/15/21.
+//  Created by Anna Thomas on 7/21/21.
 //
 
-#import "APIManager.h"
+#import "API.h" 
 #import "Product.h"
 #import <Foundation/Foundation.h>
+#import "ScanViewController.h"
 
 static NSString * const baseURLString = @"https://trackapi.nutritionix.com/v2/search/item?upc=";
 static NSString * const newBase = @"https://us.openfoodfacts.org/api/v0/product/";
@@ -17,14 +18,12 @@ static NSString *appID;
 static NSString *appKey;
 static NSDictionary *foodFactsDict;
 
-@implementation APIManager
-//    IGUserSession *_userSession;
-//    id<IGRequestToken> _activeRequestToken;
+@implementation API
 
-  
 //retrieves item info from Nutritionix (ingredients, item name, brand, and nutrition info).
-+ (NSDictionary*)getItemWithUPC:(NSString *)upc completion:(void(^)(NSDictionary *dict, NSError *error))completion {
-    NSString *path = [[NSBundle mainBundle] pathForResource: @"Keys" ofType: @"plist"]; 
++ (NSDictionary*)getItemWithUPC:(NSString *)upc completion:(void(^)(NSDictionary *dictComp, NSError *error))completion {
+     
+    NSString *path = [[NSBundle mainBundle] pathForResource: @"Keys" ofType: @"plist"];
     NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile: path];
     
     appID = [dict objectForKey: @"app_Id"];
@@ -46,7 +45,7 @@ static NSDictionary *foodFactsDict;
     NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         
         if (error) {
-                NSLog(@"%@", error);
+                NSLog(@"%@", error.localizedDescription);
         } else {
                 //print out the http response
                 NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
@@ -61,6 +60,7 @@ static NSDictionary *foodFactsDict;
                    NSLog(@"Dict: %@", dict);
                    NSArray *temp = dict[@"foods"];
                    foodDict = [temp objectAtIndex:0];
+                
 
                 } else {
                    NSLog(@"Error: %@", error);
@@ -68,7 +68,7 @@ static NSDictionary *foodFactsDict;
                                                         
         }
     }];
-    [dataTask resume]; 
+    [dataTask resume];
     
     return foodDict;
     
@@ -91,7 +91,7 @@ static NSDictionary *foodFactsDict;
     NSURLSessionDataTask *newDataTask = [newSession dataTaskWithRequest:newRequest
                                                 completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
                                                     if (error) {
-                                                        NSLog(@"%@", error);
+                                                        NSLog(@"%@", error.localizedDescription); 
                                                     } else {
                                                         //print out the http response
 //                                                        NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
@@ -106,8 +106,8 @@ static NSDictionary *foodFactsDict;
                                                         if (dict != nil) {
                                                             NSLog(@"Dict: %@", dict);
                                                             foodFactsDict = dict[@"product"];
-
-                                                            
+                                                            [ScanViewController updateData:foodDict :foodFactsDict : upc];
+                                                             
                                                         } else {
                                                             NSLog(@"Error: %@", error);
                                                         }
@@ -123,3 +123,4 @@ static NSDictionary *foodFactsDict;
  
 
 @end
+

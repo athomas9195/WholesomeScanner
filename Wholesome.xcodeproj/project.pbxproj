@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0B9A701F26A7616800469D20 /* XYPieChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B9A701E26A7616800469D20 /* XYPieChart.m */; };
 		0B9A702226A761CD00469D20 /* PieChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B9A702126A761CD00469D20 /* PieChartViewController.m */; };
+		0B9A702826A8D64200469D20 /* API.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B9A702726A8D64200469D20 /* API.m */; };
 		0BF66F1F269D8B9D007BE9F2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BF66F1E269D8B9D007BE9F2 /* AppDelegate.m */; };
 		0BF66F22269D8B9D007BE9F2 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BF66F21269D8B9D007BE9F2 /* SceneDelegate.m */; };
 		0BF66F28269D8B9D007BE9F2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BF66F26269D8B9D007BE9F2 /* Main.storyboard */; };
@@ -53,6 +54,8 @@
 		0B9A701E26A7616800469D20 /* XYPieChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XYPieChart.m; path = ../../XYPieChart/XYPieChart/XYPieChart.m; sourceTree = "<group>"; };
 		0B9A702026A761CD00469D20 /* PieChartViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PieChartViewController.h; sourceTree = "<group>"; };
 		0B9A702126A761CD00469D20 /* PieChartViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PieChartViewController.m; sourceTree = "<group>"; };
+		0B9A702626A8D64200469D20 /* API.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = API.h; sourceTree = "<group>"; };
+		0B9A702726A8D64200469D20 /* API.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = API.m; sourceTree = "<group>"; };
 		0BF66F1A269D8B9C007BE9F2 /* Wholesome.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wholesome.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BF66F1D269D8B9D007BE9F2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		0BF66F1E269D8B9D007BE9F2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -217,6 +220,8 @@
 			children = (
 				0BF66F7326A01E20007BE9F2 /* APIManager.h */,
 				0BF66F7426A01E20007BE9F2 /* APIManager.m */,
+				0B9A702626A8D64200469D20 /* API.h */,
+				0B9A702726A8D64200469D20 /* API.m */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -489,6 +494,7 @@
 				0BF66F7126A0160C007BE9F2 /* Product.m in Sources */,
 				0BF66F7526A01E20007BE9F2 /* APIManager.m in Sources */,
 				0BF66F5E269FD90E007BE9F2 /* ReportViewController.m in Sources */,
+				0B9A702826A8D64200469D20 /* API.m in Sources */,
 				0BF66F22269D8B9D007BE9F2 /* SceneDelegate.m in Sources */,
 				0BF66F55269D923F007BE9F2 /* LoginViewController.m in Sources */,
 				0BF66F6E26A010C7007BE9F2 /* Scan.m in Sources */,
@@ -666,6 +672,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 36B2H5K8M7;
 				INFOPLIST_FILE = Wholesome/Info.plist;
@@ -685,6 +692,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 36B2H5K8M7;
 				INFOPLIST_FILE = Wholesome/Info.plist;

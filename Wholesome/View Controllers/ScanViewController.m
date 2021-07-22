@@ -7,25 +7,27 @@
 
 #import "ScanViewController.h"
 #import <AVFoundation/AVFoundation.h>
-#import "APIManager.h"
+#import "API.h"
 #import "Scan.h"
 #import "ReportViewController.h"
 #import "Product.h"
+static Product *product;
 
-@interface ScanViewController () <AVCaptureMetadataOutputObjectsDelegate>
+@interface ScanViewController () <AVCaptureMetadataOutputObjectsDelegate> 
 @property (weak, nonatomic) IBOutlet UIView *cameraPreviewView;
 @property (weak, nonatomic) IBOutlet UIButton *rescanButton;
 
 @property (nonatomic, strong) AVCaptureSession *captureSession;
 @property (nonatomic, strong) AVCaptureVideoPreviewLayer *captureLayer;
 
-@property (nonatomic, strong) Product *product;
+//@property (nonatomic, strong) Product *product;
 @property (nonatomic, strong) NSDictionary *nutritionixDict;
+@property (nonatomic, strong) NSDictionary *foodFactsDict;
 
 
 
 @end
-
+  
 @implementation ScanViewController
 
 - (void)viewDidLoad {
@@ -37,10 +39,8 @@
     });
     [self setupScanningSession];
     [self.captureSession startRunning];
-    
-    
-    
-    // Do any additional setup after loading the view.
+    //timer for auto update for table view (can toggle)
+   [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(reportSegue) userInfo:nil repeats:true];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -135,20 +135,22 @@
                 dispatch_sync(dispatch_get_main_queue(), ^{
                     [self.captureSession stopRunning];
              
-                   // self.scannedBarcode.text = capturedBarcode;
-                    NSLog(@"%@", capturedBarcode);
+                });
+                   
+                // self.scannedBarcode.text = capturedBarcode;
+                NSLog(@"%@", capturedBarcode);
     
-                    [self getItemWithUPC:capturedBarcode completion:^(Product * product, NSError *error) {
+                [self getItem:capturedBarcode completion:^(Product * product, NSError *error) {
             
                         if (product) {
                             NSLog(@"%@", product.allIngred);
                         
                         } else {
-                            NSLog(@"😫😫😫 Error getting home timeline: %@", error.localizedDescription);
+                            NSLog(@"😫😫😫 Error getting product: %@", error.localizedDescription);
                         }
-                    }];
-                });
-            
+                }];
+                
+                
                 return;
             }
         }
@@ -156,145 +158,42 @@
    
 }
 
-//retrieves item info from Nutritionix (ingredients, item name, brand, and nutrition info).
-- (void)getItemWithUPC:(NSString *)upc completion:(void(^)(Product *product, NSError *error))completion {
-
-    NSString *path = [[NSBundle mainBundle] pathForResource: @"Keys" ofType: @"plist"];
-    NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile: path];
-    
-    NSString *appID= [dict objectForKey: @"app_Id"];
-    NSString *appKey = [dict objectForKey: @"app_Key"];
-    
-    NSDictionary *headers = @{ @"x-app-id": appID,
-                               @"x-app-key": appKey };
-      
-    
-    //START
-    NSString *base = @"https://trackapi.nutritionix.com/v2/search/item?upc=";
-    NSString *fullURL = [base stringByAppendingString:upc];
-    
-    //create request
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:fullURL]
-                                                           cachePolicy:NSURLRequestUseProtocolCachePolicy
-                                                       timeoutInterval:10.0];
-    [request setHTTPMethod:@"GET"];
-    [request setAllHTTPHeaderFields:headers];
-
-    //send request
-    NSURLSession *session = [NSURLSession sharedSession];
-    NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request
-                                                completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-                                                    if (error) {
-                                                        NSLog(@"%@", error);
-                                                    } else {
-                                                        //print out the http response
-                                                        NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
-                                                        NSLog(@"%@", httpResponse);
-                                                         
-                                                        //use json serialization to print out dictionary
-                                                        NSString *strISOLatin = [[NSString alloc] initWithData:data encoding:NSISOLatin1StringEncoding];
-                                                        NSData *dataUTF8 = [strISOLatin dataUsingEncoding:NSUTF8StringEncoding];
-
-                                                        id dict = [NSJSONSerialization JSONObjectWithData:dataUTF8 options:0 error:&error];
-                                                        if (dict != nil) {
-                                                            NSLog(@"Dict: %@", dict);
-                                                            NSArray *temp = dict[@"foods"];
-                                                            NSDictionary *foodDict = [temp objectAtIndex:0];
-                                                            //set product
-                                                            self.nutritionixDict = foodDict;
-                                                            
-                                                            
-                                            
-                                                            
-                                                            
-                                                        } else { 
-                                                            NSLog(@"Error: %@", error);
-                                                        }
-                                                        
-                                                
-                                                     
-                                                    } 
-                                                }];
-    [dataTask resume];
-    
-    //open food facts api call
-    //_keywords:
-    //additives_old_tags:
-    //allergens
-    //categories
-    //nova_group: 4
-    //nova_groups_tags:
-    //nutriscore_grade
-    //traces: "en:peanuts"
-    
-    
-    //START
-    NSString *newBase = @"https://us.openfoodfacts.org/api/v0/product/";
-    NSString *newFullURL = [newBase stringByAppendingString:upc];
+//retrieves item info from APIs (ingredients, item name, brand, and nutrition info).
+- (void)getItem:(NSString *)upc completion:(void(^)(Product *product, NSError *error))completion {
+    //activate the report page
+    //set product 
      
-    //create request
-    NSMutableURLRequest *newRequest = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:newFullURL]
-                                                           cachePolicy:NSURLRequestUseProtocolCachePolicy
-                                                       timeoutInterval:10.0];
-    [request setHTTPMethod:@"GET"];
-//    [request setAllHTTPHeaderFields:headers];
-
-    //send request
-    NSURLSession *newSession = [NSURLSession sharedSession];
-    NSURLSessionDataTask *newDataTask = [newSession dataTaskWithRequest:newRequest
-                                                completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-                                                    if (error) {
-                                                        NSLog(@"%@", error);
-                                                    } else {
-                                                        //print out the http response
-                                                        NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
-                                                        NSLog(@"%@", httpResponse);
-                                                         
-                                                        //use json serialization to print out dictionary
-                                                        NSString *strISOLatin = [[NSString alloc] initWithData:data encoding:NSISOLatin1StringEncoding];
-                                                        NSData *dataUTF8 = [strISOLatin dataUsingEncoding:NSUTF8StringEncoding];
-
-                                                        id dict = [NSJSONSerialization JSONObjectWithData:dataUTF8 options:0 error:&error];
-                                                        if (dict != nil) {
-                                                            NSLog(@"Dict: %@", dict);
-                                                            NSDictionary *foodDict = dict[@"product"];
-                                                            
-                                             
-                                                            
-                                                            
-                                                            //activate the report page
-                                                            dispatch_async(dispatch_get_main_queue(), ^{
-                                                                //set product
-                                                                self.product = [[Product alloc]initWithDictionary:self.nutritionixDict:foodDict:upc];
-                                                                
-                                                                //post to parse
-                                                                [Scan postScan: self.product withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
-                                                                    if(error) {
-                                                                        NSLog(@"%@", error.localizedDescription);
-                                                                    }
-                                                                }];
-                                                                  
-                                                                [self performSegueWithIdentifier:@"toReport" sender:self];
-                                                            });
-                                                            self.product = nil;
-                                                            
-                                                            
-                                                        } else {
-                                                            NSLog(@"Error: %@", error);
-                                                        }
-                                                        
-                                                
-                                                     
-                                                    }
-                                                }];
-    [newDataTask resume];
+    [API getItemWithUPC:upc completion:^(NSDictionary * _Nonnull dict, NSError * _Nonnull error) {
+          
+    }];
+     
+    [API getFoodFacts:upc completion:^(NSDictionary * _Nonnull dict, NSError * _Nonnull error) {
+        
+    }];
+ 
     
+}
+  
+
++(void)updateData:(NSDictionary *) dict : (NSDictionary *) dict1 : (NSString *)capturedBarcode {
+        product = [[Product alloc]initWithDictionary:dict:dict1:capturedBarcode];
+         
+        //post to parse  
+        [Scan postScan: product withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
+            if(error) {
+                NSLog(@"%@", error.localizedDescription);
+            }
+        }];
+         
+}
+
+
+-(void)reportSegue {
     
-//    //activate the report page
-//    dispatch_async(dispatch_get_main_queue(), ^{
-//        [self performSegueWithIdentifier:@"toReport" sender:self];
-//    });
-   
+    if(product != nil) {
+        [self performSegueWithIdentifier:@"toReport" sender:self];
+        product = nil;
+    }
 }
 
 
@@ -312,8 +211,9 @@
         
         ReportViewController *reportViewController = [segue destinationViewController];
         
-        reportViewController.product = self.product;
+        reportViewController.product = product;
     }
+   
 }
 
 
