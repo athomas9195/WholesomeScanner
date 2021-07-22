@@ -6,6 +6,9 @@
 //
 
 #import "ProfileViewController.h"
+#import <Parse/Parse.h>
+#import "LoginViewController.h"
+#import "SceneDelegate.h"
 
 @interface ProfileViewController ()
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;  //the container for the categories
@@ -14,6 +17,28 @@
 @end
 
 @implementation ProfileViewController
+- (IBAction)didTapLogout:(id)sender {
+    [self didLogOut];
+}
+
+//allows user to log out
+-(void)didLogOut {
+    [PFUser logOutInBackgroundWithBlock:^(NSError * _Nullable error) {
+        // PFUser.current() will now be nil
+        if (error != nil) {
+            NSLog(@"User log out failed: %@", error.localizedDescription);
+        } else {
+            NSLog(@"User logged out successfully");
+    
+        }
+    }];
+    SceneDelegate *myDelegate = (SceneDelegate *)self.view.window.windowScene.delegate;
+    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    LoginViewController *loginViewController = [storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
+    myDelegate.window.rootViewController = loginViewController; 
+     
+}
 
 - (void)viewDidLoad {
     

@@ -219,6 +219,20 @@
                                     <segue destination="sNF-FP-RJv" kind="show" id="Liu-UY-5QG"/>
                                 </connections>
                             </button>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kca-mL-yd0">
+                                <rect key="frame" x="0.0" y="19" width="390" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem id="jpp-az-QFR">
+                                        <barButtonItem key="rightBarButtonItem" title="Logout" id="adx-HY-68k">
+                                            <color key="tintColor" red="0.5729626417" green="0.52773392200000002" blue="0.6470781565" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <connections>
+                                                <action selector="didTapLogout:" destination="ncs-RX-o2S" id="xfB-lK-R8I"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="cDn-y0-GFm"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -230,6 +244,9 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="iconmonstr-user-male-thin-96" id="79o-tW-pR6"/>
+                    <connections>
+                        <outlet property="logoutButton" destination="adx-HY-68k" id="R3C-Vz-F1u"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v6H-aV-ehz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

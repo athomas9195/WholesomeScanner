@@ -113,7 +113,7 @@
 }
 
 - (NSInteger)collectionView:(nonnull UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return self.scans.count;
+    return self.scans.count; 
 } 
 
 
@@ -125,7 +125,7 @@
     // Pass the selected object to the new view controller.
     
     if ([[segue identifier] isEqualToString:@"toReportHistory"]){
-        //report details segue 
+        //report details segue
          
         UICollectionViewCell *tappedCell = sender;
         NSIndexPath *indexPath = [self.collectionView indexPathForCell:tappedCell];
