@@ -24,7 +24,6 @@
 		0BF66F5E269FD90E007BE9F2 /* ReportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BF66F5D269FD90E007BE9F2 /* ReportViewController.m */; };
 		0BF66F6E26A010C7007BE9F2 /* Scan.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BF66F6D26A010C7007BE9F2 /* Scan.m */; };
 		0BF66F7126A0160C007BE9F2 /* Product.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BF66F7026A0160C007BE9F2 /* Product.m */; };
-		0BF66F7526A01E20007BE9F2 /* APIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BF66F7426A01E20007BE9F2 /* APIManager.m */; };
 		0BF66F7A26A02163007BE9F2 /* Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0BF66F7926A02163007BE9F2 /* Keys.plist */; };
 		5020A7B2E691F621E3D4DD3C /* Pods_Wholesome.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D24F5C943CCB4D67368CC67A /* Pods_Wholesome.framework */; };
 		6350B920C009699682AEECC9 /* Pods_Wholesome_WholesomeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A6BE688C480F4435CD66661 /* Pods_Wholesome_WholesomeUITests.framework */; };
@@ -84,8 +83,6 @@
 		0BF66F6D26A010C7007BE9F2 /* Scan.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Scan.m; sourceTree = "<group>"; };
 		0BF66F6F26A0160C007BE9F2 /* Product.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Product.h; sourceTree = "<group>"; };
 		0BF66F7026A0160C007BE9F2 /* Product.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Product.m; sourceTree = "<group>"; };
-		0BF66F7326A01E20007BE9F2 /* APIManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APIManager.h; sourceTree = "<group>"; };
-		0BF66F7426A01E20007BE9F2 /* APIManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APIManager.m; sourceTree = "<group>"; };
 		0BF66F7926A02163007BE9F2 /* Keys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Keys.plist; sourceTree = "<group>"; };
 		253CFAD2D0BC27C963EACB07 /* Pods-WholesomeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WholesomeTests.debug.xcconfig"; path = "Target Support Files/Pods-WholesomeTests/Pods-WholesomeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		496458C4B2F93129C0F65FFE /* Pods-WholesomeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WholesomeTests.release.xcconfig"; path = "Target Support Files/Pods-WholesomeTests/Pods-WholesomeTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -218,8 +215,6 @@
 		0BF66F7226A01DFC007BE9F2 /* API */ = {
 			isa = PBXGroup;
 			children = (
-				0BF66F7326A01E20007BE9F2 /* APIManager.h */,
-				0BF66F7426A01E20007BE9F2 /* APIManager.m */,
 				0B9A702626A8D64200469D20 /* API.h */,
 				0B9A702726A8D64200469D20 /* API.m */,
 			);
@@ -492,7 +487,6 @@
 				0B9A701F26A7616800469D20 /* XYPieChart.m in Sources */,
 				0BF66F30269D8B9E007BE9F2 /* main.m in Sources */,
 				0BF66F7126A0160C007BE9F2 /* Product.m in Sources */,
-				0BF66F7526A01E20007BE9F2 /* APIManager.m in Sources */,
 				0BF66F5E269FD90E007BE9F2 /* ReportViewController.m in Sources */,
 				0B9A702826A8D64200469D20 /* API.m in Sources */,
 				0BF66F22269D8B9D007BE9F2 /* SceneDelegate.m in Sources */,

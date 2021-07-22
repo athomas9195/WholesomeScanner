@@ -30,8 +30,8 @@
             filePath = "Wholesome/View Controllers/ScanViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "212"
-            endingLineNumber = "212"
+            startingLineNumber = "234"
+            endingLineNumber = "234"
             landmarkName = "-prepareForSegue:sender:"
             landmarkType = "7">
          </BreakpointContent>
@@ -46,8 +46,8 @@
             filePath = "Wholesome/Models/Product.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "13"
-            endingLineNumber = "13"
+            startingLineNumber = "14"
+            endingLineNumber = "14"
             landmarkName = "-initWithDictionary:::"
             landmarkType = "7">
          </BreakpointContent>
@@ -62,40 +62,8 @@
             filePath = "Wholesome/Models/Product.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "18"
-            endingLineNumber = "18"
-            landmarkName = "-initWithDictionary:::"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "87D2FA7B-B76B-4283-AF17-A34BE7FCF0B8"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Wholesome/Models/Product.m"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "21"
-            endingLineNumber = "21"
-            landmarkName = "-initWithDictionary:::"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "E6AD3112-6575-402A-B238-A55CF494FF52"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Wholesome/Models/Product.m"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "22"
-            endingLineNumber = "22"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
             landmarkName = "-initWithDictionary:::"
             landmarkType = "7">
          </BreakpointContent>
@@ -110,8 +78,8 @@
             filePath = "Wholesome/Models/Product.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
             landmarkName = "-initWithDictionary:::"
             landmarkType = "7">
          </BreakpointContent>
@@ -126,8 +94,8 @@
             filePath = "Wholesome/Models/Product.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "25"
-            endingLineNumber = "25"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
             landmarkName = "-initWithDictionary:::"
             landmarkType = "7">
          </BreakpointContent>
@@ -142,8 +110,8 @@
             filePath = "Wholesome/Models/Product.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "27"
-            endingLineNumber = "27"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
             landmarkName = "-initWithDictionary:::"
             landmarkType = "7">
          </BreakpointContent>
@@ -158,8 +126,8 @@
             filePath = "Wholesome/View Controllers/ScanViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "214"
-            endingLineNumber = "214"
+            startingLineNumber = "236"
+            endingLineNumber = "236"
             landmarkName = "-prepareForSegue:sender:"
             landmarkType = "7">
          </BreakpointContent>
@@ -190,8 +158,8 @@
             filePath = "Wholesome/Models/Product.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
             landmarkName = "-initWithDictionary:::"
             landmarkType = "7">
          </BreakpointContent>
@@ -206,8 +174,8 @@
             filePath = "Wholesome/View Controllers/ReportViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "77"
-            endingLineNumber = "77"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
             landmarkName = "-viewDidLoad"
             landmarkType = "7">
          </BreakpointContent>
@@ -222,8 +190,8 @@
             filePath = "Wholesome/View Controllers/ReportViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "91"
-            endingLineNumber = "91"
+            startingLineNumber = "90"
+            endingLineNumber = "90"
             landmarkName = "-viewDidLoad"
             landmarkType = "7">
          </BreakpointContent>
@@ -238,8 +206,8 @@
             filePath = "Wholesome/View Controllers/ReportViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "103"
-            endingLineNumber = "103"
+            startingLineNumber = "102"
+            endingLineNumber = "102"
             landmarkName = "-viewDidLoad"
             landmarkType = "7">
          </BreakpointContent>
@@ -254,8 +222,8 @@
             filePath = "Wholesome/View Controllers/ReportViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "78"
-            endingLineNumber = "78"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
             landmarkName = "-viewDidLoad"
             landmarkType = "7">
          </BreakpointContent>
@@ -430,8 +398,8 @@
             filePath = "Wholesome/View Controllers/ReportViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "88"
-            endingLineNumber = "88"
+            startingLineNumber = "87"
+            endingLineNumber = "87"
             landmarkName = "-viewDidLoad"
             landmarkType = "7">
          </BreakpointContent>
@@ -782,58 +750,10 @@
             filePath = "Wholesome/View Controllers/ScanViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "141"
-            endingLineNumber = "141"
+            startingLineNumber = "145"
+            endingLineNumber = "145"
             landmarkName = "-captureOutput:didOutputMetadataObjects:fromConnection:"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "143EEA71-12BE-4907-94BF-8AE3B5B44B9C"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Wholesome/View Controllers/ScanViewController.m"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "143"
-            endingLineNumber = "143"
-            landmarkName = "-captureOutput:didOutputMetadataObjects:fromConnection:"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "143EEA71-12BE-4907-94BF-8AE3B5B44B9C - c59557c9eed2fa5e"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[ScanViewController captureOutput:didOutputMetadataObjects:fromConnection:]"
-                  moduleName = "Wholesome"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/annathomas/Documents/GitHub/WholesomeScanner/Wholesome/View%20Controllers/ScanViewController.m"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "140"
-                  endingLineNumber = "140"
-                  offsetFromSymbolStart = "1052">
-               </Location>
-               <Location
-                  uuid = "143EEA71-12BE-4907-94BF-8AE3B5B44B9C - 5486fea65196e0fc"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__76-[ScanViewController captureOutput:didOutputMetadataObjects:fromConnection:]_block_invoke_2"
-                  moduleName = "Wholesome"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/annathomas/Documents/GitHub/WholesomeScanner/Wholesome/View%20Controllers/ScanViewController.m"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "142"
-                  endingLineNumber = "142"
-                  offsetFromSymbolStart = "64">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -846,13 +766,13 @@
             filePath = "Wholesome/View Controllers/ScanViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "182"
-            endingLineNumber = "182"
+            startingLineNumber = "204"
+            endingLineNumber = "204"
             landmarkName = "+updateData:::"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "3495C89F-29B1-43E6-A148-531E5DAB665F - 9aad9ea101ed5e8e"
+                  uuid = "3495C89F-29B1-43E6-A148-531E5DAB665F - 9aad9ea101ed5c1a"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -862,12 +782,12 @@
                   urlString = "file:///Users/annathomas/Documents/GitHub/WholesomeScanner/Wholesome/View%20Controllers/ScanViewController.m"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "192"
-                  endingLineNumber = "192"
+                  startingLineNumber = "204"
+                  endingLineNumber = "204"
                   offsetFromSymbolStart = "180">
                </Location>
                <Location
-                  uuid = "3495C89F-29B1-43E6-A148-531E5DAB665F - f448d8feae9901ad"
+                  uuid = "3495C89F-29B1-43E6-A148-531E5DAB665F - f448d8feae990321"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -877,11 +797,43 @@
                   urlString = "file:///Users/annathomas/Documents/GitHub/WholesomeScanner/Wholesome/View%20Controllers/ScanViewController.m"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "193"
-                  endingLineNumber = "193"
+                  startingLineNumber = "205"
+                  endingLineNumber = "205"
                   offsetFromSymbolStart = "56">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B95EB333-2E05-4F78-B6A2-9214814B5606"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Wholesome/View Controllers/ReportViewController.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "72"
+            endingLineNumber = "72"
+            landmarkName = "-viewDidLoad"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "203F4ADF-80F3-445A-8EE2-313109FEE8FE"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Wholesome/View Controllers/ScanViewController.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "201"
+            endingLineNumber = "201"
+            landmarkName = "+updateData:::"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

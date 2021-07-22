@@ -34,7 +34,7 @@
 + (nonnull NSString *)parseClassName {
     return @"Scan";
 }
-   
+    
 //post new upc and scan info to parse backend
 + (void) postScan: (Product *) product withCompletion: (PFBooleanResultBlock  _Nullable)completion {
 
@@ -45,7 +45,7 @@
     newScan.allIngred = product.allIngred; 
     newScan.keyIngred = product.keyIngred;
     newScan.itemID = product.itemID;
-    newScan.foodName = product.foodName;
+    newScan.foodName = product.foodName; 
     newScan.brandName = product.brandName;
     newScan.nutriscore = product.nutriscore;
     newScan.nova = product.nova;
@@ -54,14 +54,7 @@
     newScan.allergens = product.allergens;
     newScan.pieChartSlices = product.pieChartSlices;
     
-    //post image
-    NSURL *url =[NSURL URLWithString:product.image];
-    NSData *urlData = [NSData dataWithContentsOfURL:url];
-  
-    if (urlData.length != 0) {
-        UIImage *productImage = [UIImage imageWithData: urlData];
-        newScan.image = [self getPFFileFromImage:productImage];
-    } 
+    newScan.image = product.image;
    
     [newScan saveInBackgroundWithBlock: completion];
 }

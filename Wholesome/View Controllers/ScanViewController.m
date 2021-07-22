@@ -11,6 +11,10 @@
 #import "Scan.h"
 #import "ReportViewController.h"
 #import "Product.h"
+#import <Parse/Parse.h>
+#import <Parse/ParseUIConstants.h>
+#import <Parse/PFInstallation.h> 
+#import <Parse/PFImageView.h>
 static Product *product;
 
 @interface ScanViewController () <AVCaptureMetadataOutputObjectsDelegate> 
@@ -134,21 +138,39 @@ static Product *product;
                 
                 dispatch_sync(dispatch_get_main_queue(), ^{
                     [self.captureSession stopRunning];
-             
+              
                 });
                    
                 // self.scannedBarcode.text = capturedBarcode;
                 NSLog(@"%@", capturedBarcode);
     
-                [self getItem:capturedBarcode completion:^(Product * product, NSError *error) {
-            
-                        if (product) {
-                            NSLog(@"%@", product.allIngred);
-                        
-                        } else {
-                            NSLog(@"😫😫😫 Error getting product: %@", error.localizedDescription);
-                        }
+                
+                
+                //see if we're getting data from parse or api
+                
+                // construct PFQuery
+                PFQuery *scanQuery = [Scan query];
+                [scanQuery whereKey:@"upc" equalTo: capturedBarcode];
+
+                // fetch data asynchronously
+                [scanQuery findObjectsInBackgroundWithBlock:^(NSArray<Scan *> * _Nullable scans, NSError * _Nullable error) {
+                    if (scans.count >=1) {
+                        product = [[Product alloc] initWithScan: [scans objectAtIndex:0]]; 
+                    }
+                    else {
+                        [self getItem:capturedBarcode completion:^(Product * product, NSError *error) {
+                    
+                                if (product) {
+                                    NSLog(@"%@", product.allIngred);
+                                
+                                } else {
+                                    NSLog(@"😫😫😫 Error getting product: %@", error.localizedDescription);
+                                }
+                        }];
+                    }
                 }];
+                
+        
                 
                 
                 return;
@@ -177,7 +199,7 @@ static Product *product;
 
 +(void)updateData:(NSDictionary *) dict : (NSDictionary *) dict1 : (NSString *)capturedBarcode {
         product = [[Product alloc]initWithDictionary:dict:dict1:capturedBarcode];
-         
+           
         //post to parse  
         [Scan postScan: product withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
             if(error) {

@@ -60,19 +60,18 @@
 
         self.containsLabel.text = uppercase; 
     }
-    
+      
     
     //profile image
-    NSString *URLString = self.product.image;  
-    NSURL *url = [NSURL URLWithString:URLString];
-    NSData *urlData = [NSData dataWithContentsOfURL:url];
+     
+    PFFileObject *file = self.product.image;
+    [file getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
 
-    if (urlData.length != 0) {
-        self.imageView.image = nil;
-        self.imageView.image = [UIImage imageWithData: urlData];
-    }
+       self.imageView.image = [UIImage imageWithData:data];
+   }];
+    //self.imageView.file = self.product.image;
     
-    //open food facts
+    //open food facts 
     //nova
     if(self.product.nova.longValue ==1) {
         self.novaImage.image = [UIImage imageNamed:@"nova 1"];

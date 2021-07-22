@@ -6,6 +6,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Scan.h"
+#import <Parse/ParseUIConstants.h>
+#import <Parse/PFInstallation.h>
+#import <Parse/Parse.h>
+#import <Parse/PFImageView.h>
+
+@class Scan; 
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -14,12 +21,12 @@ NS_ASSUME_NONNULL_BEGIN
 // MARK: Properties
 @property (nonatomic, strong) NSString *upc; 
 
-@property (nonatomic, strong) NSString *image;  
+@property (nonatomic, strong) PFFileObject *image;   
 @property (nonatomic, strong) NSNumber *rating;
 @property (nonatomic, strong) NSNumber *safetyRating; 
 @property (nonatomic, strong) NSString *nutriscore;
 @property (nonatomic, strong) NSNumber *nova;
-@property (nonatomic, strong) NSArray *novaGroup; 
+@property (nonatomic, strong) NSArray *novaGroup;
 
 @property (nonatomic, strong) NSNumber *itemID;
 
@@ -39,8 +46,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 //methods
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary :(NSDictionary *)openFoodFacts :(NSString *)upc;
-
-
+- (instancetype)initWithScan:(Scan *) scan;
+- (PFFileObject *)getPFFileFromImage: (UIImage * _Nullable)image ;
+ 
 @end
 
 NS_ASSUME_NONNULL_END

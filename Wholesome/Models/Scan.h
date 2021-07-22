@@ -6,7 +6,13 @@
 //
 
 #import <Parse/Parse.h>
-#import "Product.h" 
+#import "Product.h"
+#import <Parse/ParseUIConstants.h>
+#import <Parse/PFInstallation.h>
+#import <Parse/Parse.h>
+#import <Parse/PFImageView.h>
+
+@class Product; 
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -18,7 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong) NSString *upc;
 
-@property (nonatomic, strong) NSURL *image;
+@property (nonatomic, strong) PFFileObject *image; 
 @property (nonatomic, strong) NSNumber *rating;
 @property (nonatomic, strong) NSNumber *safetyRating;
 @property (nonatomic, strong) NSString *nutriscore;
@@ -43,7 +49,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (void) postScan: (Product *) product withCompletion: (PFBooleanResultBlock  _Nullable)completion;
 + (PFFileObject *)getPFFileFromImage: (UIImage * _Nullable)image;
-
+ 
 @end
 
 NS_ASSUME_NONNULL_END
