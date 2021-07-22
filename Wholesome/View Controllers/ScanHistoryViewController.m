@@ -12,18 +12,24 @@
 #import <Parse/PFImageView.h>
 #import "Scan.h"
 #import "ScanCell.h"
+#import "ReportViewController.h"
 
 @interface ScanHistoryViewController () <UICollectionViewDataSource, UICollectionViewDelegate, UICollisionBehaviorDelegate>
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
  
 @property (nonatomic, strong) NSMutableArray *scans; //stores scans
-    
+@property (nonatomic, strong) Product *product; //stores scans
+     
 @end
  
 @implementation ScanHistoryViewController
+- (IBAction)didTapProduct:(id)sender {
+    [self performSegueWithIdentifier:@"toReportHistory" sender:self];
+} 
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     // Do any additional setup after loading the view.
     self.collectionView.dataSource = self;
     self.collectionView.delegate = self;
@@ -84,7 +90,8 @@
     ScanCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"ScanCell" forIndexPath:indexPath];
     
     Scan *scan = self.scans[indexPath.row];
-    cell.product = [[Product alloc] initWithScan: scan];
+    self.product =[[Product alloc] initWithScan: scan];
+    cell.product = self.product;
     
     
     PFFileObject *file = cell.product.image;
@@ -98,7 +105,7 @@
     return cell;
 }
 
-//layout for collection view  
+//layout for collection view
 -(CGSize) collectionView:(UICollectionView *) collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(nonnull NSIndexPath *)indexPath{
   
     return CGSizeMake((CGRectGetWidth(collectionView.frame))/2.0,
@@ -109,14 +116,28 @@
     return self.scans.count;
 } 
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    
+    if ([[segue identifier] isEqualToString:@"toReportHistory"]){
+        //report details segue 
+         
+        UICollectionViewCell *tappedCell = sender;
+        NSIndexPath *indexPath = [self.collectionView indexPathForCell:tappedCell];
+         
+        Product *product = [[Product alloc] initWithScan: self.scans[indexPath.row]];
+        
+        ReportViewController *reportView = [segue destinationViewController];
+        
+        reportView.product = product;
+        
+    }
 }
-*/
+
 
 @end

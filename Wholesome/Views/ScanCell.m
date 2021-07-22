@@ -12,7 +12,9 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
      
-}  
+}
+
+ 
 
 //set up
 - (void)setProduct:(Product *)product{

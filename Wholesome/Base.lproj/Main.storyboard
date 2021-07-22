@@ -216,7 +216,7 @@
                                     <imageReference key="image" image="greetingcard" catalog="system" symbolScale="large"/>
                                 </state>
                                 <connections>
-                                    <segue destination="sNF-FP-RJv" kind="presentation" id="Liu-UY-5QG"/>
+                                    <segue destination="sNF-FP-RJv" kind="show" id="Liu-UY-5QG"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -238,9 +238,9 @@
         <!--Scan History View Controller-->
         <scene sceneID="1tk-oU-OP9">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="sNF-FP-RJv" customClass="ScanHistoryViewController" sceneMemberID="viewController">
+                <viewController id="sNF-FP-RJv" customClass="ScanHistoryViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="llf-N7-eBO">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="OJx-AT-u8h">
@@ -265,12 +265,15 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="184" height="187"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <gestureRecognizers/>
                                                 </imageView>
                                             </subviews>
                                         </collectionViewCellContentView>
+                                        <gestureRecognizers/>
                                         <size key="customSize" width="184" height="187"/>
                                         <connections>
-                                            <outlet property="imageView" destination="dun-f7-dJ5" id="QcT-ay-Rs7"/>
+                                            <outlet property="imageView" destination="dun-f7-dJ5" id="te8-aS-yOh"/>
+                                            <segue destination="gS5-Yg-Wzy" kind="presentation" identifier="toReportHistory" id="rVZ-fc-UXY"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -290,6 +293,7 @@
                         <viewLayoutGuide key="safeArea" id="MqS-nR-uvL"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
+                    <navigationItem key="navigationItem" id="WCN-fZ-aHo"/>
                     <connections>
                         <outlet property="collectionView" destination="OJx-AT-u8h" id="f4v-MJ-zV5"/>
                     </connections>
@@ -662,6 +666,9 @@
             <point key="canvasLocation" x="2602" y="-211"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="rVZ-fc-UXY"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="Image" width="50.666667938232422" height="50.666667938232422"/>
         <image name="Image-1" width="22" height="19.333333969116211"/>
