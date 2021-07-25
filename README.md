@@ -52,7 +52,7 @@ The ingredient scanner lets the user scan a barcode of any item at the store or 
 * User can see rating of the product by other customers
 
 *Settings*
-* Settings (Accesibility, Notification, General, etc.)
+* Settings (Change profile picture) 
 
 **Optional Nice-to-have Stories**
 
