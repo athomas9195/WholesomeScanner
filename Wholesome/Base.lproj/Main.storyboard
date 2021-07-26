@@ -90,6 +90,96 @@
             </objects>
             <point key="canvasLocation" x="-404.61538461538458" y="-41.232227488151658"/>
         </scene>
+        <!--Category Detail View Controller-->
+        <scene sceneID="Foi-bA-Iaf">
+            <objects>
+                <viewController id="Zke-dV-J9Z" customClass="CategoryDetailViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="c0W-Kz-hss">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sW1-4u-GYB">
+                                <rect key="frame" x="0.0" y="77" width="390" height="713"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="390" id="gEE-wa-u1F"/>
+                                </constraints>
+                                <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="FoodCell" rowHeight="83" id="LI4-tD-HMM" customClass="FoodCell">
+                                        <rect key="frame" x="0.0" y="24.333333969116211" width="390" height="83"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="LI4-tD-HMM" id="qjG-29-uD3">
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="83"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="srz-NQ-WHD">
+                                                    <rect key="frame" x="20" y="31" width="296" height="22"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="22" id="1WP-PL-d0N"/>
+                                                        <constraint firstAttribute="width" constant="276" id="8yj-Ha-Glo"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wkb-ey-3Jb">
+                                                    <rect key="frame" x="349" y="24" width="24.333333333333314" height="36"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="36" id="TOc-1c-avm"/>
+                                                        <constraint firstAttribute="width" constant="24.329999999999998" id="rfn-ou-mY3"/>
+                                                    </constraints>
+                                                    <state key="normal">
+                                                        <color key="titleColor" systemColor="systemGreenColor"/>
+                                                        <imageReference key="image" image="checkmark.circle" catalog="system" symbolScale="large"/>
+                                                    </state>
+                                                    <state key="selected">
+                                                        <imageReference key="image" image="checkmark.circle.fill" catalog="system" symbolScale="large"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="didSelectItem:" destination="LI4-tD-HMM" eventType="touchUpInside" id="n2O-YU-xlO"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstItem="srz-NQ-WHD" firstAttribute="top" secondItem="qjG-29-uD3" secondAttribute="top" constant="31" id="BK6-Vk-86d"/>
+                                                <constraint firstAttribute="bottom" secondItem="srz-NQ-WHD" secondAttribute="bottom" constant="30" id="Kx6-m8-Kxc"/>
+                                                <constraint firstAttribute="trailing" secondItem="wkb-ey-3Jb" secondAttribute="trailing" constant="16.670000000000002" id="OWd-5U-hmy"/>
+                                                <constraint firstAttribute="bottom" secondItem="wkb-ey-3Jb" secondAttribute="bottom" constant="23" id="Rj0-ag-5bw"/>
+                                                <constraint firstItem="wkb-ey-3Jb" firstAttribute="top" secondItem="qjG-29-uD3" secondAttribute="top" constant="24" id="UaB-tX-n1K"/>
+                                                <constraint firstAttribute="trailing" secondItem="wkb-ey-3Jb" secondAttribute="trailing" constant="16.670000000000002" id="VMV-vQ-LjK"/>
+                                                <constraint firstItem="wkb-ey-3Jb" firstAttribute="leading" secondItem="srz-NQ-WHD" secondAttribute="trailing" constant="33" id="qVf-Vh-36p"/>
+                                                <constraint firstItem="srz-NQ-WHD" firstAttribute="leading" secondItem="qjG-29-uD3" secondAttribute="leading" constant="20" id="qnG-Hl-AI8"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" red="0.5729626417" green="0.52773392200000002" blue="0.6470781565" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <connections>
+                                            <outlet property="foodLabel" destination="srz-NQ-WHD" id="ce8-3a-YLy"/>
+                                            <outlet property="selectButton" destination="wkb-ey-3Jb" id="TsC-Pz-TEq"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="FMb-7Y-FGw"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="sW1-4u-GYB" firstAttribute="top" secondItem="FMb-7Y-FGw" secondAttribute="top" constant="77" id="H1c-5I-He4"/>
+                            <constraint firstAttribute="bottom" secondItem="sW1-4u-GYB" secondAttribute="bottom" id="Ql4-eo-K5l"/>
+                            <constraint firstItem="sW1-4u-GYB" firstAttribute="leading" secondItem="FMb-7Y-FGw" secondAttribute="leading" id="o5p-NX-eTS"/>
+                            <constraint firstItem="sW1-4u-GYB" firstAttribute="trailing" secondItem="FMb-7Y-FGw" secondAttribute="trailing" id="oV9-Ik-sRp"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="sW1-4u-GYB" id="k7X-Zh-Lhw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ybZ-OD-suv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="104.61538461538461" y="681.75355450236964"/>
+        </scene>
         <!--Profile View Controller-->
         <scene sceneID="jfa-Yb-92B">
             <objects>
@@ -150,18 +240,34 @@
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Image-7" translatesAutoresizingMaskIntoConstraints="NO" id="HhA-PV-kAG">
                                                         <rect key="frame" x="8" y="0.0" width="182" height="220"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <gestureRecognizers/>
+                                                        <connections>
+                                                            <outletCollection property="gestureRecognizers" destination="YAZ-iX-RSd" appends="YES" id="Dah-D6-skO"/>
+                                                        </connections>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Image-8" translatesAutoresizingMaskIntoConstraints="NO" id="491-Rn-XMl">
                                                         <rect key="frame" x="198" y="0.0" width="182" height="220"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <gestureRecognizers/>
+                                                        <connections>
+                                                            <outletCollection property="gestureRecognizers" destination="IW3-zp-kHU" appends="YES" id="xEr-eE-JSN"/>
+                                                        </connections>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Image-9" translatesAutoresizingMaskIntoConstraints="NO" id="fCC-hn-qGl">
                                                         <rect key="frame" x="8" y="228" width="182" height="220"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <gestureRecognizers/>
+                                                        <connections>
+                                                            <outletCollection property="gestureRecognizers" destination="R1d-oL-Otp" appends="YES" id="vcE-zT-ESh"/>
+                                                        </connections>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Image-10" translatesAutoresizingMaskIntoConstraints="NO" id="TvH-Lg-nwn">
                                                         <rect key="frame" x="198" y="228" width="182" height="220"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <gestureRecognizers/>
+                                                        <connections>
+                                                            <outletCollection property="gestureRecognizers" destination="Wwo-23-Oqo" appends="YES" id="Gon-Wm-d8n"/>
+                                                        </connections>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Image-7" translatesAutoresizingMaskIntoConstraints="NO" id="NIz-xQ-g2q">
                                                         <rect key="frame" x="8" y="456" width="182" height="220"/>
@@ -219,15 +325,16 @@
                                     <segue destination="sNF-FP-RJv" kind="show" id="Liu-UY-5QG"/>
                                 </connections>
                             </button>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kca-mL-yd0">
-                                <rect key="frame" x="0.0" y="19" width="390" height="44"/>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wHJ-PL-Rex">
+                                <rect key="frame" x="0.0" y="30" width="390" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <items>
-                                    <navigationItem id="jpp-az-QFR">
-                                        <barButtonItem key="rightBarButtonItem" title="Logout" id="adx-HY-68k">
+                                    <navigationItem id="56f-Zq-GZz">
+                                        <barButtonItem key="rightBarButtonItem" title="Logout" id="mQt-w1-qrj">
                                             <color key="tintColor" red="0.5729626417" green="0.52773392200000002" blue="0.6470781565" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <connections>
-                                                <action selector="didTapLogout:" destination="ncs-RX-o2S" id="xfB-lK-R8I"/>
+                                                <action selector="didTapLogout:" destination="ncs-RX-o2S" id="qRp-XW-TZg"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -245,10 +352,37 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="iconmonstr-user-male-thin-96" id="79o-tW-pR6"/>
                     <connections>
-                        <outlet property="logoutButton" destination="adx-HY-68k" id="R3C-Vz-F1u"/>
+                        <outlet property="additives" destination="fCC-hn-qGl" id="dBY-Gm-PTJ"/>
+                        <outlet property="allergies" destination="HhA-PV-kAG" id="BSx-a5-hD2"/>
+                        <outlet property="health" destination="491-Rn-XMl" id="kMt-W3-3FW"/>
+                        <outlet property="sweeteners" destination="TvH-Lg-nwn" id="FTT-Mq-X57"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v6H-aV-ehz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="YAZ-iX-RSd">
+                    <connections>
+                        <action selector="didTapAllergies:" destination="ncs-RX-o2S" id="8b0-U1-fvL"/>
+                        <segue destination="Zke-dV-J9Z" kind="presentation" identifier="toAllergies" id="TC6-u8-ALS"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="IW3-zp-kHU">
+                    <connections>
+                        <action selector="didTapHealth:" destination="ncs-RX-o2S" id="QfN-p3-Mna"/>
+                        <segue destination="Zke-dV-J9Z" kind="presentation" identifier="toHealth" id="IfX-OX-Pig"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="R1d-oL-Otp">
+                    <connections>
+                        <action selector="didTapAdditives:" destination="ncs-RX-o2S" id="CgI-tR-fEp"/>
+                        <segue destination="Zke-dV-J9Z" kind="presentation" identifier="toAdditives" id="oNZ-Pm-aGY"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="Wwo-23-Oqo">
+                    <connections>
+                        <action selector="didTapSweeteners:" destination="ncs-RX-o2S" id="2eh-hS-CjP"/>
+                        <segue destination="Zke-dV-J9Z" kind="presentation" identifier="toSweeteners" id="yp8-Un-ViM"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1147.6923076923076" y="416.58767772511845"/>
         </scene>
@@ -685,6 +819,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="rVZ-fc-UXY"/>
+        <segue reference="yp8-Un-ViM"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Image" width="50.666667938232422" height="50.666667938232422"/>
@@ -700,6 +835,8 @@
         <image name="Image-8" width="118" height="140.66667175292969"/>
         <image name="Image-9" width="118" height="140.66667175292969"/>
         <image name="almonds" width="400" height="400"/>
+        <image name="checkmark.circle" catalog="system" width="128" height="121"/>
+        <image name="checkmark.circle.fill" catalog="system" width="128" height="121"/>
         <image name="greetingcard" catalog="system" width="107" height="128"/>
         <image name="iconmonstr-refresh-4-96" width="32" height="32"/>
         <image name="iconmonstr-user-male-thin-96" width="32" height="32"/>
@@ -710,6 +847,9 @@
         </namedColor>
         <systemColor name="opaqueSeparatorColor">
             <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemPurpleColor">
             <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

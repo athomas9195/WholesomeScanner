@@ -12,6 +12,8 @@
 		0B9A702826A8D64200469D20 /* API.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B9A702726A8D64200469D20 /* API.m */; };
 		0B9A702B26A9534400469D20 /* ScanHistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B9A702A26A9534400469D20 /* ScanHistoryViewController.m */; };
 		0B9A702F26A955A800469D20 /* ScanCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B9A702E26A955A800469D20 /* ScanCell.m */; };
+		0B9A703226ACEDD600469D20 /* CategoryDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B9A703126ACEDD600469D20 /* CategoryDetailViewController.m */; };
+		0B9A703526ACF3CF00469D20 /* FoodCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B9A703426ACF3CF00469D20 /* FoodCell.m */; };
 		0BF66F1F269D8B9D007BE9F2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BF66F1E269D8B9D007BE9F2 /* AppDelegate.m */; };
 		0BF66F22269D8B9D007BE9F2 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BF66F21269D8B9D007BE9F2 /* SceneDelegate.m */; };
 		0BF66F28269D8B9D007BE9F2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BF66F26269D8B9D007BE9F2 /* Main.storyboard */; };
@@ -61,6 +63,10 @@
 		0B9A702A26A9534400469D20 /* ScanHistoryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScanHistoryViewController.m; sourceTree = "<group>"; };
 		0B9A702D26A955A800469D20 /* ScanCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScanCell.h; sourceTree = "<group>"; };
 		0B9A702E26A955A800469D20 /* ScanCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScanCell.m; sourceTree = "<group>"; };
+		0B9A703026ACEDD600469D20 /* CategoryDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CategoryDetailViewController.h; sourceTree = "<group>"; };
+		0B9A703126ACEDD600469D20 /* CategoryDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CategoryDetailViewController.m; sourceTree = "<group>"; };
+		0B9A703326ACF3CF00469D20 /* FoodCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FoodCell.h; sourceTree = "<group>"; };
+		0B9A703426ACF3CF00469D20 /* FoodCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FoodCell.m; sourceTree = "<group>"; };
 		0BF66F1A269D8B9C007BE9F2 /* Wholesome.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wholesome.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BF66F1D269D8B9D007BE9F2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		0BF66F1E269D8B9D007BE9F2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -133,6 +139,8 @@
 			children = (
 				0B9A702D26A955A800469D20 /* ScanCell.h */,
 				0B9A702E26A955A800469D20 /* ScanCell.m */,
+				0B9A703326ACF3CF00469D20 /* FoodCell.h */,
+				0B9A703426ACF3CF00469D20 /* FoodCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -215,6 +223,8 @@
 				0B9A702126A761CD00469D20 /* PieChartViewController.m */,
 				0B9A702926A9534400469D20 /* ScanHistoryViewController.h */,
 				0B9A702A26A9534400469D20 /* ScanHistoryViewController.m */,
+				0B9A703026ACEDD600469D20 /* CategoryDetailViewController.h */,
+				0B9A703126ACEDD600469D20 /* CategoryDetailViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -501,6 +511,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0BF66F1F269D8B9D007BE9F2 /* AppDelegate.m in Sources */,
+				0B9A703226ACEDD600469D20 /* CategoryDetailViewController.m in Sources */,
 				0BF66F5B269FD5BC007BE9F2 /* ScanViewController.m in Sources */,
 				0B9A701F26A7616800469D20 /* XYPieChart.m in Sources */,
 				0BF66F30269D8B9E007BE9F2 /* main.m in Sources */,
@@ -512,6 +523,7 @@
 				0BF66F55269D923F007BE9F2 /* LoginViewController.m in Sources */,
 				0BF66F6E26A010C7007BE9F2 /* Scan.m in Sources */,
 				0B9A702226A761CD00469D20 /* PieChartViewController.m in Sources */,
+				0B9A703526ACF3CF00469D20 /* FoodCell.m in Sources */,
 				0BF66F58269E5866007BE9F2 /* ProfileViewController.m in Sources */,
 				0B9A702B26A9534400469D20 /* ScanHistoryViewController.m in Sources */,
 			);

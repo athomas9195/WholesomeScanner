@@ -19,6 +19,7 @@
  
 @property (nonatomic, strong) NSMutableArray *scans; //stores scans
 @property (nonatomic, strong) Product *product; //stores scans
+
      
 @end
  
@@ -41,7 +42,8 @@
      
     layout.minimumLineSpacing = 0;
     layout.minimumInteritemSpacing =0;
-     
+    
+ 
 }
 
 //resizes the given image
