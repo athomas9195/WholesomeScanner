@@ -49,10 +49,10 @@ The ingredient scanner lets the user scan a barcode of any item at the store or 
 * User sees "bad" ingredients 
 * User sees "good" ingredients  
 * In the report, user can select from similar product recommendations with similar and safer products or similar and cheaper products 
-* User can rate and review the product after purchasing 
+* User can see rating of the product by other customers
 
 *Settings*
-* Settings (Accesibility, Notification, General, etc.)
+* Settings (Change profile picture) 
 
 **Optional Nice-to-have Stories**
 
