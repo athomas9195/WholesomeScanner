@@ -18,6 +18,7 @@ target 'Wholesome' do
     pod 'Charts'
     pod 'Firebase/Auth'
     pod 'Firebase/Firestore'
+    pod 'Firebase/Functions'
 
   target 'WholesomeTests' do
     inherit! :search_paths

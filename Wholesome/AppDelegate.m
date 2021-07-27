@@ -7,13 +7,14 @@
 
 #import "AppDelegate.h"
 #import "Parse/Parse.h"
+@import Firebase;
 
 @interface AppDelegate ()
 
 @end
 
 @implementation AppDelegate
-
+ 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
@@ -25,6 +26,9 @@
     }];
 
     [Parse initializeWithConfiguration:config];
+    
+    // Use Firebase library to configure APIs
+    [FIRApp configure];
 
     return YES;
 }
