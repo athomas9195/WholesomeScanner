@@ -14,6 +14,7 @@
 		0B9A702F26A955A800469D20 /* ScanCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B9A702E26A955A800469D20 /* ScanCell.m */; };
 		0B9A703226ACEDD600469D20 /* CategoryDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B9A703126ACEDD600469D20 /* CategoryDetailViewController.m */; };
 		0B9A703526ACF3CF00469D20 /* FoodCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B9A703426ACF3CF00469D20 /* FoodCell.m */; };
+		0BF5CD7926AFBEC400B9B2B1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0BF5CD7826AFBEC400B9B2B1 /* GoogleService-Info.plist */; };
 		0BF66F1F269D8B9D007BE9F2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BF66F1E269D8B9D007BE9F2 /* AppDelegate.m */; };
 		0BF66F22269D8B9D007BE9F2 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BF66F21269D8B9D007BE9F2 /* SceneDelegate.m */; };
 		0BF66F28269D8B9D007BE9F2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BF66F26269D8B9D007BE9F2 /* Main.storyboard */; };
@@ -67,6 +68,7 @@
 		0B9A703126ACEDD600469D20 /* CategoryDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CategoryDetailViewController.m; sourceTree = "<group>"; };
 		0B9A703326ACF3CF00469D20 /* FoodCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FoodCell.h; sourceTree = "<group>"; };
 		0B9A703426ACF3CF00469D20 /* FoodCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FoodCell.m; sourceTree = "<group>"; };
+		0BF5CD7826AFBEC400B9B2B1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0BF66F1A269D8B9C007BE9F2 /* Wholesome.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wholesome.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BF66F1D269D8B9D007BE9F2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		0BF66F1E269D8B9D007BE9F2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 		0BF66F1C269D8B9C007BE9F2 /* Wholesome */ = {
 			isa = PBXGroup;
 			children = (
+				0BF5CD7826AFBEC400B9B2B1 /* GoogleService-Info.plist */,
 				0B9A702C26A9559500469D20 /* Views */,
 				0B9A701D26A7616800469D20 /* XYPieChart.h */,
 				0B9A701E26A7616800469D20 /* XYPieChart.m */,
@@ -381,6 +384,7 @@
 			files = (
 				0BF66F7A26A02163007BE9F2 /* Keys.plist in Resources */,
 				0BF66F2D269D8B9E007BE9F2 /* LaunchScreen.storyboard in Resources */,
+				0BF5CD7926AFBEC400B9B2B1 /* GoogleService-Info.plist in Resources */,
 				0BF66F2A269D8B9E007BE9F2 /* Assets.xcassets in Resources */,
 				0BF66F28269D8B9D007BE9F2 /* Main.storyboard in Resources */,
 			);

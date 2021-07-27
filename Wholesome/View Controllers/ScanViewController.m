@@ -23,6 +23,7 @@ static Product *product;
 
 @property (nonatomic, strong) AVCaptureSession *captureSession;
 @property (nonatomic, strong) AVCaptureVideoPreviewLayer *captureLayer;
+@property (strong, nonatomic) AVCapturePhotoOutput *stillImageOutput;
 
 //@property (nonatomic, strong) Product *product;
 @property (nonatomic, strong) NSDictionary *nutritionixDict;
@@ -72,13 +73,15 @@ static Product *product;
 - (void)setupScanningSession {
     // Initalising hte Capture session before doing any video capture/scanning.
     self.captureSession = [[AVCaptureSession alloc] init];
+    [self.captureSession setSessionPreset:AVCaptureSessionPreset640x480];  
     
     NSError *error;
     // Set camera capture device to default and the media type to video.
     AVCaptureDevice *captureDevice = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
     // Set video capture input: If there a problem initialising the camera, it will give am error.
     AVCaptureDeviceInput *input = [AVCaptureDeviceInput deviceInputWithDevice:captureDevice error:&error];
-    
+
+        
     if (!input) {
         NSLog(@"Error Getting Camera Input");
         return;
@@ -90,6 +93,12 @@ static Product *product;
     // Set output to capture session. Initalising an output object we will use later.
     [self.captureSession addOutput:captureMetadataOutput];
     
+    // Prepare an output for snapshotting CLOUD VISION INPUT SETUP
+    self.stillImageOutput = [AVCapturePhotoOutput new];
+    [self.captureSession addOutput:self.stillImageOutput];
+    //self.stillImageOutput.outputSettings = @{AVVideoCodecKey: AVVideoCodecJPEG};
+
+     
     // Create a new queue and set delegate for metadata objects scanned.
     dispatch_queue_t dispatchQueue;
     dispatchQueue = dispatch_queue_create("scanQueue", NULL);
@@ -103,6 +112,26 @@ static Product *product;
     [self.captureLayer setFrame:self.cameraPreviewView.layer.bounds];
     // Adding the camera AVCaptureVideoPreviewLayer to our view's layer.
     [self.cameraPreviewView.layer addSublayer:self.captureLayer];
+}
+- (IBAction)didTakePhoto:(id)sender {
+    AVCapturePhotoSettings *settings = [AVCapturePhotoSettings photoSettingsWithFormat:@{AVVideoCodecKey: AVVideoCodecTypeJPEG}];
+
+    [self.stillImageOutput capturePhotoWithSettings:settings delegate:self];
+} 
+
+- (void)captureOutput:(AVCapturePhotoOutput *)output didFinishProcessingPhoto:(AVCapturePhoto *)photo error:(nullable NSError *)error
+{
+     
+    if (error) {
+        NSLog(@"error : %@", error.localizedDescription);
+    }
+
+    if (photo) {
+        NSData *imageData = [photo fileDataRepresentation];
+        UIImage *image = [UIImage imageWithData:imageData];
+        NSLog(@"%@", @"got the pic");
+    }
+    
 }
 
 // AVCaptureMetadataOutputObjectsDelegate method
