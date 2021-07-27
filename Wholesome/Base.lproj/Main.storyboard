@@ -464,19 +464,6 @@
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="m4d-pt-F7T">
                                 <rect key="frame" x="0.0" y="0.0" width="390" height="761"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wJR-yi-rg0">
-                                        <rect key="frame" x="183" y="704" width="25" height="24"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="tintColor" red="0.48244726770000002" green="0.2547401239" blue="0.63832677979999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <state key="normal">
-                                            <imageReference key="image" image="camera.aperture" catalog="system" symbolScale="large"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="didTakePhoto:" destination="q4Q-bn-dXR" eventType="touchUpInside" id="f8b-WQ-Gpm"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
                                 <color key="backgroundColor" systemColor="systemPurpleColor"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qb6-xX-k3L">
@@ -487,6 +474,17 @@
                                 </state>
                                 <connections>
                                     <action selector="rescanButtonPressed:" destination="q4Q-bn-dXR" eventType="touchUpInside" id="DJO-gn-Jd3"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wJR-yi-rg0">
+                                <rect key="frame" x="184" y="700" width="25" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" red="0.48244726770000002" green="0.2547401239" blue="0.63832677979999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal">
+                                    <imageReference key="image" image="camera.aperture" catalog="system" symbolScale="large"/>
+                                </state>
+                                <connections>
+                                    <action selector="didTakePhoto:" destination="q4Q-bn-dXR" eventType="touchUpInside" id="f8b-WQ-Gpm"/>
                                 </connections>
                             </button>
                         </subviews>

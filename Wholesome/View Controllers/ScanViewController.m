@@ -16,6 +16,7 @@
 #import <Parse/PFInstallation.h> 
 #import <Parse/PFImageView.h>
 static Product *product;
+static NSArray *labelArray;
 
 @interface ScanViewController () <AVCaptureMetadataOutputObjectsDelegate> 
 @property (weak, nonatomic) IBOutlet UIView *cameraPreviewView;
@@ -28,6 +29,7 @@ static Product *product;
 //@property (nonatomic, strong) Product *product;
 @property (nonatomic, strong) NSDictionary *nutritionixDict;
 @property (nonatomic, strong) NSDictionary *foodFactsDict;
+@property (nonatomic, strong) NSArray *foodLabels;
 
 
 
@@ -128,10 +130,18 @@ static Product *product;
 
     if (photo) {
         NSData *imageData = [photo fileDataRepresentation];
-        UIImage *image = [UIImage imageWithData:imageData];
-        NSLog(@"%@", @"got the pic");
+        UIImage *image1 = [UIImage imageWithData:imageData];
+           
+        NSData *newImageData = UIImageJPEGRepresentation(image1, 1.0f);
+        NSString *base64encodedImage =
+          [newImageData base64EncodedStringWithOptions:NSDataBase64Encoding76CharacterLineLength];
+       [API getLabels:base64encodedImage completion:^(NSArray * arr, NSError * _Nonnull error) {
+           if(arr) {
+               NSLog(@"%@", arr);
+           } 
+       }];
     }
-    
+     
 }
 
 // AVCaptureMetadataOutputObjectsDelegate method
@@ -237,6 +247,12 @@ static Product *product;
          
 }
 
+//update the data once the async api call returns
++(void)updateData:(NSArray *) labels {
+    labelArray = labels;
+           
+}
+
 //activate the report segue to display report view
 -(void)reportSegue {
     
@@ -244,6 +260,11 @@ static Product *product;
         [self performSegueWithIdentifier:@"toReport" sender:self];
         product = nil;
     }
+    
+    if(labelArray != nil) {
+        NSLog(@"%@", labelArray);
+    }
+    
 }
  
 

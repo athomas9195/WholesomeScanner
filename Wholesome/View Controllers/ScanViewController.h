@@ -10,7 +10,8 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ScanViewController : UIViewController
-+(void)updateData:(NSDictionary *) dict : (NSDictionary *) dict1 : (NSString *)capturedBarcode; 
++(void)updateData:(NSDictionary *) dict : (NSDictionary *) dict1 : (NSString *)capturedBarcode;
++(void)updateData:(NSArray *) labels; 
 @end
 
 NS_ASSUME_NONNULL_END

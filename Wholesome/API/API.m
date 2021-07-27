@@ -9,6 +9,11 @@
 #import "Product.h"
 #import <Foundation/Foundation.h>
 #import "ScanViewController.h"
+#import <Firebase/Firebase.h>
+#import <FirebaseFunctions/FIRFunctions.h>
+#import <FirebaseFunctions/FIRHTTPSCallable.h>
+#import <FirebaseFunctions/FIRError.h>
+@import Firebase;
 
 static NSString * const baseURLString = @"https://trackapi.nutritionix.com/v2/search/item?upc=";
 static NSString * const newBase = @"https://us.openfoodfacts.org/api/v0/product/";
@@ -17,7 +22,9 @@ static NSDictionary *headers; //stores the headers like app id and key
 static NSString *appID;
 static NSString *appKey;
 static NSDictionary *foodFactsDict; //stores the dict from open food facts
-
+static FIRFunctions *functions;
+static NSMutableArray *foodLabels;
+  
 @implementation API
 
 //retrieves item info from Nutritionix (ingredients, item name, brand, and nutrition info).
@@ -115,6 +122,48 @@ static NSDictionary *foodFactsDict; //stores the dict from open food facts
    [newDataTask resume];
      
     return foodFactsDict;
+}
+
+//retrieves item info from Open Food Facts
++ (NSArray*)getLabels:(NSString *)encodedImage completion:(void(^)(NSArray *arr, NSError *error))completion {
+    
+    NSDictionary *requestData = @{
+      @"image": @{@"content": encodedImage},
+      @"features": @{@"maxResults": @5, @"type": @"LABEL_DETECTION"}
+    };
+
+    
+    [[functions HTTPSCallableWithName:@"annotateImage"]
+                              callWithObject:requestData
+                                  completion:^(FIRHTTPSCallableResult * _Nullable result, NSError * _Nullable error) {
+        if (error) {
+              if (error.domain == FIRFunctionsErrorDomain) {
+               // FIRFunctionsErrorCode code = error.code;
+                NSString *message = error.localizedDescription;
+               // NSObject *details = error.userInfo[FIRFunctionsErrorDetailsKey];
+                  NSLog(@"%@", message);
+              }
+            
+        } else {
+                // Function completed succesfully
+                // Get information about labeled objects
+                NSArray *labelArray = result.data[@"labelAnnotations"];
+              
+                for (NSDictionary *labelObj in labelArray) {
+                      NSString *text = labelObj[@"description"];
+                      //NSString *entityId = labelObj[@"mid"];
+                      //NSNumber *confidence = labelObj[@"score"];
+                    [foodLabels addObject:text];
+                }
+            
+                [ScanViewController updateData:foodLabels];
+            
+                NSLog(@"%@", foodLabels);
+       
+           }
+    }];
+    
+    return foodLabels;
 }
  
 

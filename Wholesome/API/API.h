@@ -14,6 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (NSDictionary*)getItemWithUPC:(NSString *)upc completion:(void(^)(NSDictionary *dictComp, NSError *error))completion;
 + (NSDictionary*)getFoodFacts:(NSString *)upc completion:(void(^)(NSDictionary *dict, NSError *error))completion;
++ (NSArray*)getLabels:(NSString *)encodedImage completion:(void(^)(NSArray *arr, NSError *error))completion;
     
 
 @end
