@@ -30,7 +30,7 @@
     } else {
         NSMutableArray *itemArray = current[@"itemsToAvoid"];
         [itemArray insertObject:self.foodLabel.text atIndex:0];
-        current[@"itemsToAvoid"] = itemArray;    
+        current[@"itemsToAvoid"] = itemArray;  
     }
     
     [current saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {

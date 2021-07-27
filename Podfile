@@ -16,6 +16,8 @@ target 'Wholesome' do
     pod 'SVPullToRefresh'
     pod 'MBProgressHUD'
     pod 'Charts'
+    pod 'Firebase/Auth'
+    pod 'Firebase/Firestore'
 
   target 'WholesomeTests' do
     inherit! :search_paths
