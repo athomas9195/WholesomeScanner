@@ -226,11 +226,14 @@ NSString *const kFUNDefaultRegion = @"us-central1";
   if (!data) {
     data = [NSNull null];
   }
+    NSLog(@"%@", data); 
   id encoded = [_serializer encode:data];
   if (!encoded) {
     FUNThrowInvalidArgument(@"FIRFunctions data encoded as nil. This should not happen.");
   }
   body[@"data"] = encoded;
+    
+    NSLog(@"%@", encoded);
 
   NSError *error = nil;
   NSData *payload = [NSJSONSerialization dataWithJSONObject:body options:0 error:&error];

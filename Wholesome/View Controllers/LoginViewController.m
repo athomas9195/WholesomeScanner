@@ -8,6 +8,8 @@
 #import "LoginViewController.h"
 #import <Parse/Parse.h>
 
+@import Firebase;
+
 @interface LoginViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *usernameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
@@ -53,6 +55,21 @@
     }
  
     [self registerUser];
+    
+    [[FIRAuth auth] createUserWithEmail:self.usernameTextField.text
+                                 password:self.passwordTextField.text
+                               completion:^(FIRAuthDataResult * _Nullable authResult,
+                                            NSError * _Nullable error) {
+        
+        if (error) {
+            NSLog(@"%@", error.localizedDescription);
+            NSLog(@"%@", error.description);
+            NSLog(@"%@", error.userInfo[FIRAuthErrorDomain]);  
+            
+         }
+        
+      }];
+      // [END create_user]
 }
 
 //when user taps login
@@ -66,6 +83,17 @@
     }
     
     [self loginUser];
+    
+    [[FIRAuth auth] signInWithEmail:self-> _usernameTextField.text
+                            password:self->_passwordTextField.text
+                          completion:^(FIRAuthDataResult * _Nullable authResult,
+                                       NSError * _Nullable error) {
+        if (error) {
+            NSLog(@"%@", error.localizedDescription);
+         }
+     }];
+     // [END headless_email_auth]
+    
 }
 
 //display errors when user cannot login or signup

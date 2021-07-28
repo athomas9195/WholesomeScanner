@@ -15,12 +15,20 @@
 #import <Parse/ParseUIConstants.h>
 #import <Parse/PFInstallation.h> 
 #import <Parse/PFImageView.h>
+#import <Firebase/Firebase.h>
+#import <FirebaseFunctions/FIRFunctions.h>
+#import <FirebaseFunctions/FIRHTTPSCallable.h>
+#import <FirebaseFunctions/FIRError.h>
+@import Firebase;
 static Product *product;
 static NSArray *labelArray;
 
 @interface ScanViewController () <AVCaptureMetadataOutputObjectsDelegate> 
 @property (weak, nonatomic) IBOutlet UIView *cameraPreviewView;
 @property (weak, nonatomic) IBOutlet UIButton *rescanButton;
+
+@property(strong, nonatomic) FIRFunctions *functions;
+@property(strong, nonatomic) FIRAuthStateDidChangeListenerHandle handle;
 
 @property (nonatomic, strong) AVCaptureSession *captureSession;
 @property (nonatomic, strong) AVCaptureVideoPreviewLayer *captureLayer;
@@ -29,7 +37,7 @@ static NSArray *labelArray;
 //@property (nonatomic, strong) Product *product;
 @property (nonatomic, strong) NSDictionary *nutritionixDict;
 @property (nonatomic, strong) NSDictionary *foodFactsDict;
-@property (nonatomic, strong) NSArray *foodLabels;
+@property (nonatomic, strong) NSMutableArray *foodLabels;
 
 
 
@@ -46,9 +54,44 @@ static NSArray *labelArray;
     });
     [self setupScanningSession];
     [self.captureSession startRunning];
+//    self.functions = [FIRFunctions functionsForApp:];
     //timer for auto update for table view (can toggle)
+    
+//    self.functions = [FIRFunctions initWithProjectID:@"wholesome-321102":]
+//
+//    (instancetype)initWithProjectID:(NSString *)projectID
+//                               region:(NSString *)region
+//                         customDomain:(nullable NSString *)customDomain
+//                                 auth:(nullable id<FIRAuthInterop>)auth
+//                            messaging:(nullable id<FIRMessagingInterop>)messaging
+//                             appCheck:(nullable id<FIRAppCheckInterop>)appCheck
+//                       fetcherService:(GTMSessionFetcherService *)fetcherService
+//
+//
+    
+    self.functions = [FIRFunctions functions]; 
+    
    [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(reportSegue) userInfo:nil repeats:true];
 }
+
+- (void) viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    // [START auth_listener]
+    self.handle = [[FIRAuth auth]
+        addAuthStateDidChangeListener:^(FIRAuth *_Nonnull auth, FIRUser *_Nullable user) {
+          // ...
+        }];
+    
+    // [END auth_listener]
+    
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+  [super viewWillDisappear:animated];
+  // [START remove_auth_listener]
+  [[FIRAuth auth] removeAuthStateDidChangeListener:_handle];
+  // [END remove_auth_listener]
+} 
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
@@ -135,11 +178,48 @@ static NSArray *labelArray;
         NSData *newImageData = UIImageJPEGRepresentation(image1, 1.0f);
         NSString *base64encodedImage =
           [newImageData base64EncodedStringWithOptions:NSDataBase64Encoding76CharacterLineLength];
-       [API getLabels:base64encodedImage completion:^(NSArray * arr, NSError * _Nonnull error) {
-           if(arr) {
-               NSLog(@"%@", arr);
-           } 
-       }];
+//       [API getLabels:base64encodedImage completion:^(NSArray * arr, NSError * _Nonnull error) {
+//           if(arr) {
+//               NSLog(@"%@", arr);
+//           }
+//       }];
+        
+        NSDictionary *data = @{
+            @"image": @{@"content": base64encodedImage},
+          @"features": @{@"maxResults": @5, @"type": @"LABEL_DETECTION"}
+        };
+         
+     
+        [[self.functions HTTPSCallableWithName:@"annotateImage"]
+                                  callWithObject:data
+                                      completion:^(FIRHTTPSCallableResult * _Nullable result, NSError * _Nullable error) {
+            if (error) {
+                  if (error.domain == FIRFunctionsErrorDomain) {
+                   // FIRFunctionsErrorCode code = error.code;
+                    NSString *message = error.localizedDescription;
+                   // NSObject *details = error.userInfo[FIRFunctionsErrorDetailsKey];
+                      NSLog(@"error from firebase%@", message);
+                  }
+                
+            } else {
+                    // Function completed succesfully
+                    // Get information about labeled objects
+                    NSArray *labelArray = result.data[@"labelAnnotations"];
+                  
+                    for (NSDictionary *labelObj in labelArray) {
+                          NSString *text = labelObj[@"description"];
+                          //NSString *entityId = labelObj[@"mid"];
+                          //NSNumber *confidence = labelObj[@"score"];
+                        [self.foodLabels addObject:text];
+                    }
+              
+                 
+                    NSLog(@"%@", self.foodLabels);
+           
+               }
+        }];
+        
+        
     }
      
 }
@@ -247,11 +327,11 @@ static NSArray *labelArray;
          
 }
 
-//update the data once the async api call returns
-+(void)updateData:(NSArray *) labels {
-    labelArray = labels;
-           
-}
+////update the data once the async api call returns
+//+(void)updateData:(NSArray *) labels {
+//    labelArray = labels;
+//
+//}
 
 //activate the report segue to display report view
 -(void)reportSegue {
@@ -261,9 +341,9 @@ static NSArray *labelArray;
         product = nil;
     }
     
-    if(labelArray != nil) {
-        NSLog(@"%@", labelArray);
-    }
+//    if(labelArray != nil) {
+//        NSLog(@"%@", labelArray);
+//    }
     
 }
  

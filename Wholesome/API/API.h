@@ -8,6 +8,8 @@
 #import <Foundation/Foundation.h>
 #import "Product.h"
 
+@import Firebase; 
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface API : NSObject

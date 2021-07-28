@@ -156,8 +156,8 @@ static NSMutableArray *foodLabels;
                     [foodLabels addObject:text];
                 }
             
-                [ScanViewController updateData:foodLabels];
-            
+            //    [ScanViewController updateData:foodLabels];
+             
                 NSLog(@"%@", foodLabels);
        
            }
