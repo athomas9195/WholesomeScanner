@@ -43,6 +43,8 @@ static NSArray *labelArray;
 @property (nonatomic, strong) NSDictionary *foodFactsDict;
 @property (nonatomic, strong) NSMutableArray *foodLabels;
 
+@property (nonatomic, strong) NSString *prediction;
+ 
 //image classification data
 @property (nonatomic) unsigned long resultsCount;
 @property (retain, nonatomic) NSArray *results;
@@ -63,10 +65,7 @@ static NSArray *labelArray;
     });
     [self setupScanningSession];
     [self.captureSession startRunning];
-    
-    
-   // self.functions = [FIRFunctions functions];
-    
+ 
    [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(reportSegue) userInfo:nil repeats:true];
 }
 
@@ -178,8 +177,7 @@ static NSArray *labelArray;
 
 - (void)processImage:(UIImage*) image {
     
-//    CIImage *photo = image.CIImage;
-    CIImage* photo = [[CIImage alloc] initWithCGImage:image.CGImage];  
+    CIImage* photo = [[CIImage alloc] initWithCGImage:image.CGImage];
 
     MLModel *model = [[[Food101 alloc] init] model];
     VNCoreMLModel *m = [VNCoreMLModel modelForMLModel: model error:nil];
@@ -189,7 +187,8 @@ static NSArray *labelArray;
             self.results = [request.results copy];
             VNClassificationObservation *topResult = ((VNClassificationObservation *)(self.results[0]));
             float percent = topResult.confidence * 100;
-            self.resultsLabel.text = [NSString stringWithFormat: @"Confidence: %.f%@ %@", percent,@"%", topResult.identifier];
+            self.resultsLabel.text =[NSString stringWithFormat: @"Confidence: %.f%@ %@", percent,@"%", topResult.identifier];
+            self.prediction = topResult.identifier;
             [self reloadInputViews];
         });
     }];
@@ -201,7 +200,20 @@ static NSArray *labelArray;
     dispatch_async(dispatch_get_main_queue(), ^{
         [handler performRequests:reqArray error:nil];
     });
+    
      
+}
+
+//retrieves item info from APIs (ingredients, item name, brand, and nutrition info).
+- (void)searchForPrediction {
+ 
+    [API searchItems:self.prediction completion:^(NSDictionary * _Nonnull dictComp, NSError * _Nonnull error) {
+        if(error) {
+            NSLog(@"%@", error.localizedDescription);
+        } else  {
+            NSLog(@"%@", @"got the result");
+        }
+    }];
 }
 
 
@@ -305,8 +317,6 @@ static NSArray *labelArray;
     [API getFoodFacts:upc completion:^(NSDictionary * _Nonnull dict, NSError * _Nonnull error) {
         
     }];
- 
-    
 }
   
 
@@ -320,27 +330,21 @@ static NSArray *labelArray;
                 NSLog(@"%@", error.localizedDescription);
             }
         }];
-         
 }
-
-////update the data once the async api call returns
-//+(void)updateData:(NSArray *) labels {
-//    labelArray = labels;
-//
-//}
-
+ 
 //activate the report segue to display report view
 -(void)reportSegue {
+    
+    if(self.prediction != nil) {
+        [self searchForPrediction];
+        self.prediction = nil;
+        
+    }
     
     if(product != nil) {
         [self performSegueWithIdentifier:@"toReport" sender:self];
         product = nil;
-    }
-    
-//    if(labelArray != nil) {
-//        NSLog(@"%@", labelArray);
-//    }
-    
+    } 
 }
  
 
