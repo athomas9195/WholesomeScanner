@@ -332,6 +332,17 @@ static NSArray *labelArray;
             }
         }];
 }
+
+//update the data once the async api call returns
++(void)updateCommonFoodData:(NSDictionary *) dict {
+        product = [[Product alloc]initWithDictionary:dict]; 
+        //post to parse
+        [Scan postScan: product withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
+            if(error) {
+                NSLog(@"%@", error.localizedDescription);
+            }
+        }];
+}
  
 //activate the report segue to display report view
 -(void)reportSegue {
@@ -341,11 +352,11 @@ static NSArray *labelArray;
         self.prediction = nil;
         
     }
-    
+ 
     if(product != nil) {
         [self performSegueWithIdentifier:@"toReport" sender:self];
         product = nil;
-    } 
+    }  
 }
  
 

@@ -46,6 +46,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 //methods
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary :(NSDictionary *)openFoodFacts :(NSString *)upc;
+- (instancetype)initWithDictionary:(NSDictionary *)nutritionix; 
 - (instancetype)initWithScan:(Scan *) scan;
 - (PFFileObject *)getPFFileFromImage: (UIImage * _Nullable)image ;
  

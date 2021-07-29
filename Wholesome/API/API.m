@@ -126,7 +126,7 @@ static NSString *foodName;
 
                 id dict = [NSJSONSerialization JSONObjectWithData:dataUTF8 options:0 error:&error];
                 if (dict != nil) {
-                  // NSLog(@"Dict: %@", dict);
+                  // NSLog(@"Dict: %@", dict); 
                    NSArray *temp = dict[@"common"];
                    searchResults = [temp objectAtIndex:0];
                     //the key value pair
@@ -196,16 +196,17 @@ static NSString *foodName;
                    NSLog(@"Dict: %@", dict);
                   NSDictionary *temp = dict[@"foods"];
                     foodNutrition = temp;
-                     
+                    [ScanViewController updateCommonFoodData:foodNutrition];
+                      
                 } else {
                    NSLog(@"Error: %@", error);
                 }
-                                                        
-        } 
+                          
+        }
     }];
     [dataTask resume];
     
-    return foodDict;
+    return foodNutrition; 
 }
 
 

@@ -73,6 +73,51 @@
      return self;
  }
 
+//initialized product with the nutritionix and open food facts dictionaries
+- (instancetype)initWithDictionary:(NSArray *)nutritionixArray {
+     self = [super init];
+     if (self) {
+    
+         NSDictionary *nutritionix = [nutritionixArray objectAtIndex:0];
+         //get the image of the food 
+         NSDictionary *photo = nutritionix[@"photo"];
+         NSString *imageURL = photo[@"thumb"];
+         
+         NSURL *url =[NSURL URLWithString:imageURL ];
+         NSData *urlData = [NSData dataWithContentsOfURL:url];
+         
+         if (urlData.length != 0) {
+             UIImage *productImage = [UIImage imageWithData: urlData];
+             self.image = [self getPFFileFromImage:productImage];
+         }
+ 
+         self.foodName = nutritionix[@"food_name"];
+    
+        // self.allIngred = nutritionix[@"nf_ingredient_statement"];
+           
+
+         self.pieChartSlices = [NSMutableArray arrayWithCapacity:5];
+         NSNumber *carbs = nutritionix[@"nf_total_carbohydrate"];
+         [_pieChartSlices addObject:carbs];
+         
+         NSNumber *fat = nutritionix[@"nf_saturated_fat"];
+         [_pieChartSlices addObject:fat];
+         
+         NSNumber *sodium = nutritionix[@"nf_sodium"];
+         double newSodium = [sodium floatValue] * 0.01;
+         [_pieChartSlices addObject: [NSNumber numberWithDouble:newSodium]];
+         
+         NSNumber *fiber = nutritionix[@"nf_dietary_fiber"];
+         [_pieChartSlices addObject:fiber];
+         
+         NSNumber *protein = nutritionix[@"nf_protein"];
+         [_pieChartSlices addObject:protein];
+         
+    
+     }
+     return self;
+ }
+
 //initialize with scan from parse backend 
 - (instancetype)initWithScan:(Scan *)scan {
      self = [super init];
