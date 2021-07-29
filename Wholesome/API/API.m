@@ -17,6 +17,7 @@
 
 static NSString * const baseURLString = @"https://trackapi.nutritionix.com/v2/search/item?upc=";
 static NSString * const baseURLStringSearch = @"https://trackapi.nutritionix.com/v2/search/instant?query=";
+static NSString * const baseURLStringNutrition= @"https://trackapi.nutritionix.com/v2/natural/nutrients";
 static NSString * const newBase = @"https://us.openfoodfacts.org/api/v0/product/";
 static NSDictionary *foodDict;  //stores the nutritionix dictionary
 static NSDictionary *headers; //stores the headers like app id and key
@@ -26,7 +27,9 @@ static NSDictionary *foodFactsDict; //stores the dict from open food facts
 static FIRFunctions *functions;
 static NSMutableArray *foodLabels;
 
-static NSArray *searchResults;
+static NSDictionary *searchResults;
+static NSDictionary *foodNutrition;
+static NSString *foodName;
   
 @implementation API
 
@@ -123,11 +126,20 @@ static NSArray *searchResults;
 
                 id dict = [NSJSONSerialization JSONObjectWithData:dataUTF8 options:0 error:&error];
                 if (dict != nil) {
-                   NSLog(@"Dict: %@", dict);
+                  // NSLog(@"Dict: %@", dict);
                    NSArray *temp = dict[@"common"];
                    searchResults = [temp objectAtIndex:0];
-                    
- 
+                    //the key value pair
+                    NSString *uneditedFoodName = searchResults[@"tag_name"];
+        
+                    NSString *foodName = [uneditedFoodName stringByReplacingOccurrencesOfString:@" " withString:@"+"];
+                      
+                    [self getNutritionInfo:foodName completion:^(NSDictionary *dictComp, NSError *error) {
+                        if(error) {
+                            NSLog(@"%@", error.localizedDescription);
+                        }
+                    }];
+                     
                 } else {
                    NSLog(@"Error: %@", error);
                 }
@@ -137,8 +149,65 @@ static NSArray *searchResults;
     [dataTask resume];
     
     return foodDict;
-    
 }
+
+
+//retrieves nutrition info of search result from Nutritionix
++ (NSDictionary*)getNutritionInfo:(NSString *)foodName completion:(void(^)(NSDictionary *dictComp, NSError *error))completion {
+       
+    NSString *path = [[NSBundle mainBundle] pathForResource: @"Keys" ofType: @"plist"];
+    NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile: path];
+    
+    appID = [dict objectForKey: @"app_Id"];
+    appKey = [dict objectForKey: @"app_Key"];
+    
+    headers = @{ @"x-app-id": appID, @"x-app-key": appKey , @"x-remote-user-id": @"0"};
+        
+    //create request
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:baseURLStringNutrition]
+                                                           cachePolicy:NSURLRequestUseProtocolCachePolicy
+                                                       timeoutInterval:10.0];
+    [request setHTTPMethod:@"POST"];
+    [request setAllHTTPHeaderFields:headers];
+    
+    NSString *string = [NSString stringWithFormat:@"query="];
+    NSString *dataString = [string stringByAppendingString:foodName];
+    NSData *postData = [dataString dataUsingEncoding:NSUTF8StringEncoding];
+      
+    [request setHTTPBody:postData];
+      
+    //send request
+    NSURLSession *session = [NSURLSession sharedSession];
+    NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        
+        if (error) {
+                NSLog(@"%@", error.localizedDescription);
+        } else {
+                //print out the http response
+                NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
+                NSLog(@"%@", httpResponse);
+                                                         
+                //use json serialization to print out dictionary
+                NSString *strISOLatin = [[NSString alloc] initWithData:data encoding:NSISOLatin1StringEncoding];
+                NSData *dataUTF8 = [strISOLatin dataUsingEncoding:NSUTF8StringEncoding];
+ 
+                id dict = [NSJSONSerialization JSONObjectWithData:dataUTF8 options:0 error:&error];
+                if (dict != nil) {
+                   NSLog(@"Dict: %@", dict);
+                  NSDictionary *temp = dict[@"foods"];
+                    foodNutrition = temp;
+                     
+                } else {
+                   NSLog(@"Error: %@", error);
+                }
+                                                        
+        } 
+    }];
+    [dataTask resume];
+    
+    return foodDict;
+}
+
 
 
 //retrieves item info from Open Food Facts

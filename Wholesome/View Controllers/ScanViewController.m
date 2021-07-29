@@ -188,8 +188,9 @@ static NSArray *labelArray;
             VNClassificationObservation *topResult = ((VNClassificationObservation *)(self.results[0]));
             float percent = topResult.confidence * 100;
             self.resultsLabel.text =[NSString stringWithFormat: @"Confidence: %.f%@ %@", percent,@"%", topResult.identifier];
-            self.prediction = topResult.identifier;
-            [self reloadInputViews];
+            NSString *uneditedResultName = topResult.identifier;
+            self.prediction = [uneditedResultName stringByReplacingOccurrencesOfString:@"_" withString:@"+"]; 
+            [self reloadInputViews]; 
         });
     }];
     
