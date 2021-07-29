@@ -19,6 +19,10 @@
 #import <FirebaseFunctions/FIRFunctions.h>
 #import <FirebaseFunctions/FIRHTTPSCallable.h>
 #import <FirebaseFunctions/FIRError.h>
+#import <CoreML/CoreML.h>
+#import <Vision/Vision.h>
+#import "Food101.h"
+ 
 @import Firebase;
 static Product *product;
 static NSArray *labelArray;
@@ -39,6 +43,11 @@ static NSArray *labelArray;
 @property (nonatomic, strong) NSDictionary *foodFactsDict;
 @property (nonatomic, strong) NSMutableArray *foodLabels;
 
+//image classification data
+@property (nonatomic) unsigned long resultsCount;
+@property (retain, nonatomic) NSArray *results;
+  
+@property (weak, nonatomic) IBOutlet UILabel *resultsLabel;
 
 
 @end
@@ -54,22 +63,9 @@ static NSArray *labelArray;
     });
     [self setupScanningSession];
     [self.captureSession startRunning];
-//    self.functions = [FIRFunctions functionsForApp:];
-    //timer for auto update for table view (can toggle)
     
-//    self.functions = [FIRFunctions initWithProjectID:@"wholesome-321102":]
-//
-//    (instancetype)initWithProjectID:(NSString *)projectID
-//                               region:(NSString *)region
-//                         customDomain:(nullable NSString *)customDomain
-//                                 auth:(nullable id<FIRAuthInterop>)auth
-//                            messaging:(nullable id<FIRMessagingInterop>)messaging
-//                             appCheck:(nullable id<FIRAppCheckInterop>)appCheck
-//                       fetcherService:(GTMSessionFetcherService *)fetcherService
-//
-//
     
-    self.functions = [FIRFunctions functions]; 
+   // self.functions = [FIRFunctions functions];
     
    [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(reportSegue) userInfo:nil repeats:true];
 }
@@ -173,55 +169,55 @@ static NSArray *labelArray;
 
     if (photo) {
         NSData *imageData = [photo fileDataRepresentation];
-        UIImage *image1 = [UIImage imageWithData:imageData];
-           
-        NSData *newImageData = UIImageJPEGRepresentation(image1, 1.0f);
-        NSString *base64encodedImage =
-          [newImageData base64EncodedStringWithOptions:NSDataBase64Encoding76CharacterLineLength];
-//       [API getLabels:base64encodedImage completion:^(NSArray * arr, NSError * _Nonnull error) {
-//           if(arr) {
-//               NSLog(@"%@", arr);
-//           }
-//       }];
+        UIImage *image = [UIImage imageWithData:imageData];
+        UIImage *finalImage = [self resizeImage:image withSize:CGSizeMake(299, 299)];
         
-        NSDictionary *data = @{
-            @"image": @{@"content": base64encodedImage},
-          @"features": @{@"maxResults": @5, @"type": @"LABEL_DETECTION"}
-        };
-         
-     
-        [[self.functions HTTPSCallableWithName:@"annotateImage"]
-                                  callWithObject:data
-                                      completion:^(FIRHTTPSCallableResult * _Nullable result, NSError * _Nullable error) {
-            if (error) {
-                  if (error.domain == FIRFunctionsErrorDomain) {
-                   // FIRFunctionsErrorCode code = error.code;
-                    NSString *message = error.localizedDescription;
-                   // NSObject *details = error.userInfo[FIRFunctionsErrorDetailsKey];
-                      NSLog(@"error from firebase%@", message);
-                  }
-                
-            } else {
-                    // Function completed succesfully
-                    // Get information about labeled objects
-                    NSArray *labelArray = result.data[@"labelAnnotations"];
-                  
-                    for (NSDictionary *labelObj in labelArray) {
-                          NSString *text = labelObj[@"description"];
-                          //NSString *entityId = labelObj[@"mid"];
-                          //NSNumber *confidence = labelObj[@"score"];
-                        [self.foodLabels addObject:text];
-                    }
-              
-                 
-                    NSLog(@"%@", self.foodLabels);
-           
-               }
-        }];
-        
-        
+        [self processImage:finalImage];
     }
+}
+
+- (void)processImage:(UIImage*) image {
+    
+//    CIImage *photo = image.CIImage;
+    CIImage* photo = [[CIImage alloc] initWithCGImage:image.CGImage];  
+
+    MLModel *model = [[[Food101 alloc] init] model];
+    VNCoreMLModel *m = [VNCoreMLModel modelForMLModel: model error:nil];
+    VNCoreMLRequest *req = [[VNCoreMLRequest alloc] initWithModel: m completionHandler: (VNRequestCompletionHandler) ^(VNRequest *request, NSError *error){
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self.resultsCount = request.results.count;
+            self.results = [request.results copy];
+            VNClassificationObservation *topResult = ((VNClassificationObservation *)(self.results[0]));
+            float percent = topResult.confidence * 100;
+            self.resultsLabel.text = [NSString stringWithFormat: @"Confidence: %.f%@ %@", percent,@"%", topResult.identifier];
+            [self reloadInputViews];
+        });
+    }];
+    
+    NSDictionary *options = [[NSDictionary alloc] init];
+    NSArray *reqArray = @[req];
+    
+    VNImageRequestHandler *handler = [[VNImageRequestHandler alloc] initWithCIImage:photo options:options];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [handler performRequests:reqArray error:nil];
+    });
      
+}
+
+
+//resizes the given image
+- (UIImage *)resizeImage:(UIImage *)image withSize:(CGSize)size {
+    UIImageView *resizeImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, size.width, size.height)];
+    
+    resizeImageView.contentMode = UIViewContentModeScaleAspectFill;
+    resizeImageView.image = image;
+    
+    UIGraphicsBeginImageContext(size);
+    [resizeImageView.layer renderInContext:UIGraphicsGetCurrentContext()];
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return newImage;
 }
 
 // AVCaptureMetadataOutputObjectsDelegate method

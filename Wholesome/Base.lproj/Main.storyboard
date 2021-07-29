@@ -476,6 +476,13 @@
                                     <action selector="rescanButtonPressed:" destination="q4Q-bn-dXR" eventType="touchUpInside" id="DJO-gn-Jd3"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D1W-FX-bmC">
+                                <rect key="frame" x="20" y="650" width="350" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wJR-yi-rg0">
                                 <rect key="frame" x="184" y="700" width="25" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -501,6 +508,7 @@
                     <connections>
                         <outlet property="cameraPreviewView" destination="m4d-pt-F7T" id="MTA-4c-mhP"/>
                         <outlet property="rescanButton" destination="Qb6-xX-k3L" id="FSl-kU-5a9"/>
+                        <outlet property="resultsLabel" destination="D1W-FX-bmC" id="kb8-Jt-17o"/>
                         <segue destination="gS5-Yg-Wzy" kind="presentation" identifier="toReport" id="7Wn-Pk-17B"/>
                     </connections>
                 </viewController>
