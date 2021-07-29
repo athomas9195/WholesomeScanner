@@ -17,7 +17,7 @@ The ingredient scanner lets the user scan a barcode of any item at the store or 
 
 - **Category:** Health / Social Networking
 - **Mobile:** Camera, location, real time. Mobile is essential for the instant results and portabiilty aspects of the app.
-- **Story:** Builds a community of people who put their health first and brings safety issues of big corporations to the forefront of discussion. It also recommends healthier alternatives to the product they scanned (promotes health and also generates income). And it will let the user rate the product they scanned so that other users can make better decisions.
+- **Story:** Builds a community of people who put their health first and brings health and safety issues to the forefront of discussion. It also recommends healthier alternatives to the product they scanned (promotes health and also generates income). And it will let the user rate the product they scanned so that other users can make better decisions.
 - **Market:** Parents who want to ensure the safety of their baby products and people who want to take care of their health and wellbeing.
 - **Habit:**  It can become an essential tool for households and individuals who want to ensure a better lifestyle.
 - **Scope:** Will need to find an API with a database of health and safety information. Probably will have to refer to the FDA. Hoping to add a community feature where people can share their insights and bring people closer together in the health community. Large potential for use with stores like Whole Foods.
