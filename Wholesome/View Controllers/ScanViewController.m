@@ -65,6 +65,8 @@ static NSArray *labelArray;
     });
     [self setupScanningSession];
     [self.captureSession startRunning];
+    
+    self.resultsLabel.text = @"Take a picture of your food or scan its barcode.";
  
    [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(reportSegue) userInfo:nil repeats:true];
 }
@@ -98,6 +100,68 @@ static NSArray *labelArray;
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+- (void)detectText:(CIImage*)image{
+    //create req
+    VNDetectTextRectanglesRequest *textReq = [VNDetectTextRectanglesRequest new];
+    NSDictionary *d = [[NSDictionary alloc] init];
+    //req handler
+    VNImageRequestHandler *handler = [[VNImageRequestHandler alloc] initWithCIImage:image options:d];
+    //send req to handler
+    [handler performRequests:@[textReq] error:nil];
+    
+    if(textReq.results.count <= 1) {
+        [self processImage:image];
+    } else {
+    
+        //is there a character?
+        for(VNTextObservation  *observation in textReq.results){
+            if(observation){
+    //            UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Text Detected!"
+    //                                                                           message:@"I've found a text in there! Show you where I'd found that?"
+    //                                                                    preferredStyle:UIAlertControllerStyleAlert];
+    //            UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"Show" style:UIAlertActionStyleDefault
+    //                                                                  handler:^(UIAlertAction * action) {
+    //                                                                      [self drawTextRect:image];
+    //                                                                  }];
+    //            [alert addAction:defaultAction];
+    //            dispatch_async(dispatch_get_main_queue(), ^{
+    //                [self presentViewController:alert animated:YES completion:nil];
+    //            });
+                
+                [self drawTextRect:image];
+            }
+        }
+    }
+}
+
+# pragma mark Text Detection
+- (void)drawTextRect:(CIImage*)image{
+    //text
+    VNDetectTextRectanglesRequest *textLandmarks = [VNDetectTextRectanglesRequest new];
+    textLandmarks.reportCharacterBoxes = YES;
+    VNSequenceRequestHandler *handler = [VNSequenceRequestHandler new];
+    [handler performRequests:@[textLandmarks] onCIImage:image error:nil];
+    for(VNTextObservation *observation in textLandmarks.results){
+            //find text rectangle
+        for (VNRectangleObservation* box in observation.characterBoxes){
+            //draw rect on each char of the text
+            CGRect boundingBox = box.boundingBox;
+//            NSLog(@" |-%@", NSStringFromCGRect(boundingBox));
+            CGSize size = CGSizeMake(boundingBox.size.width * self.cameraPreviewView.bounds.size.width, boundingBox.size.height * self.cameraPreviewView.bounds.size.height);
+            CGPoint origin = CGPointMake(boundingBox.origin.x * self.cameraPreviewView.bounds.size.width, (1-boundingBox.origin.y)*self.cameraPreviewView.bounds.size.height - size.height);
+             
+            CAShapeLayer *layer = [CAShapeLayer layer];
+            
+            layer.frame = CGRectMake(origin.x, origin.y, size.width, size.height);
+            layer.borderColor = [UIColor redColor].CGColor;
+            layer.borderWidth = 2;
+            
+            [self.cameraPreviewView.layer addSublayer:layer];
+        }
+    }
+}
+
 
 - (IBAction)rescanButtonPressed:(id)sender {
     // Start scanning again.
@@ -170,14 +234,14 @@ static NSArray *labelArray;
         NSData *imageData = [photo fileDataRepresentation];
         UIImage *image = [UIImage imageWithData:imageData];
         UIImage *finalImage = [self resizeImage:image withSize:CGSizeMake(299, 299)];
+        CIImage* photo = [[CIImage alloc] initWithCGImage:finalImage.CGImage];
         
-        [self processImage:finalImage];
-    }
+        [self detectText:photo];
+    } 
 }
 
-- (void)processImage:(UIImage*) image {
-    
-    CIImage* photo = [[CIImage alloc] initWithCGImage:image.CGImage];
+- (void)processImage:(CIImage*) image {
+    self.resultsLabel.text = @"";
 
     MLModel *model = [[[Food101 alloc] init] model];
     VNCoreMLModel *m = [VNCoreMLModel modelForMLModel: model error:nil];
@@ -186,8 +250,8 @@ static NSArray *labelArray;
             self.resultsCount = request.results.count;
             self.results = [request.results copy];
             VNClassificationObservation *topResult = ((VNClassificationObservation *)(self.results[0]));
-            float percent = topResult.confidence * 100;
-            self.resultsLabel.text =[NSString stringWithFormat: @"Confidence: %.f%@ %@", percent,@"%", topResult.identifier];
+            //float percent = topResult.confidence * 100;
+            //self.resultsLabel.text =[NSString stringWithFormat: @"Confidence: %.f%@ %@", percent,@"%", topResult.identifier];
             NSString *uneditedResultName = topResult.identifier;
             self.prediction = [uneditedResultName stringByReplacingOccurrencesOfString:@"_" withString:@"+"]; 
             [self reloadInputViews]; 
@@ -197,7 +261,7 @@ static NSArray *labelArray;
     NSDictionary *options = [[NSDictionary alloc] init];
     NSArray *reqArray = @[req];
     
-    VNImageRequestHandler *handler = [[VNImageRequestHandler alloc] initWithCIImage:photo options:options];
+    VNImageRequestHandler *handler = [[VNImageRequestHandler alloc] initWithCIImage:image options:options];
     dispatch_async(dispatch_get_main_queue(), ^{
         [handler performRequests:reqArray error:nil];
     });

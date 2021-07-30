@@ -79,10 +79,10 @@
      if (self) {
     
          NSDictionary *nutritionix = [nutritionixArray objectAtIndex:0];
-         //get the image of the food 
+         //get the image of the food
          NSDictionary *photo = nutritionix[@"photo"];
          NSString *imageURL = photo[@"thumb"];
-         
+          
          NSURL *url =[NSURL URLWithString:imageURL ];
          NSData *urlData = [NSData dataWithContentsOfURL:url];
          
