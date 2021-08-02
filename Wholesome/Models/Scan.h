@@ -34,8 +34,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSNumber *itemID;
 
 @property (nonatomic, strong) NSString *foodName;
-@property (nonatomic, strong) NSString *brandName;
-//@property (nonatomic, strong) NSString *category;
+@property (nonatomic, strong) NSString *brandName; 
 
 @property (nonatomic, strong) NSArray *allIngred;
 @property (nonatomic, strong) NSArray *keyIngred; //keywords

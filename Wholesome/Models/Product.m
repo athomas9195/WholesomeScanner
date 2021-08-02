@@ -44,13 +44,6 @@
          self.nutriscore = openFoodFacts[@"nutriscore_grade"];
          self.allergens = openFoodFacts[@"allergens"];
          
-         //implement pie chart slices
-             //"nf_total_carbohydrate" = 11;
-             //"nf_saturated_fat" = 0;
-             //"nf_sodium" = 300;
-             //"nf_dietary_fiber" = 4;
-             //"nf_protein" = 3;
-
          self.pieChartSlices = [NSMutableArray arrayWithCapacity:5];
          NSNumber *carbs = nutritionix[@"nf_total_carbohydrate"];
          [_pieChartSlices addObject:carbs];
@@ -92,9 +85,7 @@
          }
  
          self.foodName = nutritionix[@"food_name"];
-    
-        // self.allIngred = nutritionix[@"nf_ingredient_statement"];
-           
+            
 
          self.pieChartSlices = [NSMutableArray arrayWithCapacity:5];
          NSNumber *carbs = nutritionix[@"nf_total_carbohydrate"];
@@ -112,6 +103,38 @@
          
          NSNumber *protein = nutritionix[@"nf_protein"];
          [_pieChartSlices addObject:protein];
+         
+    
+     }
+     return self;
+ }
+
+//initialized product with the nutritionix and open food facts dictionaries
+- (instancetype)initWithArray:(NSArray *)nutritionixArray {
+     self = [super init];
+     if (self) {
+    
+         NSDictionary *nutritionix = [nutritionixArray objectAtIndex:0];
+ 
+         self.foodName = nutritionix[@"food_name"];
+
+
+         self.pieChartSlices = [NSMutableArray arrayWithCapacity:5];
+         NSNumber *carbs = nutritionix[@"nf_total_carbohydrate"];
+         [_pieChartSlices addObject:carbs];
+         
+         NSNumber *fat = nutritionix[@"nf_saturated_fat"];
+         [_pieChartSlices addObject:fat];
+         
+         NSNumber *sodium = nutritionix[@"nf_sodium"];
+         double newSodium = [sodium floatValue] * 0.01;
+         [_pieChartSlices addObject: [NSNumber numberWithDouble:newSodium]];
+         
+         NSNumber *fiber = nutritionix[@"nf_dietary_fiber"];
+         [_pieChartSlices addObject:fiber];
+         
+         NSNumber *protein = [NSNumber numberWithFloat:1.0];
+         [_pieChartSlices addObject:protein]; 
          
     
      }

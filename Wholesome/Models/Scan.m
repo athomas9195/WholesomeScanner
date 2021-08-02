@@ -10,25 +10,25 @@
 
 @implementation Scan
 
-@dynamic scanID;
-@dynamic userID;
-@dynamic author;
-@dynamic rating;
-@dynamic safetyRating;
-@dynamic image;
-@dynamic allIngred;
-@dynamic keyIngred;
-@dynamic badIngred;
-@dynamic itemID;
-@dynamic foodName;
-@dynamic brandName;
-@dynamic upc;
-@dynamic nutriscore;
-@dynamic nova;
-@dynamic novaGroup;
-@dynamic additives;
-@dynamic allergens;
-@dynamic pieChartSlices;
+@dynamic scanID; //parse id
+@dynamic userID; //user parse id
+@dynamic author; //user who scanned the product
+@dynamic rating; //the rating of the product
+@dynamic safetyRating; //how safe it is to consume
+@dynamic image; //the product image
+@dynamic allIngred; //the full ingredients list
+@dynamic keyIngred; //the key ingredients
+@dynamic badIngred; //the ingredients to avoid
+@dynamic itemID; //the product id
+@dynamic foodName; //the product name
+@dynamic brandName; //the brand name
+@dynamic upc; //the upc code
+@dynamic nutriscore; //the nutriscore value
+@dynamic nova; //the nova value
+@dynamic novaGroup; //the nova value description
+@dynamic additives; //the additives present in the product
+@dynamic allergens; //the allergens in the product
+@dynamic pieChartSlices; //array used to generate pie chart on report 
 
 
 + (nonnull NSString *)parseClassName {

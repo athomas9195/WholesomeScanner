@@ -30,7 +30,7 @@
 //set how many rows in timeline display
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return [self.selectedArray count];
-}
+} 
  
 //enables custom cell displays
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {

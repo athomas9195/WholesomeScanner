@@ -239,6 +239,7 @@ PODS:
   - Charts (3.6.0):
     - Charts/Core (= 3.6.0)
   - Charts/Core (3.6.0)
+  - Cosmos (23.0.0)
   - DateTools (2.0.0)
   - FigmaExport (0.23.1)
   - Firebase/Auth (8.4.0):
@@ -348,6 +349,7 @@ DEPENDENCIES:
   - AFNetworking
   - BDBOAuth1Manager
   - Charts
+  - Cosmos (~> 23.0)
   - DateTools
   - FigmaExport
   - Firebase/Auth
@@ -367,6 +369,7 @@ SPEC REPOS:
     - Bolts
     - BoringSSL-GRPC
     - Charts
+    - Cosmos
     - DateTools
     - FigmaExport
     - Firebase
@@ -395,6 +398,7 @@ SPEC CHECKSUMS:
   Bolts: 8c1e8aab2f603387b8b9924f57d1d64f43d3ffdc
   BoringSSL-GRPC: 8edf627ee524575e2f8d19d56f068b448eea3879
   Charts: b1e3a1f5a1c9ba5394438ca3b91bd8c9076310af
+  Cosmos: b5c6a9a637e28a061b54c8f8b1d8529d7d4db73f
   DateTools: 933ac9c490f21f92127cf690ccd8c397e0126caf
   FigmaExport: 2e678e6e201196786d917f2aec63937295237a1b
   Firebase: 54cdc8bc9c9b3de54f43dab86e62f5a76b47034f
@@ -416,6 +420,6 @@ SPEC CHECKSUMS:
   PromisesObjC: 68159ce6952d93e17b2dfe273b8c40907db5ba58
   SVPullToRefresh: ba2e718695a43253d8bea6852d2960097dc15d8c
 
-PODFILE CHECKSUM: 8eb0fd17fde6948a35fd2eedabe26819973b9489
+PODFILE CHECKSUM: aedb0fcaf99852a4626105d7ec26f775456bd199
 
 COCOAPODS: 1.10.1

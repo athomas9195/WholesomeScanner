@@ -91,6 +91,7 @@
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
     
+    //set up the segues for each corresponding category 
     if ([[segue identifier] isEqualToString:@"toAllergies"]) {
         CategoryDetailViewController *detail = segue.destinationViewController;
         detail.selectedArray = self.allergyArray;

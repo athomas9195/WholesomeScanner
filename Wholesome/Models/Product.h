@@ -18,7 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface Product : NSObject
 
-// MARK: Properties
+// MARK: Properties description listed in Scan.h 
 @property (nonatomic, strong) NSString *upc; 
 
 @property (nonatomic, strong) PFFileObject *image;   
@@ -32,7 +32,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong) NSString *foodName;
 @property (nonatomic, strong) NSString *brandName;
-//@property (nonatomic, strong) NSString *category;
 
 @property (nonatomic, strong) NSString *allIngred;
 @property (nonatomic, strong) NSArray *keyIngred;
@@ -49,6 +48,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (instancetype)initWithDictionary:(NSDictionary *)nutritionix; 
 - (instancetype)initWithScan:(Scan *) scan;
 - (PFFileObject *)getPFFileFromImage: (UIImage * _Nullable)image ;
+- (instancetype)initWithArray:(NSArray *)nutritionixArray;
  
 @end
 

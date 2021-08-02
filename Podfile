@@ -19,6 +19,7 @@ target 'Wholesome' do
     pod 'Firebase/Auth'
     pod 'Firebase/Firestore'
     pod 'Firebase/Functions'
+    pod 'Cosmos', '~> 23.0'
 
   target 'WholesomeTests' do
     inherit! :search_paths

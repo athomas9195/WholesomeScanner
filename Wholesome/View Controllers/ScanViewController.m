@@ -60,7 +60,7 @@ static NSArray *labelArray;
    
     [super viewDidLoad];
     dispatch_async(dispatch_get_main_queue(), ^(void) {
-       // All UI calls go here
+        //UI calls
         [self.view bringSubviewToFront:self.rescanButton];
     });
     [self setupScanningSession];
@@ -116,20 +116,24 @@ static NSArray *labelArray;
     
         //is there a character?
         for(VNTextObservation  *observation in textReq.results){
-            if(observation){
-    //            UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Text Detected!"
-    //                                                                           message:@"I've found a text in there! Show you where I'd found that?"
-    //                                                                    preferredStyle:UIAlertControllerStyleAlert];
-    //            UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"Show" style:UIAlertActionStyleDefault
-    //                                                                  handler:^(UIAlertAction * action) {
-    //                                                                      [self drawTextRect:image];
-    //                                                                  }];
-    //            [alert addAction:defaultAction];
-    //            dispatch_async(dispatch_get_main_queue(), ^{
-    //                [self presentViewController:alert animated:YES completion:nil];
-    //            });
+            if(observation){ 
                 
                 [self drawTextRect:image];
+                
+                
+                NSDictionary *dict = @{
+                    @"food_name": @"Red Pepper",
+                    @"nf_total_carbohydrate": [NSNumber numberWithFloat:5.0],
+                    @"nf_saturated_fat": [NSNumber numberWithFloat:1.0],
+                    @"nf_sodium": [NSNumber numberWithFloat:10.0],
+                    @"nf_dietary_fiber": [NSNumber numberWithFloat:20.0],
+                  };
+
+                NSArray *nutritionixArray = @[dict];
+                
+                product = [[Product alloc] initWithArray:nutritionixArray];
+                [self performSegueWithIdentifier:@"toReport" sender:self]; 
+                
             }
         }
     }
@@ -159,7 +163,7 @@ static NSArray *labelArray;
             
             [self.cameraPreviewView.layer addSublayer:layer];
         }
-    }
+    } 
 }
 
 
@@ -231,6 +235,7 @@ static NSArray *labelArray;
     }
 
     if (photo) {
+        //get the image and convert to CIImage
         NSData *imageData = [photo fileDataRepresentation];
         UIImage *image = [UIImage imageWithData:imageData];
         UIImage *finalImage = [self resizeImage:image withSize:CGSizeMake(299, 299)];
@@ -243,24 +248,26 @@ static NSArray *labelArray;
 - (void)processImage:(CIImage*) image {
     self.resultsLabel.text = @"";
 
+    //set up the ML model call
     MLModel *model = [[[Food101 alloc] init] model];
     VNCoreMLModel *m = [VNCoreMLModel modelForMLModel: model error:nil];
     VNCoreMLRequest *req = [[VNCoreMLRequest alloc] initWithModel: m completionHandler: (VNRequestCompletionHandler) ^(VNRequest *request, NSError *error){
         dispatch_async(dispatch_get_main_queue(), ^{
+            //get the call results
             self.resultsCount = request.results.count;
             self.results = [request.results copy];
             VNClassificationObservation *topResult = ((VNClassificationObservation *)(self.results[0]));
-            //float percent = topResult.confidence * 100;
-            //self.resultsLabel.text =[NSString stringWithFormat: @"Confidence: %.f%@ %@", percent,@"%", topResult.identifier];
             NSString *uneditedResultName = topResult.identifier;
             self.prediction = [uneditedResultName stringByReplacingOccurrencesOfString:@"_" withString:@"+"]; 
             [self reloadInputViews]; 
         });
     }];
     
+    //set up the call
     NSDictionary *options = [[NSDictionary alloc] init];
     NSArray *reqArray = @[req];
     
+    //call the model function
     VNImageRequestHandler *handler = [[VNImageRequestHandler alloc] initWithCIImage:image options:options];
     dispatch_async(dispatch_get_main_queue(), ^{
         [handler performRequests:reqArray error:nil];
@@ -269,7 +276,7 @@ static NSArray *labelArray;
      
 }
 
-//retrieves item info from APIs (ingredients, item name, brand, and nutrition info).
+//retrieves search info from nutritionix
 - (void)searchForPrediction {
  
     [API searchItems:self.prediction completion:^(NSDictionary * _Nonnull dictComp, NSError * _Nonnull error) {
@@ -422,7 +429,7 @@ static NSArray *labelArray;
         product = nil;
     }  
 }
- 
+  
 
 #pragma mark - Navigation
 

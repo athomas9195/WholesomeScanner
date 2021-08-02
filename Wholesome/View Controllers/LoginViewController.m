@@ -7,8 +7,7 @@
 
 #import "LoginViewController.h"
 #import <Parse/Parse.h>
-
-@import Firebase;
+ 
 
 @interface LoginViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *usernameTextField;
@@ -55,21 +54,7 @@
     }
  
     [self registerUser];
-    
-    [[FIRAuth auth] createUserWithEmail:self.usernameTextField.text
-                                 password:self.passwordTextField.text
-                               completion:^(FIRAuthDataResult * _Nullable authResult,
-                                            NSError * _Nullable error) {
-        
-        if (error) {
-            NSLog(@"%@", error.localizedDescription);
-            NSLog(@"%@", error.description);
-            NSLog(@"%@", error.userInfo[FIRAuthErrorDomain]);  
-            
-         }
-        
-      }];
-      // [END create_user]
+ 
 }
 
 //when user taps login
@@ -82,17 +67,7 @@
         [self showAlertAction:@"Password is empty"];
     }
     
-    [self loginUser];
-    
-    [[FIRAuth auth] signInWithEmail:self-> _usernameTextField.text
-                            password:self->_passwordTextField.text
-                          completion:^(FIRAuthDataResult * _Nullable authResult,
-                                       NSError * _Nullable error) {
-        if (error) {
-            NSLog(@"%@", error.localizedDescription);
-         }
-     }];
-     // [END headless_email_auth]
+    [self loginUser]; 
     
 }
 
