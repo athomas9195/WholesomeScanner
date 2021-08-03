@@ -37,12 +37,39 @@
           
          
          //open food facts
-         self.keyIngred = openFoodFacts[@"_keywords"]; 
-         self.additives = openFoodFacts[@"additives_old_tags"];
+         self.keyIngred = openFoodFacts[@"_keywords"];
+         
+         NSArray *arr =openFoodFacts[@"additives_old_tags"];
+         NSMutableArray *newArr = [[NSMutableArray alloc]init];
+         for (id object in arr) {
+             // remove the 'en:' string
+             [newArr addObject: [object stringByReplacingOccurrencesOfString:@"en:" withString:@""]];
+         } 
+         
+         self.additives = newArr;
+           
          self.nova = openFoodFacts[@"nova_group"];
-         self.novaGroup = openFoodFacts[@"nova_groups_tags"]; 
+        
+         
+         NSArray *arr1 =openFoodFacts[@"nova_groups_tags"];
+         NSMutableArray *newArr1 = [[NSMutableArray alloc]init];
+         for (id object in arr1) {
+             // remove the 'en:' string
+             NSString *tempString = [object stringByReplacingOccurrencesOfString:@"en:" withString:@""];
+             [newArr1 addObject: [tempString stringByReplacingOccurrencesOfString:@"-" withString:@" "]];
+         }
+         
+        
+         self.novaGroup = newArr1;
+          
+         
          self.nutriscore = openFoodFacts[@"nutriscore_grade"];
-         self.allergens = openFoodFacts[@"allergens"];
+         
+         
+         NSString *allerg =openFoodFacts[@"allergens"];
+        // remove the 'en:' string
+         self.allergens = [allerg stringByReplacingOccurrencesOfString:@"en:" withString:@""]; 
+
          
          self.pieChartSlices = [NSMutableArray arrayWithCapacity:5];
          NSNumber *carbs = nutritionix[@"nf_total_carbohydrate"];

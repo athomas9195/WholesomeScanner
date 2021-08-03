@@ -7,7 +7,6 @@
 
 #import "AppDelegate.h"
 #import "Parse/Parse.h"
-@import Firebase;
 
 @interface AppDelegate ()
 
@@ -26,10 +25,7 @@
     }];
 
     [Parse initializeWithConfiguration:config];
-    
-    // Use Firebase library to configure APIs
-    [FIRApp configure];
-
+  
     return YES;
 }
 

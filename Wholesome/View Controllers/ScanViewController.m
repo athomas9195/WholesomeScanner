@@ -15,24 +15,17 @@
 #import <Parse/ParseUIConstants.h>
 #import <Parse/PFInstallation.h> 
 #import <Parse/PFImageView.h>
-#import <Firebase/Firebase.h>
-#import <FirebaseFunctions/FIRFunctions.h>
-#import <FirebaseFunctions/FIRHTTPSCallable.h>
-#import <FirebaseFunctions/FIRError.h>
 #import <CoreML/CoreML.h>
 #import <Vision/Vision.h>
 #import "Food101.h"
- 
-@import Firebase;
+  
 static Product *product;
+static NSMutableArray *carouselItems;   //alternative items images
 static NSArray *labelArray;
 
 @interface ScanViewController () <AVCaptureMetadataOutputObjectsDelegate> 
 @property (weak, nonatomic) IBOutlet UIView *cameraPreviewView;
 @property (weak, nonatomic) IBOutlet UIButton *rescanButton;
-
-@property(strong, nonatomic) FIRFunctions *functions;
-@property(strong, nonatomic) FIRAuthStateDidChangeListenerHandle handle;
 
 @property (nonatomic, strong) AVCaptureSession *captureSession;
 @property (nonatomic, strong) AVCaptureVideoPreviewLayer *captureLayer;
@@ -51,6 +44,7 @@ static NSArray *labelArray;
   
 @property (weak, nonatomic) IBOutlet UILabel *resultsLabel;
 
+ 
 
 @end
   
@@ -73,21 +67,11 @@ static NSArray *labelArray;
 
 - (void) viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    // [START auth_listener]
-    self.handle = [[FIRAuth auth]
-        addAuthStateDidChangeListener:^(FIRAuth *_Nonnull auth, FIRUser *_Nullable user) {
-          // ...
-        }];
-    
-    // [END auth_listener]
     
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
   [super viewWillDisappear:animated];
-  // [START remove_auth_listener]
-  [[FIRAuth auth] removeAuthStateDidChangeListener:_handle];
-  // [END remove_auth_listener]
 } 
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -389,6 +373,7 @@ static NSArray *labelArray;
     [API getFoodFacts:upc completion:^(NSDictionary * _Nonnull dict, NSError * _Nonnull error) {
         
     }];
+
 }
   
 
@@ -396,6 +381,10 @@ static NSArray *labelArray;
 +(void)updateData:(NSDictionary *) dict : (NSDictionary *) dict1 : (NSString *)capturedBarcode {
         product = [[Product alloc]initWithDictionary:dict:dict1:capturedBarcode];
            
+        [API searchAlternatives:(product.foodName) completion:^(NSDictionary * _Nonnull dictComp, NSError * _Nonnull error) {
+            
+        }]; 
+    
         //post to parse  
         [Scan postScan: product withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
             if(error) {
@@ -414,6 +403,28 @@ static NSArray *labelArray;
             }
         }];
 }
+
+//update the alternative items data once the async api call returns
++(void)updateAlternativeData:(NSArray *) arr {
+    NSMutableArray *tempAlt = [[NSMutableArray alloc] init];
+    for (id dict in arr) {
+       
+        //get the image of the food
+        NSDictionary *photo = dict[@"photo"];
+        NSString *imageURL = photo[@"thumb"];
+         
+        NSURL *url =[NSURL URLWithString:imageURL ];
+        NSData *urlData = [NSData dataWithContentsOfURL:url];
+        
+        if (urlData.length != 0) {
+            UIImage *productImage = [UIImage imageWithData: urlData];
+            [tempAlt addObject:productImage];
+        }
+    }
+    
+    carouselItems =tempAlt;
+        
+}
  
 //activate the report segue to display report view
 -(void)reportSegue {
@@ -424,10 +435,11 @@ static NSArray *labelArray;
         
     }
  
-    if(product != nil) {
+    if(carouselItems != nil && product !=nil) {
         [self performSegueWithIdentifier:@"toReport" sender:self];
         product = nil;
-    }  
+        carouselItems = nil;
+    }
 }
   
 
@@ -444,8 +456,9 @@ static NSArray *labelArray;
         ReportViewController *reportViewController = [segue destinationViewController];
         
         reportViewController.product = product;
+        reportViewController.carouselItems = carouselItems;
     }
-   
+    
 }
 
 

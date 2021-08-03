@@ -8,16 +8,14 @@
 #import <Foundation/Foundation.h>
 #import "Product.h"
 
-@import Firebase; 
-
 NS_ASSUME_NONNULL_BEGIN
 
 @interface API : NSObject
 
 + (NSDictionary*)getItemWithUPC:(NSString *)upc completion:(void(^)(NSDictionary *dictComp, NSError *error))completion;
 + (NSDictionary*)getFoodFacts:(NSString *)upc completion:(void(^)(NSDictionary *dict, NSError *error))completion; 
-+ (NSDictionary*)searchItems:(NSString *)food completion:(void(^)(NSDictionary *dictComp, NSError *error))completion; 
-    
++ (NSDictionary*)searchItems:(NSString *)food completion:(void(^)(NSDictionary *dictComp, NSError *error))completion;
++ (NSDictionary*)searchAlternatives:(NSString *)food completion:(void(^)(NSDictionary *dictComp, NSError *error))completion; 
 
 @end
 

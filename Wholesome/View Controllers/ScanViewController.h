@@ -11,7 +11,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ScanViewController : UIViewController
 +(void)updateData:(NSDictionary *) dict : (NSDictionary *) dict1 : (NSString *)capturedBarcode;
-+(void)updateCommonFoodData:(NSDictionary *) dict; 
++(void)updateCommonFoodData:(NSDictionary *) dict;
++(void)updateAlternativeData:(NSArray *) arr; 
 @end
 
 NS_ASSUME_NONNULL_END

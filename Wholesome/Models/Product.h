@@ -37,7 +37,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSArray *keyIngred;
 
 @property (nonatomic, strong) NSArray *additives;
-@property (nonatomic, strong) NSArray *allergens;
+@property (nonatomic, strong) NSString *allergens;
  
 @property (nonatomic, strong) NSArray *badIngred;
 

@@ -16,10 +16,8 @@ target 'Wholesome' do
     pod 'SVPullToRefresh'
     pod 'MBProgressHUD'
     pod 'Charts'
-    pod 'Firebase/Auth'
-    pod 'Firebase/Firestore'
-    pod 'Firebase/Functions'
     pod 'Cosmos', '~> 23.0'
+    pod 'iCarousel'
 
   target 'WholesomeTests' do
     inherit! :search_paths

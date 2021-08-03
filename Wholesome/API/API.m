@@ -68,6 +68,11 @@ static NSString *foodName;
                    NSLog(@"Dict: %@", dict);
                    NSArray *temp = dict[@"foods"];
                    foodDict = [temp objectAtIndex:0];
+                    
+                    NSString *name = foodDict[@"food_name"];
+                    [self searchAlternatives:name completion:^(NSDictionary * _Nonnull dictComp, NSError * _Nonnull error) {
+                         
+                    }];
                 
 
                 } else {
@@ -120,6 +125,8 @@ static NSString *foodName;
 
                 id dict = [NSJSONSerialization JSONObjectWithData:dataUTF8 options:0 error:&error];
                 if (dict != nil) {
+                     
+                    
                    NSArray *temp = dict[@"common"];
                    searchResults = [temp objectAtIndex:0];
                     //the key value pair
@@ -143,6 +150,59 @@ static NSString *foodName;
     
     return foodDict;
 }
+
+//retrieves search results from Nutritionix
++ (NSDictionary*)searchAlternatives:(NSString *)food completion:(void(^)(NSDictionary *dictComp, NSError *error))completion {
+      
+    NSString *path = [[NSBundle mainBundle] pathForResource: @"Keys" ofType: @"plist"];
+    NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile: path];
+    
+    appID = [dict objectForKey: @"app_Id"];
+    appKey = [dict objectForKey: @"app_Key"];
+    
+    headers = @{ @"x-app-id": appID, @"x-app-key": appKey };
+    NSString *editedFood = [food stringByReplacingOccurrencesOfString:@" " withString:@"+"];
+     
+    NSString *tempURL = [baseURLStringSearch stringByAppendingString:editedFood];
+       
+    //create request
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:tempURL]
+                                                           cachePolicy:NSURLRequestUseProtocolCachePolicy
+                                                       timeoutInterval:10.0];
+    [request setHTTPMethod:@"GET"];
+    [request setAllHTTPHeaderFields:headers];
+
+    //send request
+    NSURLSession *session = [NSURLSession sharedSession];
+    NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        
+        if (error) {
+                NSLog(@"%@", error.localizedDescription);
+        } else {
+                //print out the http response
+                NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
+                NSLog(@"%@", httpResponse);
+                       
+                //use json serialization to print out dictionary
+                NSString *strISOLatin = [[NSString alloc] initWithData:data encoding:NSISOLatin1StringEncoding];
+                NSData *dataUTF8 = [strISOLatin dataUsingEncoding:NSUTF8StringEncoding];
+
+                id dict = [NSJSONSerialization JSONObjectWithData:dataUTF8 options:0 error:&error];
+                if (dict != nil) {
+                    
+                    //store data for alternative items
+                     NSArray *alternatives = dict[@"branded"];
+                    [ScanViewController updateAlternativeData:alternatives];
+                 
+                }
+                                                        
+        }
+    }];
+    [dataTask resume];
+    
+    return foodDict;
+}
+
 
 
 //retrieves nutrition info of search result from Nutritionix
@@ -229,8 +289,9 @@ static NSString *foodName;
 
                                                         id dict = [NSJSONSerialization JSONObjectWithData:dataUTF8 options:0 error:&error];
                                                         if (dict != nil) {
-                                                            NSLog(@"Dict: %@", dict);
+                                                           
                                                             foodFactsDict = dict[@"product"];
+                                                            NSLog(@"Dict: %@", foodFactsDict);
                                                             [ScanViewController updateData:foodDict :foodFactsDict : upc];
                                                              
                                                         } else {

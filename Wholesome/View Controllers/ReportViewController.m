@@ -9,15 +9,14 @@
 #import <Parse/Parse.h>
 #import <Parse/PFImageView.h>
 #import "PieChartViewController.h"
-
-
+#import "iCarousel.h"
+  
 @interface ReportViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *foodNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *containsLabel;
 @property (weak, nonatomic) IBOutlet PFImageView *imageView;
 @property (weak, nonatomic) IBOutlet UILabel *ingredientsLabel;
-
-
+ 
 @property (weak, nonatomic) IBOutlet UILabel *key1; //keyword tag
 @property (weak, nonatomic) IBOutlet UILabel *key2;//keyword tag
 @property (weak, nonatomic) IBOutlet UILabel *key3;//keyword tag
@@ -29,10 +28,8 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *nutriscoreImage;
 @property (weak, nonatomic) IBOutlet UIImageView *novaImage;
- 
 
-
-
+   
 @end
 
 @implementation ReportViewController
@@ -40,8 +37,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    _carousel.delegate = self;
+    _carousel.dataSource = self; 
+    
     self.foodNameLabel.text = self.product.foodName;
     self.ingredientsLabel.text = self.product.allIngred;
+    self.key1.clipsToBounds = true;
+    self.key2.clipsToBounds = true;
+    self.key3.clipsToBounds = true;
+    self.key1.layer.cornerRadius = 10;
+    self.key2.layer.cornerRadius = 10;
+    self.key3.layer.cornerRadius = 10;
     
     //get the contains label
     NSArray *ingreds = [self.ingredientsLabel.text componentsSeparatedByString:@","];
@@ -117,10 +123,73 @@
         self.key3.text = [keys objectAtIndex:2]; 
     }
     
-    
-    
+    //configure carousel
+    _carousel.type = iCarouselTypeCoverFlow2;
+     
 }
 
+#pragma mark - Carousel Lifecycle
+
+//carousel clean up 
+- (void)dealloc
+{
+    //it's a good idea to set these to nil here to avoid
+    //sending messages to a deallocated viewcontroller
+    //this is true even if your project is using ARC, unless
+    //you are targeting iOS 5 as a minimum deployment target
+    _carousel.delegate = nil;
+    _carousel.dataSource = nil;
+}
+
+-(BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+    return YES;
+}
+#pragma mark iCarousel methods
+
+- (NSInteger)numberOfItemsInCarousel:(iCarousel *)carousel
+{
+    //return the total number of items in the carousel
+    return [self.carouselItems count];
+}
+
+- (UIView *)carousel:(iCarousel *)carousel viewForItemAtIndex:(NSInteger)index reusingView:(UIView *)view
+{
+    
+    //create new view if no view is available for recycling
+    if (view == nil)
+    {
+        //don't do anything specific to the index within
+        //this `if (view == nil) {...}` statement because the view will be
+        //recycled and used with other index values later
+        view = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 100.0f, 100.0f)];
+        ((UIImageView *)view).image = self.carouselItems[index];
+        view.contentMode = UIViewContentModeCenter;
+    }
+    else
+    {
+        //get a reference to the label in the recycled view
+        //label = (UILabel *)[view viewWithTag:1];
+    }
+    
+    //set item label
+    //remember to always set any properties of your carousel item
+    //views outside of the `if (view == nil) {...}` check otherwise
+    //you'll get weird issues with carousel item content appearing
+    //in the wrong place in the carousel
+   // label.text = [self.carouselItems[index] stringValue];
+     
+    return view;
+}
+
+- (CGFloat)carousel:(iCarousel *)carousel valueForOption:(iCarouselOption)option withDefault:(CGFloat)value
+{
+    if (option == iCarouselOptionSpacing)
+    {
+        return value * 5.1;
+    }
+    return value;
+}
 
 #pragma mark - Navigation
 
@@ -132,7 +201,7 @@
             PieChartViewController *embed = segue.destinationViewController;
             embed.slices = self.product.pieChartSlices;  
     } 
-}
+} 
 
 
 @end
