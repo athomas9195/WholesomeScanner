@@ -456,8 +456,10 @@ static NSArray *labelArray;
         ReportViewController *reportViewController = [segue destinationViewController];
         
         reportViewController.product = product;
+        
+        
         reportViewController.carouselItems = carouselItems;
-    }
+    } 
     
 }
 

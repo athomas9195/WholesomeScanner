@@ -192,8 +192,9 @@ static NSString *foodName;
                     
                     //store data for alternative items
                      NSArray *alternatives = dict[@"branded"];
+                    
                     [ScanViewController updateAlternativeData:alternatives];
-                 
+                   
                 }
                                                         
         }

@@ -37,21 +37,26 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    _carousel.delegate = self;
-    _carousel.dataSource = self; 
+    if(self.carouselItems.count >=1) {
+        _carousel.delegate = self;
+        _carousel.dataSource = self;  
+    }
     
-    self.foodNameLabel.text = self.product.foodName;
-    self.ingredientsLabel.text = self.product.allIngred;
     self.key1.clipsToBounds = true;
     self.key2.clipsToBounds = true;
     self.key3.clipsToBounds = true;
     self.key1.layer.cornerRadius = 10;
     self.key2.layer.cornerRadius = 10;
     self.key3.layer.cornerRadius = 10;
+   
     
-    //get the contains label
-    NSArray *ingreds = [self.ingredientsLabel.text componentsSeparatedByString:@","];
+    self.foodNameLabel.text = self.product.foodName;
+    if(self.product.allIngred != (id)[NSNull null]) {
+        self.ingredientsLabel.text = self.product.allIngred;
     
+    
+        
+    }
     //set the contains label: if no allergens, then display the first ingredient
     if(self.product.allergens) {
         NSString *allergen = self.product.allergens;
@@ -59,11 +64,13 @@
 
         self.containsLabel.text = uppercaseAllergen;
     } else {
+        //get the contains label
+        NSArray *ingreds = [self.ingredientsLabel.text componentsSeparatedByString:@","];
         NSString *firstIngred = [ingreds objectAtIndex:0];
         NSString *uppercase = [firstIngred uppercaseString];
 
         self.containsLabel.text = uppercase; 
-    }
+    } 
       
 
     //display image
@@ -201,7 +208,7 @@
             PieChartViewController *embed = segue.destinationViewController;
             embed.slices = self.product.pieChartSlices;  
     } 
-} 
+}
 
 
 @end

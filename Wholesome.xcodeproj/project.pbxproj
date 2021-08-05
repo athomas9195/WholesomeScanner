@@ -18,6 +18,7 @@
 		0BF5CD7C26B1F3CF00B9B2B1 /* Vision.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BF5CD7A26B1F3CB00B9B2B1 /* Vision.framework */; };
 		0BF5CD8126B1F5CE00B9B2B1 /* VisionKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BF5CD7F26B1F5CC00B9B2B1 /* VisionKit.framework */; };
 		0BF5CD8926B2496500B9B2B1 /* Food101.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 0BF5CD8826B2496500B9B2B1 /* Food101.mlmodel */; };
+		0BF5CD8C26BB965400B9B2B1 /* DiscoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BF5CD8B26BB965400B9B2B1 /* DiscoverViewController.m */; };
 		0BF66F1F269D8B9D007BE9F2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BF66F1E269D8B9D007BE9F2 /* AppDelegate.m */; };
 		0BF66F22269D8B9D007BE9F2 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BF66F21269D8B9D007BE9F2 /* SceneDelegate.m */; };
 		0BF66F28269D8B9D007BE9F2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BF66F26269D8B9D007BE9F2 /* Main.storyboard */; };
@@ -75,6 +76,8 @@
 		0BF5CD7A26B1F3CB00B9B2B1 /* Vision.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Vision.framework; path = System/Library/Frameworks/Vision.framework; sourceTree = SDKROOT; };
 		0BF5CD7F26B1F5CC00B9B2B1 /* VisionKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VisionKit.framework; path = System/Library/Frameworks/VisionKit.framework; sourceTree = SDKROOT; };
 		0BF5CD8826B2496500B9B2B1 /* Food101.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Food101.mlmodel; sourceTree = "<group>"; };
+		0BF5CD8A26BB965400B9B2B1 /* DiscoverViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DiscoverViewController.h; sourceTree = "<group>"; };
+		0BF5CD8B26BB965400B9B2B1 /* DiscoverViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DiscoverViewController.m; sourceTree = "<group>"; };
 		0BF66F1A269D8B9C007BE9F2 /* Wholesome.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wholesome.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BF66F1D269D8B9D007BE9F2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		0BF66F1E269D8B9D007BE9F2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -237,6 +240,8 @@
 				0B9A702A26A9534400469D20 /* ScanHistoryViewController.m */,
 				0B9A703026ACEDD600469D20 /* CategoryDetailViewController.h */,
 				0B9A703126ACEDD600469D20 /* CategoryDetailViewController.m */,
+				0BF5CD8A26BB965400B9B2B1 /* DiscoverViewController.h */,
+				0BF5CD8B26BB965400B9B2B1 /* DiscoverViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -526,6 +531,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0BF66F1F269D8B9D007BE9F2 /* AppDelegate.m in Sources */,
+				0BF5CD8C26BB965400B9B2B1 /* DiscoverViewController.m in Sources */,
 				0B9A703226ACEDD600469D20 /* CategoryDetailViewController.m in Sources */,
 				0BF66F5B269FD5BC007BE9F2 /* ScanViewController.m in Sources */,
 				0B9A701F26A7616800469D20 /* XYPieChart.m in Sources */,
