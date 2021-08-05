@@ -14,24 +14,36 @@
 
 @interface DiscoverViewController ()
 @property (weak, nonatomic) IBOutlet PFImageView *profileImage;
-
+ 
 @end
 
 @implementation DiscoverViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.profileImage.layer.cornerRadius = 35.0;
+    
+    __weak typeof(self) weakSelf = self;
+      dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+          [self getData1:10];
+          dispatch_async(dispatch_get_main_queue(), ^{
+              [weakSelf updateViews];
+              [weakSelf.carousel1 reloadData];
+          });
+      });
+}
+
+-(void)updateViews {
+    _carousel1.type = iCarouselTypeCoverFlow2;
+    _carousel2.type = iCarouselTypeCoverFlow2;
+    _carousel3.type = iCarouselTypeCoverFlow2;
     _carousel1.delegate = self;
     _carousel1.dataSource = self;
     _carousel2.delegate = self;
     _carousel2.dataSource = self;
     _carousel3.delegate = self;
     _carousel3.dataSource = self;
-    
-    self.profileImage.layer.cornerRadius = 30.0;
-      
-    [self getData1:10]; 
-    // Do any additional setup after loading the view.
 }
 
 #pragma mark - Carousel Lifecycle
@@ -122,12 +134,14 @@
         if (scans) {
             NSMutableArray* scansMutableArray = [scans mutableCopy];
             self.carouselItems1 = scansMutableArray;
+            [self.carousel1 reloadData]; 
         }
         else {
             NSLog(@"%@", error.localizedDescription);
             NSLog(@"%@", @"CANNOT GET STUFF");
         }
     }];
+   
 }
 
 //resizes the given image
