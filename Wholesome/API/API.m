@@ -39,8 +39,8 @@ static NSString *foodName;
     NSString *path = [[NSBundle mainBundle] pathForResource: @"Keys" ofType: @"plist"];
     NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile: path];
     
-    appID = [dict objectForKey: @"app_Id"];
-    appKey = [dict objectForKey: @"app_Key"];
+    appID = @"db2a090e";
+    appKey = @"88ab5cb3090035503860faec9dc41deb";
     
     headers = @{ @"x-app-id": appID, @"x-app-key": appKey };
      
@@ -98,8 +98,8 @@ static NSString *foodName;
     NSString *path = [[NSBundle mainBundle] pathForResource: @"Keys" ofType: @"plist"];
     NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile: path];
      
-    appID = @"7a7f40ef";
-    appKey = @"4caac3de1af0d3c21b1c809fb1d14ff1";  
+    appID = @"db2a090e";
+    appKey = @"88ab5cb3090035503860faec9dc41deb"; 
     
     headers = @{ @"x-app-id": appID, @"x-app-key": appKey };
      
@@ -154,8 +154,8 @@ static NSString *foodName;
     NSString *path = [[NSBundle mainBundle] pathForResource: @"Keys" ofType: @"plist"];
     NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile: path];
     
-    appID = [dict objectForKey: @"app_Id"];
-    appKey = [dict objectForKey: @"app_Key"];
+    appID = @"db2a090e";
+    appKey = @"88ab5cb3090035503860faec9dc41deb";
     
     headers = @{ @"x-app-id": appID, @"x-app-key": appKey };
      
@@ -217,8 +217,8 @@ static NSString *foodName;
     NSString *path = [[NSBundle mainBundle] pathForResource: @"Keys" ofType: @"plist"];
     NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile: path];
     
-    appID = @"7a7f40ef";
-    appKey = @"4caac3de1af0d3c21b1c809fb1d14ff1";
+    appID = @"db2a090e";
+    appKey = @"88ab5cb3090035503860faec9dc41deb";
     
     headers = @{ @"x-app-id": appID, @"x-app-key": appKey };
     NSString *editedFood = [food stringByReplacingOccurrencesOfString:@" " withString:@"+"];
@@ -337,8 +337,8 @@ static NSString *foodName;
     NSString *path = [[NSBundle mainBundle] pathForResource: @"Keys" ofType: @"plist"];
     NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile: path];
     
-    appID = [dict objectForKey: @"app_Id"];
-    appKey = [dict objectForKey: @"app_Key"];
+    appID = @"db2a090e";
+    appKey = @"88ab5cb3090035503860faec9dc41deb";
     
     headers = @{ @"x-app-id": appID, @"x-app-key": appKey , @"x-remote-user-id": @"0"};
         

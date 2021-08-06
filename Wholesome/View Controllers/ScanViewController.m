@@ -447,6 +447,8 @@ static NSArray *labelArray;
         product = nil;
         carouselItems = nil;
     }
+    
+    
 }
   
 
