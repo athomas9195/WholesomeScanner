@@ -15,9 +15,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet iCarousel *carousel2;
 @property (weak, nonatomic) IBOutlet iCarousel *carousel3;
 @property (nonatomic, strong) NSMutableArray *carouselItems1;
-@property (nonatomic, strong) NSMutableArray *carouselItems2;
-@property (nonatomic, strong) NSMutableArray *carouselItems3; 
-
+@property (nonatomic, strong) NSArray *carouselItems2;
+@property (nonatomic, strong) NSArray *carouselItems3; 
+ 
+ 
 @end
 
 NS_ASSUME_NONNULL_END

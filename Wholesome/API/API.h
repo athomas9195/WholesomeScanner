@@ -15,9 +15,9 @@ NS_ASSUME_NONNULL_BEGIN
 + (NSDictionary*)getItemWithUPC:(NSString *)upc completion:(void(^)(NSDictionary *dictComp, NSError *error))completion;
 + (NSDictionary*)getFoodFacts:(NSString *)upc completion:(void(^)(NSDictionary *dict, NSError *error))completion; 
 + (NSDictionary*)searchItems:(NSString *)food completion:(void(^)(NSDictionary *dictComp, NSError *error))completion;
-+ (NSDictionary*)searchAlternatives:(NSString *)food completion:(void(^)(NSDictionary *dictComp, NSError *error))completion; 
-
-@end
++ (NSDictionary*)searchAlternatives:(NSString *)food completion:(void(^)(NSArray *products, NSError *error))completion;
++ (NSDictionary*)getItemWithItemID:(NSString *)item completion:(void(^)(NSDictionary *dict, NSError *error))completion;
+@end  
 
 
 NS_ASSUME_NONNULL_END

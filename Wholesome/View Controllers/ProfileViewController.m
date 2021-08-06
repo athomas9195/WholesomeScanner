@@ -10,6 +10,7 @@
 #import "LoginViewController.h"
 #import "SceneDelegate.h"
 #import "CategoryDetailViewController.h"
+#import <Parse/PFImageView.h> 
 
 @interface ProfileViewController ()
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;  //the container for the categories
@@ -18,6 +19,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *health;
 @property (weak, nonatomic) IBOutlet UIImageView *additives;
 @property (weak, nonatomic) IBOutlet UIImageView *sweeteners;
+@property (weak, nonatomic) IBOutlet PFImageView *profileImage;
 
 
 @property (strong, nonatomic) NSArray *allergyArray; //array of items in the categories
@@ -49,13 +51,14 @@
     self.additives.userInteractionEnabled = YES;
     self.health.userInteractionEnabled = YES;
     self.sweeteners.userInteractionEnabled = YES;
-     
+    self.profileImage.layer.cornerRadius = 38.0;
+       
     // Do any additional setup after loading the view.
     
     self.allergyArray = [NSArray arrayWithObjects: @"Dairy", @"Egg",@"Fish and Shellfish",@"Soybean", @"Tree Nuts", @"Wheat",@"Sesame",@"Peanut",@"Celery",@"Gluten",@"Lupin",@"Mustard",@"Sulphites", nil];
-    self.healthArray = [NSArray arrayWithObjects: @"Vegan", @"Vegetarian",@"Pescatarian",@"Pregnancy", nil];
-    self.additiveArray = [NSArray arrayWithObjects: @"MSG", @"Azo-Colours",@"Banzote",@"Benzoic Acid", @"Food Coloring", @"Glutamate",@"Preservative", nil];
-    self.sweetenerArray = [NSArray arrayWithObjects: @"Stevia", @"Splenda",@"Maple Syrup",@"Agave Syrup", @"Xylitol", @"Erythritol",@"Yacon Syrup", nil];
+    self.healthArray = [NSArray arrayWithObjects: @"Vegan", @"Vegetarian",@"Pescatarian",@"Pregnancy", @"Omega 3", @"Plant-based" , @"Protein-rich", @"Reduced fat", @"Reduced sugar", @"Healthy", @"No saturated fats",  nil];
+    self.additiveArray = [NSArray arrayWithObjects: @"MSG", @"Azo-Colours",@"Banzote",@"Benzoic Acid", @"Food Coloring", @"Glutamate",@"Preservative", @"Nitrates", @"BHA", @"BHT", @"Potassium Benzote", @"Benzene", @"Sorbates", @"Trans fats", @"Salt", @"High fructcose corn syrup", nil];
+    self.sweetenerArray = [NSArray arrayWithObjects: @"Stevia", @"Splenda",@"Maple Syrup",@"Agave Syrup", @"Xylitol", @"Erythritol",@"Yacon Syrup", @"Acesulfame", @"Advantame", @"Aspartame", @"Neotame", @"Saccharin", @"Sucralose", @"Splenda", @"Sunett", @"Newtame", @"Sweet Twin", nil]; 
           
 }
  

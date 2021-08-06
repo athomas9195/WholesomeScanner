@@ -18,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
  
 @property (nonatomic, strong) NSMutableArray *scans; //stores scans
+@property (weak, nonatomic) IBOutlet PFImageView *profileImage;
 @property (nonatomic, strong) Product *product; //stores scans
 
      
@@ -34,7 +35,8 @@
     // Do any additional setup after loading the view.
     self.collectionView.dataSource = self;
     self.collectionView.delegate = self;
-      
+    self.profileImage.layer.cornerRadius = 38.0; 
+    
     [self getData:30];
 
     //set the layout of the collection view

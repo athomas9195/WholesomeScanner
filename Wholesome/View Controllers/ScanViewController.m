@@ -381,8 +381,8 @@ static NSArray *labelArray;
 +(void)updateData:(NSDictionary *) dict : (NSDictionary *) dict1 : (NSString *)capturedBarcode {
         product = [[Product alloc]initWithDictionary:dict:dict1:capturedBarcode];
            
-        [API searchAlternatives:(product.foodName) completion:^(NSDictionary * _Nonnull dictComp, NSError * _Nonnull error) {
-            
+        [API searchAlternatives:(product.foodName) completion:^(NSArray * _Nonnull products, NSError * _Nonnull error) {
+             
         }]; 
     
         //post to parse  
@@ -459,7 +459,7 @@ static NSArray *labelArray;
         
         
         reportViewController.carouselItems = carouselItems;
-    } 
+    }
     
 }
 

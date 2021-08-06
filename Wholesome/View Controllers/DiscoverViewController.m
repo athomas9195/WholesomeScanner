@@ -9,8 +9,11 @@
 #import <Parse/PFImageView.h>
 #import "iCarousel.h"
 #import <Parse/Parse.h>
+#import "API.h"
 #import "Scan.h"
 
+ 
+static NSMutableArray *veganItems;
 
 @interface DiscoverViewController ()
 @property (weak, nonatomic) IBOutlet PFImageView *profileImage;
@@ -22,16 +25,43 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.profileImage.layer.cornerRadius = 35.0;
-    
     __weak typeof(self) weakSelf = self;
-      dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-          [self getData1:10];
-          dispatch_async(dispatch_get_main_queue(), ^{
-              [weakSelf updateViews];
-              [weakSelf.carousel1 reloadData];
+          dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+              [self getData1:10];
+              [API searchAlternatives:@"vegan" completion:^(NSArray * products, NSError * _Nonnull error) {
+                  if(products) {
+                   
+                          //don't do anything specific to the index within
+                          //this `if (view == nil) {...}` statement because the view will be
+                          //recycled and used with other index values later
+                          self.carouselItems2 = products;
+                  }
+         
+       
+              }];
+              
+              [API searchAlternatives:@"keto" completion:^(NSArray * products, NSError * _Nonnull error) {
+                  if(products) {
+                   
+                          //don't do anything specific to the index within
+                          //this `if (view == nil) {...}` statement because the view will be
+                          //recycled and used with other index values later
+                          self.carouselItems3 = products;
+                  }
+       
+              }];
+             
+              dispatch_async(dispatch_get_main_queue(), ^{
+                  [weakSelf updateViews];
+                  [weakSelf.carousel1 reloadData];
+              });
           });
-      });
+     
+    self.profileImage.layer.cornerRadius = 38.0;
+ 
+    
+    [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(reload) userInfo:nil repeats:true];
+    
 }
 
 -(void)updateViews {
@@ -67,46 +97,98 @@
 
 - (NSInteger)numberOfItemsInCarousel:(iCarousel *)carousel
 {
+    if(carousel == self.carousel1) {
+        return [self.carouselItems1 count];
+    }
+    
+    if(carousel == self.carousel2) {
+        
+        return [self.carouselItems2 count];
+    }
+    if(carousel == self.carousel3) {
+        
+        return [self.carouselItems3 count]; 
+    }
     //return the total number of items in the carousel
-    return [self.carouselItems1 count];
+   
+    return 0;
 }
+
 
 - (UIView *)carousel:(iCarousel *)carousel viewForItemAtIndex:(NSInteger)index reusingView:(UIView *)view
 {
-    
-    //create new view if no view is available for recycling
-    if (view == nil)
-    {
-        //don't do anything specific to the index within
-        //this `if (view == nil) {...}` statement because the view will be
-        //recycled and used with other index values later
-        view = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 100.0f, 100.0f)];
-        
-        //convert parse file image to uiimage
-        Scan *scan =self.carouselItems1[index];
-        PFFileObject *file =  scan.image;
-        [file getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
-  
-            UIImage *newImage =[UIImage imageWithData:data];
-            UIImage *resized = [self resizeImage:newImage withSize:CGSizeMake(300, 300)];
-            ((UIImageView *)view).image = resized;
-       }];
+    if (carousel == self.carousel1) {
+        //create new view if no view is available for recycling
+        if (view == nil)
+        {
+            //don't do anything specific to the index within
+            //this `if (view == nil) {...}` statement because the view will be
+            //recycled and used with other index values later
+            view = [[UIImageView alloc] initWithFrame:CGRectMake(50, 50, 300.0f, 300.0f)];
+            
+            //convert parse file image to uiimage
+            Scan *scan =self.carouselItems1[index];
+            PFFileObject *file =  scan.image;
+            [file getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+      
+                UIImage *newImage =[UIImage imageWithData:data];
+                UIImage *resized = [self resizeImage:newImage withSize:CGSizeMake(150, 150)];
+                ((UIImageView *)view).image = resized;
+           }];
 
-        view.contentMode = UIViewContentModeCenter; 
-    } 
-    else
-    {
-        //get a reference to the label in the recycled view
-        //label = (UILabel *)[view viewWithTag:1];
-    }
-    
-    //set item label
-    //remember to always set any properties of your carousel item
-    //views outside of the `if (view == nil) {...}` check otherwise
-    //you'll get weird issues with carousel item content appearing
-    //in the wrong place in the carousel
-   // label.text = [self.carouselItems[index] stringValue];
+            view.contentMode = UIViewContentModeCenter;
+        }
+         
+        return view;
+        
+    } else if (carousel == self.carousel2) {
+        if (view == nil) {
+            view = [[UIImageView alloc] initWithFrame:CGRectMake(50, 50, 300.0f, 300.0f)];
+        
+            //convert parse file image to uiimage
+            Product *prod =self.carouselItems2[index];
+            
+            
+            PFFileObject *file = prod.image;
+            [file getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+      
+                UIImage *newImage =[UIImage imageWithData:data];
+                UIImage *resized = [self resizeImage:newImage withSize:CGSizeMake(150, 150)];
+                ((UIImageView *)view).image = resized;
+           }];
+
+            view.contentMode = UIViewContentModeCenter;
+        }
+         
+
+        return view;
      
+    
+    } else {
+        if (view == nil) {
+            view = [[UIImageView alloc] initWithFrame:CGRectMake(50, 50, 300.0f, 300.0f)];
+        
+            //convert parse file image to uiimage
+            Product *prod =self.carouselItems3[index];
+             
+            PFFileObject *file = prod.image;
+            [file getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+      
+                UIImage *newImage =[UIImage imageWithData:data];
+                UIImage *resized = [self resizeImage:newImage withSize:CGSizeMake(150, 150)];
+                ((UIImageView *)view).image = resized;
+           }];
+
+            view.contentMode = UIViewContentModeCenter;
+        }
+           
+        return view;
+        
+    }
+       
+        
+        
+        
     return view;
 }
 
@@ -114,9 +196,22 @@
 {
     if (option == iCarouselOptionSpacing)
     {
-        return value * 5.1;
+        return value * 0.3;
     }
     return value;
+}
+
+-(void ) reload {
+    if(self.carouselItems2.count >= 3) {
+        [self.carousel2 reloadData];
+        self.carousel2 = nil;
+    }
+    
+    if(self.carouselItems3.count >= 3) {
+        [self.carousel3 reloadData];
+        self.carousel3 = nil;
+    } 
+   
 }
 
 //gets the data from parse backend
