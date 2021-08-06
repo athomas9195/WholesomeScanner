@@ -61,12 +61,19 @@ static NSArray *labelArray;
     [self.captureSession startRunning];
     
     self.resultsLabel.text = @"Take a picture of your food or scan its barcode.";
+    
+    [NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(hideLabel) userInfo:nil repeats:NO];
  
    [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(reportSegue) userInfo:nil repeats:true];
 }
 
 - (void) viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    
+}
+
+- (void) hideLabel{
+    self.resultsLabel.text = @"";  
     
 }
 

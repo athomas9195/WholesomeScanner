@@ -70,7 +70,7 @@
         NSString *uppercase = [firstIngred uppercaseString];
 
         self.containsLabel.text = uppercase; 
-    } 
+    }
       
 
     //display image
@@ -169,7 +169,7 @@
         //don't do anything specific to the index within
         //this `if (view == nil) {...}` statement because the view will be
         //recycled and used with other index values later
-        view = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 100.0f, 100.0f)];
+        view = [[UIImageView alloc] initWithFrame:CGRectMake(20, 20, 100.0f, 100.0f)];
         ((UIImageView *)view).image = self.carouselItems[index];
         view.contentMode = UIViewContentModeCenter;
     }
@@ -187,13 +187,13 @@
    // label.text = [self.carouselItems[index] stringValue];
      
     return view;
-}
+} 
 
 - (CGFloat)carousel:(iCarousel *)carousel valueForOption:(iCarouselOption)option withDefault:(CGFloat)value
 {
     if (option == iCarouselOptionSpacing)
     {
-        return value * 5.1;
+        return value * 0.5;
     }
     return value;
 }

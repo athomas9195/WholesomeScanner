@@ -199,7 +199,7 @@ static NSMutableArray *veganItems;
         return value * 0.3;
     }
     return value;
-}
+}  
 
 -(void ) reload {
     if(self.carouselItems2.count >= 3) {

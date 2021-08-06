@@ -35,6 +35,19 @@
     [self.logInButton.layer setBorderWidth:1.0];
     [self.logInButton.layer setBorderColor:[[UIColor lightGrayColor] CGColor]];
     [self.logInButton.layer setCornerRadius:5.0];
+    
+    [self.usernameTextField.layer setBorderWidth:1.0];
+    [self.passwordTextField.layer setBorderWidth:1.0]; 
+    
+    [self.usernameTextField.layer setCornerRadius:10.0];
+    [self.passwordTextField.layer setCornerRadius:10.0];
+    
+    [self.usernameTextField.layer setBorderColor:[[UIColor lightGrayColor] CGColor]];
+    [self.passwordTextField.layer setBorderColor:[[UIColor lightGrayColor] CGColor]];
+    
+    
+    self.usernameTextField.placeholder = @"Username"; 
+    self.passwordTextField.placeholder = @"Password";
 }
 
 //gesture tap for keyboard dismissing
