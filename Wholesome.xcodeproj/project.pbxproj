@@ -358,7 +358,7 @@
 		0BF66F12269D8B9C007BE9F2 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1250;
+				LastUpgradeCheck = 1310;
 				TargetAttributes = {
 					0BF66F19269D8B9C007BE9F2 = {
 						CreatedOnToolsVersion = 12.5.1;
@@ -718,6 +718,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DA16DF2AA125F84981C4AFD0 /* Pods-Wholesome.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -738,6 +739,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B3C123112452A5E0D05ACF69 /* Pods-Wholesome.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -800,6 +802,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 505CEA44AB0B9213EA425A3F /* Pods-Wholesome-WholesomeUITests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 36B2H5K8M7;
 				INFOPLIST_FILE = WholesomeUITests/Info.plist;
@@ -819,6 +822,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 06D2DF84CCC9325432C3C375 /* Pods-Wholesome-WholesomeUITests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 36B2H5K8M7;
 				INFOPLIST_FILE = WholesomeUITests/Info.plist;

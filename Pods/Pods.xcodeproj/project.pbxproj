@@ -15,6 +15,7 @@
 			dependencies = (
 			);
 			name = FigmaExport;
+			productName = FigmaExport;
 		};
 /* End PBXAggregateTarget section */
 
@@ -1016,7 +1017,7 @@
 		03AE7CC436EBD4E26D72D68E04509B38 /* PFQueryState_Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFQueryState_Private.h; path = Parse/Parse/Internal/Query/State/PFQueryState_Private.h; sourceTree = "<group>"; };
 		03BF2C4DC61FF3AA38C7C16211B40B87 /* UIScrollView+SVInfiniteScrolling.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIScrollView+SVInfiniteScrolling.m"; path = "SVPullToRefresh/UIScrollView+SVInfiniteScrolling.m"; sourceTree = "<group>"; };
 		03C53177F36E54F23E7EF60E56F0F30B /* PFPropertyInfo_Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFPropertyInfo_Private.h; path = Parse/Parse/Internal/PropertyInfo/PFPropertyInfo_Private.h; sourceTree = "<group>"; };
-		040FB37DB755D3271E65935E0D248AE4 /* ParseUI.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = ParseUI.bundle; path = "Parse-ParseUI.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
+		040FB37DB755D3271E65935E0D248AE4 /* ParseUI.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ParseUI.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		04CB670996BE4201CFAC1AB7AA1FA98E /* PFUser.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFUser.h; path = Parse/Parse/PFUser.h; sourceTree = "<group>"; };
 		04CB9EA3D779A2C9AB8ADA1ED1E46E45 /* BDBOAuth1Manager-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BDBOAuth1Manager-umbrella.h"; sourceTree = "<group>"; };
 		04DC95CA53FFA2FDDA34870F55BDCDC6 /* PFObjectPrivate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFObjectPrivate.h; path = Parse/Parse/Internal/Object/PFObjectPrivate.h; sourceTree = "<group>"; };
@@ -1027,10 +1028,10 @@
 		05376CCBDB6AB7F53803F60590B0FEEA /* Pods-Wholesome-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Wholesome-frameworks.sh"; sourceTree = "<group>"; };
 		05574BC942A8023E258247D8935963F6 /* PFAnalyticsController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFAnalyticsController.h; path = Parse/Parse/Internal/Analytics/Controller/PFAnalyticsController.h; sourceTree = "<group>"; };
 		0594541BDBA03BAA1C79087F1091397A /* PFPushController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFPushController.h; path = Parse/Parse/Internal/Push/Controller/PFPushController.h; sourceTree = "<group>"; };
-		05C4280976BF93DA8B36818DE2E2A5E0 /* Cosmos.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Cosmos.framework; path = Cosmos.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		05C4280976BF93DA8B36818DE2E2A5E0 /* Cosmos.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Cosmos.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		060482EA62C4CECC95E204675D1C16BE /* BFTaskCompletionSource.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BFTaskCompletionSource.h; path = Bolts/Common/BFTaskCompletionSource.h; sourceTree = "<group>"; };
 		061C2CB2FBD327FD849C7E22AF97EE0D /* Parse.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Parse.release.xcconfig; sourceTree = "<group>"; };
-		0652F2476C7C87C6C0F6CB68072EA25F /* Parse.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Parse.framework; path = Parse.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0652F2476C7C87C6C0F6CB68072EA25F /* Parse.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Parse.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		069F7A39F27BCE2C1516269EBC3D8E7B /* PFApplication.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFApplication.m; path = Parse/Parse/Internal/PFApplication.m; sourceTree = "<group>"; };
 		06BDEF8D1DA79A6D2A54A65E078A9F9E /* PFImage.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFImage.m; path = ParseUI/Classes/Internal/Extensions/PFImage.m; sourceTree = "<group>"; };
 		071A888A07737A8345E016BA6B4A1AF2 /* PFSessionUtilities.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFSessionUtilities.h; path = Parse/Parse/Internal/Session/Utilities/PFSessionUtilities.h; sourceTree = "<group>"; };
@@ -1038,7 +1039,7 @@
 		07DA1BF1DCE419C5CDC9B8EDBCACB2EC /* Mantle-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Mantle-Info.plist"; sourceTree = "<group>"; };
 		07E051A611E2E6C6B89CC8791F9F5D9A /* PFAnalyticsController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFAnalyticsController.m; path = Parse/Parse/Internal/Analytics/Controller/PFAnalyticsController.m; sourceTree = "<group>"; };
 		08B3826C4D0E6EEEC167249927595CA5 /* PFPinningObjectStore.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFPinningObjectStore.h; path = Parse/Parse/Internal/Object/PinningStore/PFPinningObjectStore.h; sourceTree = "<group>"; };
-		091E3163DFD3044ACC49E5E2C665CA9C /* en.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = en.lproj; path = Parse/Parse/Resources/en.lproj; sourceTree = "<group>"; };
+		091E3163DFD3044ACC49E5E2C665CA9C /* en.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; name = en.lproj; path = Parse/Parse/Resources/en.lproj; sourceTree = "<group>"; };
 		093F03DB45BF13B1A4F6EAA93ECA1C67 /* ChevronDownShapeRenderer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChevronDownShapeRenderer.swift; path = Source/Charts/Renderers/Scatter/ChevronDownShapeRenderer.swift; sourceTree = "<group>"; };
 		0A666D5DCCF5CD9FA88ED32AC644B77C /* MTLJSONAdapter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MTLJSONAdapter.h; path = Mantle/include/MTLJSONAdapter.h; sourceTree = "<group>"; };
 		0A92AC9C215C3E4C4C351AD9E1365C34 /* PFCollectionViewCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFCollectionViewCell.m; path = ParseUI/Classes/Cells/PFCollectionViewCell.m; sourceTree = "<group>"; };
@@ -1118,7 +1119,7 @@
 		23AE63FCFB7F0441E90FFEC00D578832 /* PFInstallationConstants.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFInstallationConstants.m; path = Parse/Parse/Internal/Installation/Constants/PFInstallationConstants.m; sourceTree = "<group>"; };
 		23E57EA5E2BC1BE45161B84F18A57149 /* XAxisRendererRadarChart.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = XAxisRendererRadarChart.swift; path = Source/Charts/Renderers/XAxisRendererRadarChart.swift; sourceTree = "<group>"; };
 		240AF0758FAE23141264C061789FD064 /* AFNetworking-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "AFNetworking-Info.plist"; sourceTree = "<group>"; };
-		2428AD85578DC866411417371341DF6E /* he.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = he.lproj; path = ParseUI/Resources/Localization/he.lproj; sourceTree = "<group>"; };
+		2428AD85578DC866411417371341DF6E /* he.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; name = he.lproj; path = ParseUI/Resources/Localization/he.lproj; sourceTree = "<group>"; };
 		24BFAA26E82AF0E72C26997D095967CF /* NSDictionary+MTLMappingAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSDictionary+MTLMappingAdditions.m"; path = "Mantle/NSDictionary+MTLMappingAdditions.m"; sourceTree = "<group>"; };
 		2554C23DE4F7B45600C74CBCB8548A77 /* PFAnalytics.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFAnalytics.m; path = Parse/Parse/PFAnalytics.m; sourceTree = "<group>"; };
 		257C792CD1640D8F0A1EFCC5513953D4 /* ParseManagerPrivate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ParseManagerPrivate.h; path = Parse/Parse/Internal/ParseManagerPrivate.h; sourceTree = "<group>"; };
@@ -1127,13 +1128,13 @@
 		26A622B922319FD2C334FA32C49CF812 /* IAxisValueFormatter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IAxisValueFormatter.swift; path = Source/Charts/Formatters/IAxisValueFormatter.swift; sourceTree = "<group>"; };
 		26D03275582366F51D6CE8F63022DF0D /* ChartDataEntry.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChartDataEntry.swift; path = Source/Charts/Data/Implementations/Standard/ChartDataEntry.swift; sourceTree = "<group>"; };
 		26E1AC47FD69052D25A7A3872850B37A /* PFOfflineObjectController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFOfflineObjectController.h; path = Parse/Parse/Internal/Object/Controller/OfflineController/PFOfflineObjectController.h; sourceTree = "<group>"; };
-		276D5481B1D7B77F3F1D062A07535BCB /* Pods_Wholesome.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Wholesome.framework; path = "Pods-Wholesome.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		276D5481B1D7B77F3F1D062A07535BCB /* Pods_Wholesome.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Wholesome.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		27B18F1096A87463846808569B7CA5E1 /* PFFileObject+Synchronous.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "PFFileObject+Synchronous.h"; path = "Parse/Parse/PFFileObject+Synchronous.h"; sourceTree = "<group>"; };
 		27EC72F8B9F23FB578429B30B2619837 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
 		2878D48BE25A5C77C173CE81E90E75ED /* PFColor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFColor.h; path = ParseUI/Classes/Internal/Extensions/PFColor.h; sourceTree = "<group>"; };
 		28A7693120CE6E568ACD996AAC8E7C27 /* PFMutablePushState.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFMutablePushState.m; path = Parse/Parse/Internal/Push/State/PFMutablePushState.m; sourceTree = "<group>"; };
 		2A2618D5BA0130A5176D8CF910060030 /* UIProgressView+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIProgressView+AFNetworking.m"; path = "UIKit+AFNetworking/UIProgressView+AFNetworking.m"; sourceTree = "<group>"; };
-		2A32D8AE7A29003E0684A02CDB81073C /* fr.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = fr.lproj; path = ParseUI/Resources/Localization/fr.lproj; sourceTree = "<group>"; };
+		2A32D8AE7A29003E0684A02CDB81073C /* fr.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; name = fr.lproj; path = ParseUI/Resources/Localization/fr.lproj; sourceTree = "<group>"; };
 		2A62CFA8710D4C5B4C32C599A8C89E2B /* PFNetworkActivityIndicatorManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFNetworkActivityIndicatorManager.h; path = Parse/Parse/PFNetworkActivityIndicatorManager.h; sourceTree = "<group>"; };
 		2B0290A660A20460DB786F49C94232CE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		2B2D8C9804564317E9872730E8D5854A /* PFFilePersistenceGroup.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFFilePersistenceGroup.h; path = Parse/Parse/Internal/Persistence/Group/PFFilePersistenceGroup.h; sourceTree = "<group>"; };
@@ -1142,7 +1143,7 @@
 		2C5F4302B64D4A3FD730EC8D12D9DCE5 /* NSArray+MTLManipulationAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSArray+MTLManipulationAdditions.m"; path = "Mantle/NSArray+MTLManipulationAdditions.m"; sourceTree = "<group>"; };
 		2CDFD8278F4DC3F924CBC4C7283C5E0F /* PFTextButton.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFTextButton.h; path = ParseUI/Classes/Internal/Views/Buttons/PFTextButton.h; sourceTree = "<group>"; };
 		2D2417F5DCD071BB3711BFD588B4BDB6 /* Pods-Wholesome.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Wholesome.debug.xcconfig"; sourceTree = "<group>"; };
-		2D409645D088AB9189F3E7CD44A1CCFA /* BDBOAuth1Manager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = BDBOAuth1Manager.framework; path = BDBOAuth1Manager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2D409645D088AB9189F3E7CD44A1CCFA /* BDBOAuth1Manager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BDBOAuth1Manager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D703936131D255AA1B86706F13124D7 /* PFFileDataStream.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFFileDataStream.m; path = Parse/Parse/Internal/File/FileDataStream/PFFileDataStream.m; sourceTree = "<group>"; };
 		2D8F0D44A53F24CC50DF002F231B37C1 /* DateTools-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DateTools-prefix.pch"; sourceTree = "<group>"; };
 		2D9A4FEDB966912F78B438A596A8BB8B /* PFOfflineStore.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFOfflineStore.m; path = Parse/Parse/Internal/LocalDataStore/OfflineStore/PFOfflineStore.m; sourceTree = "<group>"; };
@@ -1237,14 +1238,14 @@
 		4A96464998F8F2AC5BB532C10293C0E9 /* PFRole.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFRole.m; path = Parse/Parse/PFRole.m; sourceTree = "<group>"; };
 		4AB8A93985C3E7C3354E29B3B6B1AE03 /* PFObject+Subclass.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "PFObject+Subclass.h"; path = "Parse/Parse/PFObject+Subclass.h"; sourceTree = "<group>"; };
 		4ABBD53F857F70E095BCB9E0D75F3321 /* PFCommandResult.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFCommandResult.m; path = Parse/Parse/Internal/PFCommandResult.m; sourceTree = "<group>"; };
-		4AF171581392AD234F23BE913F0C22FE /* DateTools.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = DateTools.framework; path = DateTools.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4AF171581392AD234F23BE913F0C22FE /* DateTools.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DateTools.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B8D55F9202A5EF11ED6CD8DA6189BAB /* iCarousel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = iCarousel.m; path = iCarousel/iCarousel.m; sourceTree = "<group>"; };
 		4BD1544486FCDED44F25A9E122E32E53 /* MBProgressHUD.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = MBProgressHUD.modulemap; sourceTree = "<group>"; };
 		4BDF659CAAC48228070C35CB7FF42564 /* PFGeoPoint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFGeoPoint.h; path = Parse/Parse/PFGeoPoint.h; sourceTree = "<group>"; };
 		4C0F634204A88980439052252F2C175D /* HorizontalBarChartRenderer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HorizontalBarChartRenderer.swift; path = Source/Charts/Renderers/HorizontalBarChartRenderer.swift; sourceTree = "<group>"; };
 		4C21EBA17E0126D34D02441CB836BF5A /* ChartData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChartData.swift; path = Source/Charts/Data/Implementations/Standard/ChartData.swift; sourceTree = "<group>"; };
 		4CE82EB1DF0FCD36E342970173F46D39 /* PFQuery.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFQuery.m; path = Parse/Parse/PFQuery.m; sourceTree = "<group>"; };
-		4D2C7AB3E1EF1B0A93EE67374B300B94 /* Pods_WholesomeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_WholesomeTests.framework; path = "Pods-WholesomeTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4D2C7AB3E1EF1B0A93EE67374B300B94 /* Pods_WholesomeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WholesomeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D30D60917D51EF183AB4A4E6943CB32 /* PFImageCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFImageCache.m; path = ParseUI/Classes/Internal/PFImageCache.m; sourceTree = "<group>"; };
 		4DCAF993B63997E91A1FC143B906F4A1 /* PFHTTPRequest.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFHTTPRequest.h; path = Parse/Parse/Internal/HTTPRequest/PFHTTPRequest.h; sourceTree = "<group>"; };
 		4E8C2E7FE020F72D983097397452FCF4 /* AFAutoPurgingImageCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFAutoPurgingImageCache.m; path = "UIKit+AFNetworking/AFAutoPurgingImageCache.m"; sourceTree = "<group>"; };
@@ -1335,7 +1336,7 @@
 		6AAC47B35539D4BB06E125F0DAF4C089 /* BFCancellationTokenSource.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BFCancellationTokenSource.h; path = Bolts/Common/BFCancellationTokenSource.h; sourceTree = "<group>"; };
 		6ACDE4F92931BFEDB156B3AC7DCD0B39 /* RightToLeft.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RightToLeft.swift; path = Cosmos/Helpers/RightToLeft.swift; sourceTree = "<group>"; };
 		6B944FD93D6ED1A777450FB9D044781E /* PFCurrentObjectControlling.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFCurrentObjectControlling.h; path = Parse/Parse/Internal/Object/CurrentController/PFCurrentObjectControlling.h; sourceTree = "<group>"; };
-		6BCD3E077861DE8917A0FFFBC6BD96CF /* Mantle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Mantle.framework; path = Mantle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6BCD3E077861DE8917A0FFFBC6BD96CF /* Mantle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Mantle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BF215A4A96EC657536A1BE9179671D3 /* AFURLRequestSerialization.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFURLRequestSerialization.h; path = AFNetworking/AFURLRequestSerialization.h; sourceTree = "<group>"; };
 		6C13F258D7FDC8DC181387B8C8C3B7F8 /* IShapeRenderer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IShapeRenderer.swift; path = Source/Charts/Renderers/Scatter/IShapeRenderer.swift; sourceTree = "<group>"; };
 		6C303CC9C535BE046339D5CECDB058F1 /* PFOfflineObjectController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFOfflineObjectController.m; path = Parse/Parse/Internal/Object/Controller/OfflineController/PFOfflineObjectController.m; sourceTree = "<group>"; };
@@ -1361,7 +1362,7 @@
 		7070289D54DE76754E99892785A9E8CC /* BubbleChartDataSet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BubbleChartDataSet.swift; path = Source/Charts/Data/Implementations/Standard/BubbleChartDataSet.swift; sourceTree = "<group>"; };
 		708F3B492CF5C34A35AAFDA136C891DB /* PFTextButton.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFTextButton.m; path = ParseUI/Classes/Internal/Views/Buttons/PFTextButton.m; sourceTree = "<group>"; };
 		70C83F0B91941A4A6AEFA6D6E876DF31 /* PFCloudCodeController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFCloudCodeController.h; path = Parse/Parse/Internal/CloudCode/PFCloudCodeController.h; sourceTree = "<group>"; };
-		7113486623047BA5B54451B578676668 /* SVPullToRefresh.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SVPullToRefresh.framework; path = SVPullToRefresh.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7113486623047BA5B54451B578676668 /* SVPullToRefresh.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SVPullToRefresh.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7145759BDEFC50DBEE0257D49136CACE /* CosmosAccessibility.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CosmosAccessibility.swift; path = Cosmos/CosmosAccessibility.swift; sourceTree = "<group>"; };
 		71E1EBB71C1ACD4486D8EB06E0D00E64 /* Charts-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Charts-Info.plist"; sourceTree = "<group>"; };
 		71F32DE280E48A67F61AB44C3C4A0E71 /* CandleChartDataProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CandleChartDataProvider.swift; path = Source/Charts/Interfaces/CandleChartDataProvider.swift; sourceTree = "<group>"; };
@@ -1457,7 +1458,7 @@
 		8B143A2A345E43DC5918BE98C60A1A4C /* PFRESTAnalyticsCommand.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFRESTAnalyticsCommand.m; path = Parse/Parse/Internal/Commands/PFRESTAnalyticsCommand.m; sourceTree = "<group>"; };
 		8B31D6C61924F167A440B6781FFF6E83 /* PFFieldOperationDecoder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFFieldOperationDecoder.h; path = Parse/Parse/Internal/FieldOperation/PFFieldOperationDecoder.h; sourceTree = "<group>"; };
 		8B43EE84E274D37DB3B0B1F6AFB79F38 /* PFPushUtilities.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFPushUtilities.m; path = Parse/Parse/Internal/Push/Utilites/PFPushUtilities.m; sourceTree = "<group>"; };
-		8B8FAB0D627B17EDE1366984278705D9 /* MBProgressHUD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = MBProgressHUD.framework; path = MBProgressHUD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B8FAB0D627B17EDE1366984278705D9 /* MBProgressHUD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MBProgressHUD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BAB970906982CE9A5990A2BB14718C6 /* PFPinningEventuallyQueue.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFPinningEventuallyQueue.m; path = Parse/Parse/Internal/PFPinningEventuallyQueue.m; sourceTree = "<group>"; };
 		8BD19BB6714C518C089028373A335E7D /* Bolts.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = Bolts.m; path = Bolts/Common/Bolts.m; sourceTree = "<group>"; };
 		8BE788D0CCBC9F366299D5E6C20510F3 /* PFFileObject+Deprecated.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "PFFileObject+Deprecated.h"; path = "Parse/Parse/PFFileObject+Deprecated.h"; sourceTree = "<group>"; };
@@ -1484,7 +1485,7 @@
 		9283B678171387973400E8AA7177231C /* PFObjectController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFObjectController.h; path = Parse/Parse/Internal/Object/Controller/PFObjectController.h; sourceTree = "<group>"; };
 		92F053C6BC45366637457737E1A469E8 /* PFProduct+Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "PFProduct+Private.h"; path = "Parse/Parse/Internal/Product/PFProduct+Private.h"; sourceTree = "<group>"; };
 		93B3B7CFAEA740C61234937F7EA1674D /* PFFileController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFFileController.h; path = Parse/Parse/Internal/File/Controller/PFFileController.h; sourceTree = "<group>"; };
-		94223772EA366418BDF409DEB60BB34D /* pt-BR.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = "pt-BR.lproj"; path = "ParseUI/Resources/Localization/pt-BR.lproj"; sourceTree = "<group>"; };
+		94223772EA366418BDF409DEB60BB34D /* pt-BR.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; name = "pt-BR.lproj"; path = "ParseUI/Resources/Localization/pt-BR.lproj"; sourceTree = "<group>"; };
 		9447417F6A1A5E15D80B13C9B1118F1D /* PFDateFormatter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFDateFormatter.m; path = Parse/Parse/Internal/PFDateFormatter.m; sourceTree = "<group>"; };
 		94823335137BA3ED067ECE97EB9B9CFD /* ParseModule.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ParseModule.m; path = Parse/Parse/Internal/ParseModule.m; sourceTree = "<group>"; };
 		94F2207756A977CB86ACA19F1E312DAA /* NSObject+MTLComparisonAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSObject+MTLComparisonAdditions.m"; path = "Mantle/NSObject+MTLComparisonAdditions.m"; sourceTree = "<group>"; };
@@ -1521,13 +1522,13 @@
 		9CDF9D488A07FE687A45A579B340CDB3 /* Platform+Touch Handling.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Platform+Touch Handling.swift"; path = "Source/Charts/Utils/Platform+Touch Handling.swift"; sourceTree = "<group>"; };
 		9CEBA5824F26EE3679A5E1F07A391F95 /* CosmosSettings.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CosmosSettings.swift; path = Cosmos/CosmosSettings.swift; sourceTree = "<group>"; };
 		9D76942BA47642827B42B196CB3AE0D0 /* Platform+Accessibility.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Platform+Accessibility.swift"; path = "Source/Charts/Utils/Platform+Accessibility.swift"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9E21F71DB2F17D4DB15CB4A4A66CBA38 /* PFSession.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFSession.h; path = Parse/Parse/PFSession.h; sourceTree = "<group>"; };
 		9E6FD1488FBD7AECE58CF0999DF4F0B6 /* PFPolygon.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFPolygon.m; path = Parse/Parse/PFPolygon.m; sourceTree = "<group>"; };
 		9E8DCF8A9A4B794167E797FFD0849C26 /* IScatterChartDataSet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IScatterChartDataSet.swift; path = Source/Charts/Data/Interfaces/IScatterChartDataSet.swift; sourceTree = "<group>"; };
 		9EC477A48857B2798828D37731914F23 /* PFCommandRunning.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFCommandRunning.h; path = Parse/Parse/Internal/Commands/CommandRunner/PFCommandRunning.h; sourceTree = "<group>"; };
 		9ECF7286D82CAB055E76F088CECEBD79 /* PFLogInView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFLogInView.h; path = ParseUI/Classes/LogInViewController/PFLogInView.h; sourceTree = "<group>"; };
-		9EFE33B4DA974D110421762DC01089D0 /* en.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = en.lproj; path = ParseUI/Resources/Localization/en.lproj; sourceTree = "<group>"; };
+		9EFE33B4DA974D110421762DC01089D0 /* en.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; name = en.lproj; path = ParseUI/Resources/Localization/en.lproj; sourceTree = "<group>"; };
 		9F0F5B65FA5D1D631EB6A59D7AC6EDD2 /* PFURLSessionDataTaskDelegate_Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFURLSessionDataTaskDelegate_Private.h; path = Parse/Parse/Internal/Commands/CommandRunner/URLSession/Session/TaskDelegate/PFURLSessionDataTaskDelegate_Private.h; sourceTree = "<group>"; };
 		9FA4C7931D85ADEC17AE131E572228C1 /* CombinedChartData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CombinedChartData.swift; path = Source/Charts/Data/Implementations/Standard/CombinedChartData.swift; sourceTree = "<group>"; };
 		9FC65B2BA18CE46E0507251EED1F39F6 /* PFACLState_Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFACLState_Private.h; path = Parse/Parse/Internal/ACL/State/PFACLState_Private.h; sourceTree = "<group>"; };
@@ -1535,7 +1536,7 @@
 		A03ADB27A02DDF626EF3377572371413 /* PFURLSession.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFURLSession.h; path = Parse/Parse/Internal/Commands/CommandRunner/URLSession/Session/PFURLSession.h; sourceTree = "<group>"; };
 		A13E302AE2911A519DA391C5D7C622B2 /* BarLineScatterCandleBubbleRenderer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BarLineScatterCandleBubbleRenderer.swift; path = Source/Charts/Renderers/BarLineScatterCandleBubbleRenderer.swift; sourceTree = "<group>"; };
 		A187B9693FB639BF615ACE56F7CC3247 /* PFJSONSerialization.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFJSONSerialization.h; path = Parse/Parse/Internal/PFJSONSerialization.h; sourceTree = "<group>"; };
-		A1C1B977ED8804E8AEEC884E7359EE58 /* Charts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Charts.framework; path = Charts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1C1B977ED8804E8AEEC884E7359EE58 /* Charts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Charts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A21C7F8730F84B8D17EC07ABF519323E /* ScatterChartRenderer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ScatterChartRenderer.swift; path = Source/Charts/Renderers/ScatterChartRenderer.swift; sourceTree = "<group>"; };
 		A237AB2FCEB32E1D656BE2F46E237717 /* ChartColorTemplates.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChartColorTemplates.swift; path = Source/Charts/Utils/ChartColorTemplates.swift; sourceTree = "<group>"; };
 		A23987868B508A67DAB0707D62ACF969 /* PFRESTSessionCommand.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFRESTSessionCommand.m; path = Parse/Parse/Internal/Commands/PFRESTSessionCommand.m; sourceTree = "<group>"; };
@@ -1547,7 +1548,7 @@
 		A3F84218DE7FC3FEA36842EEB84017DD /* PFRect.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFRect.m; path = ParseUI/Classes/Internal/Extensions/PFRect.m; sourceTree = "<group>"; };
 		A42953FEA0BF650D4FC6D616F678EB9F /* PFAnalyticsUtilities.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFAnalyticsUtilities.h; path = Parse/Parse/Internal/Analytics/Utilities/PFAnalyticsUtilities.h; sourceTree = "<group>"; };
 		A4A7E5106EC8F14662ABAFFA28301DE6 /* PFInstallationPrivate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFInstallationPrivate.h; path = Parse/Parse/Internal/Installation/PFInstallationPrivate.h; sourceTree = "<group>"; };
-		A4FA15D44DF6BAC7550EDEED10862AA3 /* AFNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = AFNetworking.framework; path = AFNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A4FA15D44DF6BAC7550EDEED10862AA3 /* AFNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AFNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A51A30317EBB7D19C4D50ADF15812B0B /* PFObjectSubclassingController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFObjectSubclassingController.m; path = Parse/Parse/Internal/Object/Subclassing/PFObjectSubclassingController.m; sourceTree = "<group>"; };
 		A5328C265AC555DAF065E9C6D2260D06 /* PFAnalyticsUtilities.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFAnalyticsUtilities.m; path = Parse/Parse/Internal/Analytics/Utilities/PFAnalyticsUtilities.m; sourceTree = "<group>"; };
 		A551C861FF33C0DE38189D7BD04FB0C1 /* Bolts-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Bolts-Info.plist"; sourceTree = "<group>"; };
@@ -1596,7 +1597,7 @@
 		B46541062CF3EA67D6603D0789C019F5 /* BDBOAuth1RequestSerializer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BDBOAuth1RequestSerializer.h; path = BDBOAuth1Manager/BDBOAuth1RequestSerializer.h; sourceTree = "<group>"; };
 		B47D59C116889BF3565EA1D1CDA6B47D /* PFMultiProcessFileLock.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFMultiProcessFileLock.m; path = Parse/Parse/Internal/MultiProcessLock/PFMultiProcessFileLock.m; sourceTree = "<group>"; };
 		B5ABE35834D51BEA044DDBCB3F518A16 /* BubbleChartData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BubbleChartData.swift; path = Source/Charts/Data/Implementations/Standard/BubbleChartData.swift; sourceTree = "<group>"; };
-		B5C84CC88D9788291EF4FBC09C232156 /* Pods_Wholesome_WholesomeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Wholesome_WholesomeUITests.framework; path = "Pods-Wholesome-WholesomeUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B5C84CC88D9788291EF4FBC09C232156 /* Pods_Wholesome_WholesomeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Wholesome_WholesomeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5D8DE23D72D35ECB2519DF7FB806B92 /* PFURLSessionCommandRunner.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFURLSessionCommandRunner.h; path = Parse/Parse/Internal/Commands/CommandRunner/URLSession/PFURLSessionCommandRunner.h; sourceTree = "<group>"; };
 		B6236E87D9EFF1EB187DE6BC43DD8F15 /* PFAppleAuthenticationProvider.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFAppleAuthenticationProvider.h; path = "ParseUI/Sign In With Apple/PFAppleAuthenticationProvider.h"; sourceTree = "<group>"; };
 		B644C34A0675B0D759C68A924B50701F /* UIActivityIndicatorView+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIActivityIndicatorView+AFNetworking.m"; path = "UIKit+AFNetworking/UIActivityIndicatorView+AFNetworking.m"; sourceTree = "<group>"; };
@@ -1658,7 +1659,7 @@
 		C728AEBDA1BE0EAE48A23FDFD891E76E /* PFCoreDataProvider.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFCoreDataProvider.h; path = Parse/Parse/Internal/PFCoreDataProvider.h; sourceTree = "<group>"; };
 		C76694654B87735284B3719798857F1D /* PFRelationState.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFRelationState.m; path = Parse/Parse/Internal/Relation/State/PFRelationState.m; sourceTree = "<group>"; };
 		C7A0989CE871A7C5441A8BD7AAEC1F5F /* ILineRadarChartDataSet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ILineRadarChartDataSet.swift; path = Source/Charts/Data/Interfaces/ILineRadarChartDataSet.swift; sourceTree = "<group>"; };
-		C8217EB109A6A34051F09192C29B676F /* iCarousel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = iCarousel.framework; path = iCarousel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8217EB109A6A34051F09192C29B676F /* iCarousel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = iCarousel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C87351AEEE12720FF4D09315250B9542 /* Pods-WholesomeTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-WholesomeTests.modulemap"; sourceTree = "<group>"; };
 		C88E7BF8FC0DC7AD8118A86F7044EA06 /* XShapeRenderer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = XShapeRenderer.swift; path = Source/Charts/Renderers/Scatter/XShapeRenderer.swift; sourceTree = "<group>"; };
 		C8B052D1E0C9B5D2112398E760AF808C /* PFProductTableViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFProductTableViewController.h; path = ParseUI/Classes/ProductTableViewController/PFProductTableViewController.h; sourceTree = "<group>"; };
@@ -1685,7 +1686,7 @@
 		CD7D1DFCB9D2AB5CFBBB962ECB91B6D5 /* Cosmos.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Cosmos.release.xcconfig; sourceTree = "<group>"; };
 		CE1F7491CC233BF6B6AB9020AE2829E6 /* YAxisRendererRadarChart.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = YAxisRendererRadarChart.swift; path = Source/Charts/Renderers/YAxisRendererRadarChart.swift; sourceTree = "<group>"; };
 		CE87ECA330AA8122660303B8948B36F3 /* BDBOAuth1Manager.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = BDBOAuth1Manager.modulemap; sourceTree = "<group>"; };
-		CEF60B20DD5F70C0905E804116E9F50C /* de.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = de.lproj; path = ParseUI/Resources/Localization/de.lproj; sourceTree = "<group>"; };
+		CEF60B20DD5F70C0905E804116E9F50C /* de.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; name = de.lproj; path = ParseUI/Resources/Localization/de.lproj; sourceTree = "<group>"; };
 		CF5CD45A5FAAE171CF417A1F05F120F8 /* BDBOAuth1SessionManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BDBOAuth1SessionManager.m; path = BDBOAuth1Manager/BDBOAuth1SessionManager.m; sourceTree = "<group>"; };
 		D0290E6676965859C92BFB8DCBD1092B /* CombinedChartRenderer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CombinedChartRenderer.swift; path = Source/Charts/Renderers/CombinedChartRenderer.swift; sourceTree = "<group>"; };
 		D0347591443AE41BB76E8B885B6E7070 /* PFURLSessionJSONDataTaskDelegate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFURLSessionJSONDataTaskDelegate.m; path = Parse/Parse/Internal/Commands/CommandRunner/URLSession/Session/TaskDelegate/PFURLSessionJSONDataTaskDelegate.m; sourceTree = "<group>"; };
@@ -1781,9 +1782,9 @@
 		EC5ECA7264FD2F275D9C63F0BDCA64C0 /* PFWeakValue.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFWeakValue.h; path = Parse/Parse/Internal/PFWeakValue.h; sourceTree = "<group>"; };
 		ECFDAF04DBD79F7098582341BA88D46B /* ParseClientConfiguration.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ParseClientConfiguration.m; path = Parse/Parse/ParseClientConfiguration.m; sourceTree = "<group>"; };
 		ED6759DFB9E084BFB21864F1C1FA1E53 /* PFUser.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFUser.m; path = Parse/Parse/PFUser.m; sourceTree = "<group>"; };
-		ED7ADA84A7005589821D254428CD2D26 /* Parse.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = Parse.bundle; path = "Parse-Parse.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED7ADA84A7005589821D254428CD2D26 /* Parse.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Parse.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED7FF563EA9BB2AC85A71C14C97A5BAF /* AFSecurityPolicy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFSecurityPolicy.m; path = AFNetworking/AFSecurityPolicy.m; sourceTree = "<group>"; };
-		ED93F929A7AB890EE0B162434C230862 /* sv.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = sv.lproj; path = ParseUI/Resources/Localization/sv.lproj; sourceTree = "<group>"; };
+		ED93F929A7AB890EE0B162434C230862 /* sv.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; name = sv.lproj; path = ParseUI/Resources/Localization/sv.lproj; sourceTree = "<group>"; };
 		EDB74E8CC528AB301802D7C3EE7EEEA2 /* PFACLState.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFACLState.m; path = Parse/Parse/Internal/ACL/State/PFACLState.m; sourceTree = "<group>"; };
 		EDCAA6AEA0E713EEA271DEB3B2D9BC76 /* BubbleChartRenderer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BubbleChartRenderer.swift; path = Source/Charts/Renderers/BubbleChartRenderer.swift; sourceTree = "<group>"; };
 		EDCF81D1728B88F10E42408EE18947A2 /* PFCloud+Synchronous.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "PFCloud+Synchronous.h"; path = "Parse/Parse/PFCloud+Synchronous.h"; sourceTree = "<group>"; };
@@ -1820,7 +1821,7 @@
 		F6412D228111C8A8924F3A9462B31F9A /* IFillFormatter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IFillFormatter.swift; path = Source/Charts/Formatters/IFillFormatter.swift; sourceTree = "<group>"; };
 		F729EBE11732000A8F2202572A9FE06E /* NSValueTransformer+MTLInversionAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSValueTransformer+MTLInversionAdditions.m"; path = "Mantle/NSValueTransformer+MTLInversionAdditions.m"; sourceTree = "<group>"; };
 		F77A0EC22220C86BE8BB1797B172B8E0 /* Pods-Wholesome-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Wholesome-acknowledgements.markdown"; sourceTree = "<group>"; };
-		F84B331B5D6AAF1548DD1BB004AE5C2A /* Bolts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Bolts.framework; path = Bolts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F84B331B5D6AAF1548DD1BB004AE5C2A /* Bolts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Bolts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8DE96530ECE4572A4C003D5FA1B19D4 /* UIKit+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIKit+AFNetworking.h"; path = "UIKit+AFNetworking/UIKit+AFNetworking.h"; sourceTree = "<group>"; };
 		F8FE2EC797FA4B57D9B72BBBB4F4327C /* ChartDataSet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChartDataSet.swift; path = Source/Charts/Data/Implementations/Standard/ChartDataSet.swift; sourceTree = "<group>"; };
 		F91E9782E8533CEF5903F401A3AA0320 /* PFQueryController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFQueryController.m; path = Parse/Parse/Internal/Query/Controller/PFQueryController.m; sourceTree = "<group>"; };
@@ -2009,7 +2010,6 @@
 				617969A53DBA5E7428FAA52EACC0729E /* Support Files */,
 				8FBD3BFA82444369FDA794D09C91C996 /* Tasks */,
 			);
-			name = Bolts;
 			path = Bolts;
 			sourceTree = "<group>";
 		};
@@ -2296,7 +2296,6 @@
 				246E28DB31AF0CDDA1E54554106E8212 /* extobjc */,
 				9028C1707D5E078DBA590D9AC9AEE5BF /* Support Files */,
 			);
-			name = Mantle;
 			path = Mantle;
 			sourceTree = "<group>";
 		};
@@ -2323,7 +2322,6 @@
 				33B0F8DE897D42C9A2ED496C681D1D1A /* MBProgressHUD.m */,
 				D15C5978C47E2004603AF0087333E9EE /* Support Files */,
 			);
-			name = MBProgressHUD;
 			path = MBProgressHUD;
 			sourceTree = "<group>";
 		};
@@ -2332,7 +2330,6 @@
 			children = (
 				AAA7A3B02572680CAB3B269F8AAF8499 /* Support Files */,
 			);
-			name = FigmaExport;
 			path = FigmaExport;
 			sourceTree = "<group>";
 		};
@@ -2343,7 +2340,6 @@
 				67154AFF897104D76B400F1D71B84213 /* Support Files */,
 				81F75BACFD0786B4417027983F9FEEAF /* UI */,
 			);
-			name = Parse;
 			path = Parse;
 			sourceTree = "<group>";
 		};
@@ -2402,7 +2398,6 @@
 				61E20A1C53D36DD4E3D7547AC5933E7A /* UIScrollView+SVPullToRefresh.m */,
 				CB1F6700714ECD0E6CB71D3D37A675F0 /* Support Files */,
 			);
-			name = SVPullToRefresh;
 			path = SVPullToRefresh;
 			sourceTree = "<group>";
 		};
@@ -2581,7 +2576,6 @@
 				B801C4F7D4F626EFF046D26102CF83C9 /* Resources */,
 				CA2C563E6BB4DC1687FE62A1D830E8D1 /* Support Files */,
 			);
-			name = DateTools;
 			path = DateTools;
 			sourceTree = "<group>";
 		};
@@ -2605,7 +2599,6 @@
 				1BB4FA3B3AF2006C13A38A9A6FFB9C9D /* StarLayer.swift */,
 				18BA0AE415CF3F92B728816C24364138 /* Support Files */,
 			);
-			name = Cosmos;
 			path = Cosmos;
 			sourceTree = "<group>";
 		};
@@ -3060,7 +3053,6 @@
 				6370B3201898D327650A19F6007DCB86 /* Support Files */,
 				F68DB627FF8818D02A3AE2D2A42E216A /* UIKit */,
 			);
-			name = AFNetworking;
 			path = AFNetworking;
 			sourceTree = "<group>";
 		};
@@ -3162,7 +3154,6 @@
 				1DAE4F41C7834D86FA73B6E0B07E25B4 /* Core */,
 				E94B411CE1F572E58C345B2864F99EAF /* Support Files */,
 			);
-			name = Charts;
 			path = Charts;
 			sourceTree = "<group>";
 		};
@@ -3188,7 +3179,6 @@
 				F123C6AEA94D46696F1C0F8D5C8162F8 /* NSString+BDBOAuth1Manager.m */,
 				278AC594C056543BDF17EABD4A4C1B29 /* Support Files */,
 			);
-			name = BDBOAuth1Manager;
 			path = BDBOAuth1Manager;
 			sourceTree = "<group>";
 		};
@@ -3241,7 +3231,6 @@
 				4B8D55F9202A5EF11ED6CD8DA6189BAB /* iCarousel.m */,
 				5CFC3545739714400B0232D97A51A5E5 /* Support Files */,
 			);
-			name = iCarousel;
 			path = iCarousel;
 			sourceTree = "<group>";
 		};
@@ -3998,7 +3987,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1100;
-				LastUpgradeCheck = 1100;
+				LastUpgradeCheck = 1310;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 10.0";
@@ -4872,7 +4861,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/Bolts/Bolts-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/Bolts/Bolts-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -4906,7 +4895,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/Charts/Charts-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/Charts/Charts-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -4932,7 +4921,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -4957,7 +4946,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/iCarousel/iCarousel-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/iCarousel/iCarousel-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -4991,7 +4980,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/MBProgressHUD/MBProgressHUD-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/MBProgressHUD/MBProgressHUD-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -5025,7 +5014,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/SVPullToRefresh/SVPullToRefresh-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/SVPullToRefresh/SVPullToRefresh-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -5058,7 +5047,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/DateTools/DateTools-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/DateTools/DateTools-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -5084,7 +5073,7 @@
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/Parse";
 				IBSC_MODULE = Parse;
 				INFOPLIST_FILE = "Target Support Files/Parse/ResourceBundle-ParseUI-Parse-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				PRODUCT_NAME = ParseUI;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -5108,7 +5097,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/Charts/Charts-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/Charts/Charts-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -5131,7 +5120,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FEC24FF66CA5E62D3EA309EDADC4CE4B /* Pods-Wholesome.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -5217,7 +5206,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/BDBOAuth1Manager/BDBOAuth1Manager-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/BDBOAuth1Manager/BDBOAuth1Manager-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -5250,7 +5239,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/Parse/Parse-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/Parse/Parse-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -5275,7 +5264,7 @@
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/Parse";
 				IBSC_MODULE = Parse;
 				INFOPLIST_FILE = "Target Support Files/Parse/ResourceBundle-ParseUI-Parse-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				PRODUCT_NAME = ParseUI;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -5299,7 +5288,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/iCarousel/iCarousel-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/iCarousel/iCarousel-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -5332,7 +5321,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/DateTools/DateTools-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/DateTools/DateTools-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -5365,7 +5354,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/Mantle/Mantle-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/Mantle/Mantle-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -5398,7 +5387,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/Bolts/Bolts-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/Bolts/Bolts-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -5431,7 +5420,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/Cosmos/Cosmos-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/Cosmos/Cosmos-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -5465,7 +5454,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/AFNetworking/AFNetworking-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/AFNetworking/AFNetworking-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -5498,7 +5487,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/Cosmos/Cosmos-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/Cosmos/Cosmos-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -5533,7 +5522,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/BDBOAuth1Manager/BDBOAuth1Manager-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/BDBOAuth1Manager/BDBOAuth1Manager-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -5567,7 +5556,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/AFNetworking/AFNetworking-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/AFNetworking/AFNetworking-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -5592,7 +5581,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -5607,7 +5596,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D7DA47C6F3C4178D95E94D6E9638419C /* Pods-Wholesome-WholesomeUITests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -5655,7 +5644,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/MBProgressHUD/MBProgressHUD-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/MBProgressHUD/MBProgressHUD-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -5688,7 +5677,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/Mantle/Mantle-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/Mantle/Mantle-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -5780,7 +5769,7 @@
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/Parse";
 				IBSC_MODULE = Parse;
 				INFOPLIST_FILE = "Target Support Files/Parse/ResourceBundle-Parse-Parse-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				PRODUCT_NAME = Parse;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -5796,7 +5785,7 @@
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/Parse";
 				IBSC_MODULE = Parse;
 				INFOPLIST_FILE = "Target Support Files/Parse/ResourceBundle-Parse-Parse-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				PRODUCT_NAME = Parse;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -5882,7 +5871,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/SVPullToRefresh/SVPullToRefresh-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/SVPullToRefresh/SVPullToRefresh-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -5905,7 +5894,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D611ED3EAC140BF9F96E178021124920 /* Pods-Wholesome-WholesomeUITests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -5992,7 +5981,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/Parse/Parse-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/Parse/Parse-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -6015,7 +6004,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2D2417F5DCD071BB3711BFD588B4BDB6 /* Pods-Wholesome.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
